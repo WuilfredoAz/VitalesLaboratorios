@@ -76,6 +76,11 @@ picture img
     vertical-align: top;
 }
 
+.header
+{
+    position: relative;
+}
+
 /* Estilos que tiene la barra superior (Azul) del header */
 .headerUp
 {
@@ -241,3 +246,85 @@ picture img
     border-bottom: 2px solid;
     font-weight: 500;
 }
+
+.hero
+{
+    height: calc(100vh - 105px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url("../img/hero.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.hero .centro
+{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.epigrafe
+{
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: var(--resaltante);
+    letter-spacing: 2px;
+}
+
+.title
+{
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--fuenteImportante);
+}
+
+h2.title
+{
+    margin-bottom: 20px;
+}
+
+.rotate
+{
+    color: var(--fuenteRotativa);
+    font-weight: 700;
+}
+
+.parrafo
+{
+    font-weight: 400;
+    color: var(--fuenteNormal);
+    font-size: 12px;
+    margin-bottom: 35px;
+}
+
+.hero .parrafo
+{
+    width: 560px;
+}
+
+.btn-cta
+{
+    font-weight: 500;
+    font-size: 12px;
+    padding: 12px 25px;
+    background-color: var(--resaltante);
+    box-shadow: 0px 10px 23px -15px var(--resaltante);
+    color: var(--fuente);
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 1px;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.btn-cta:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 10px 23px -10px var(--resaltante);
+}
+
