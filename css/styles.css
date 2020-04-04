@@ -1,0 +1,243 @@
+/* Colores usados */
+:root
+{
+    /* Color de fondo principal */
+    --bgColor:#FBFCFF;
+
+    /* Colores del Header */
+    --upMenu: #0154BE;
+    --downMenu: #F5F7F8;
+    --sombraMenu: #C3CFFC;
+    --seleccionMenu: #F3478B;
+
+    /* Colores de fuente */
+    --fuente: #FFFFFF;
+    --fuenteNormal:#828282;
+    --fuenteImportante:#333333;
+    --fuenteRotativa:#2D85F5;
+    --fuenteRespuesta: #707070;
+    --fuenteFooterTxt: #E8E8E8;
+
+    /* Color resaltante */
+    --resaltante:#EB196C;
+
+    /* Sombras de elementos */
+    --sombras: #CED7FF;
+
+    /* Carrusel servicios */
+    --arrowContenedor: #F5F7F8;
+    --arrowSombra: rgba(1,84,190, .2);
+    --arrowAzul: #0C1A49;
+    --arrowDisable:#AEC2CC;
+
+    /* Footer */
+    --bgFooter: #0F1733;
+    --lineFooter: #1E2E66;
+
+    /* RS Nosotros */
+    --azulNosotros: #0154BE;
+    --sombraAzulNostros: rgba(1,84,190, .32);
+
+}
+
+/* Reseteo de estilos */
+*
+{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Asignamos el color de fondo */
+body
+{
+    background-color: var(--bgColor);
+}
+
+/* Clase que centra el contenido en la página */
+.centro
+{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Ajuste para que los contenedores de las img abarquen todo el espacio */
+figure,
+picture
+{
+    width: 100%;
+}
+/* Ajuste para quitar el margen que queda abajo en las img */
+figure img,
+picture img
+{
+    vertical-align: top;
+}
+
+/* Estilos que tiene la barra superior (Azul) del header */
+.headerUp
+{
+    background-color: var(--upMenu);
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos necesarios para que los elementos se centren con el contenedor */
+.headerUp .centro,
+.headerDown .centro
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos básicos de la parte superior, inferior del header y de los datos del header superior y la caja de las RS del up*/
+.headerUp_left,
+.headerUp_Right,
+.headerUp_dato,
+.headerUp_Right_Caja
+{
+    display: flex;
+    justify-content: center;
+}
+
+/* Margen entre el primer elemento del header superior */
+.headerUp_dato:nth-child(1)
+{
+    margin-right: 50px;
+}
+
+/* Estilos para el icono de los datos del header superior */
+.headerUp_ico
+{
+    height: 15px;
+    width: auto;
+    margin-right: 10px;
+    opacity: .4;
+}
+
+/* Estilos para el texto de los datos del header superior */
+.headerUp_txt
+{
+    font-weight: 500;
+    font-size: 11px;
+    color: var(--fuente);
+    text-decoration: none;
+}
+
+/* Estilos para los enlaces de las RS en el Up */
+.headerUp_RS
+{
+    text-decoration: none;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Correccion del margen en el ultimo elemento de las RS en el Up */
+.headerUp_RS:last-child
+{
+    margin-right: 0;
+}
+
+/* Tamaño de las imagenes de las RS en el Up */
+.headerUp_RS_Img
+{
+    height: 20px;
+    width: auto;
+    opacity: .4;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Efecto al hacer hover en las RS del Up */
+.headerUp_RS_Img:hover
+{
+    opacity: 1;
+}
+
+/* Estilos generales de la parte inferior (Blanca) del header */
+.headerDown
+{
+    height: 70px;
+    background-color: var(--downMenu);
+    box-shadow: 0px 10px 23px -15px var(--sombraMenu);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor del logo */
+.logo
+{
+    height: 45px;
+    width: auto;
+}
+
+/* Imagene del logo normal */
+.logo img
+{
+    height: 100%;
+    width: auto;
+}
+
+/* Ajuste necesario para colocar el border del selected */
+.headerDown .centro
+{
+    height: inherit;
+}
+
+/* Ajuste necesario para colocar el border del selected */
+.menu
+{
+    height: inherit;
+}
+
+/* Estilos para que los elementos del menu se coloque uno al lado del otro y tenga la misma altura para el selected */
+.menu ul
+{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    height: inherit;
+}
+
+/* Estilos necesarios para el selected y el espaciado entre elementos */
+.menu ul li
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding-right: 15px;
+}
+
+/* Estilos necesarios para la clase por defecto de los textos del menu */
+.menu ul li a
+{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--fuenteNormal);
+    text-decoration: none;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Estilos que se aplican al hacer hover sobre un elemento del menu */
+.menu ul li a:hover
+{
+    color: var(--fuenteImportante);
+}
+
+/* Estilo que se aplica segun la pagina que este visualizando */
+.menu ul li a.selected
+{
+    color: var(--seleccionMenu);
+    border-bottom: 2px solid;
+    font-weight: 500;
+}
