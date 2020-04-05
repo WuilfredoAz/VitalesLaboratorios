@@ -7,63 +7,70 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <header class="header">
+            <div class="headerUp">
+                <div class="centro">
+                    <div class="headerUp_left">
+                        <div class="headerUp_dato">
+                            <img class="headerUp_ico" src="img/icons/locacion-blanco.png" alt="Ubicación:" />
+                            <a href="#" class="js-datoDireccionAbre headerUp_txt" target="_blank">Cargando</a>
+                        </div>
+                        <div class="headerUp_dato">
+                            <img class="headerUp_ico" src="img/icons/telefono-blanco.png" alt="Telf:" />
+                            <a href="#" class="js-datoTelefono headerUp_txt">Cargando</a>
+                        </div>
+                    </div>
+                    <div class="headerUp_Right">
+                        <div class="headerUp_Right_Caja">
+                            <a href="#" class="js-fb headerUp_RS">
+                                <img class="headerUp_RS_Img" src="img/icons/fb.png" alt="Facebook" />
+                            </a>
+                            <a href="#" class="js-wa headerUp_RS">
+                                <img class="headerUp_RS_Img" src="img/icons/ws.png" alt="WhatsApp" />
+                            </a>
+                            <a href="#" class="js-ig headerUp_RS">
+                                <img class="headerUp_RS_Img" src="img/icons/ig.png" alt="Instagram" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="headerDown">
+                <div class="centro">
+                    <picture class="logo">
+                        <!-- <source srcset="img/logoresponsive.png" media="()" /> -->
+                        <img src="img/logo-black.png" alt="Vitales Laboratorios Logo" />
+                    </picture>
+                    <nav class="menu">
+                        <ul>
+                            <li><a class="js-menuLink" href="#">Inicio</a></li>
+                            <li><a class="js-menuLink" href="#">Nosotros</a></li>
+                            <li><a class="js-menuLink" href="#">Servicios</a></li>
+                            <li><a class="js-menuLink" href="#">Exámenes</a></li>
+                            <li><a class="js-menuLink" href="#">Acerca de</a></li>
+                            <li><a class="js-menuLink" href="#">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
         <main>
-            <header class="header">
-                <div class="headerUp">
-                    <div class="centro">
-                        <div class="headerUp_left">
-                            <div class="headerUp_dato">
-                                <img class="headerUp_ico" src="img/icons/locacion-blanco.png" alt="Ubicación:" />
-                                <a href="#" class="js-datoDireccionAbre headerUp_txt" target="_blank">Cargando</a>
-                            </div>
-                            <div class="headerUp_dato">
-                                <img class="headerUp_ico" src="img/icons/telefono-blanco.png" alt="Telf:" />
-                                <a href="#" class="js-datoTelefono headerUp_txt">Cargando</a>
-                            </div>
-                        </div>
-                        <div class="headerUp_Right">
-                            <div class="headerUp_Right_Caja">
-                                <a href="#" class="js-fb headerUp_RS">
-                                    <img class="headerUp_RS_Img" src="img/icons/fb.png" alt="Facebook" />
-                                </a>
-                                <a href="#" class="js-wa headerUp_RS">
-                                    <img class="headerUp_RS_Img" src="img/icons/ws.png" alt="WhatsApp" />
-                                </a>
-                                <a href="#" class="js-ig headerUp_RS">
-                                    <img class="headerUp_RS_Img" src="img/icons/ig.png" alt="Instagram" />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="headerDown">
-                    <div class="centro">
-                        <picture class="logo">
-                            <!-- <source srcset="img/logoresponsive.png" media="()" /> -->
-                            <img src="img/logo-black.png" alt="Vitales Laboratorios Logo" />
-                        </picture>
-                        <nav class="menu">
-                            <ul>
-                                <li><a class="js-menuLink" href="#">Inicio</a></li>
-                                <li><a class="js-menuLink" href="#">Nosotros</a></li>
-                                <li><a class="js-menuLink" href="#">Servicios</a></li>
-                                <li><a class="js-menuLink" href="#">Exámenes</a></li>
-                                <li><a class="js-menuLink" href="#">Acerca de</a></li>
-                                <li><a class="js-menuLink" href="#">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </header>
             <section class="hero">
                 <div class="centro">
                     <p class="epigrafe">Bienvenidos a</p>
-                    <h1 class="title">Vitales Laboratorios</h1>
-                    <h2 class="title">Los únicos con <span class="rotate">la mejor tecnología</span></h2>
+                    <h1 class="titulo">Vitales Laboratorios</h1>
+                    <h2 class="titulo">Los únicos con
+                        <ul class="tituloLista">
+                            <li class="rotate">la mejor tecnología.</li>
+                            <li class="rotate">los mejores profesionales.</li>
+                            <li class="rotate">la mayor rápidez.</li>
+                            <li class="rotate">los mejores precios.</li>
+                        </ul>
+                    </h2>
                     <p class="parrafo">
-                        En Vitales Laboratorios, estamos conscientes de que tener un los resultados de una
-                        prueba puede ser crucial para ti. Es por eso que ponemos a tu disposición nuestras
-                        líneas para cotización de exámenes o de resultados.
+                        Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.
+                        Tenemos para ti, una amplia gama de  servicios para que puedas realizarte tus exámenes médicos de forma
+                        rápida y con la calidad que solo nosotros podemos ofrecerte.
                     </p>
                     <a href="#" class="btn-cta">Contáctanos</a>
                 </div>

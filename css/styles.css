@@ -247,18 +247,24 @@ picture img
     font-weight: 500;
 }
 
+/* Estilos necesarios para el hero (Imagen de fondo y degradado generado por css)
+tamaño de fuente declarado para usar EMs para responsive*/
 .hero
 {
     height: calc(100vh - 105px);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-image: url("../img/hero.jpg");
-    background-size: contain;
+    background: linear-gradient(90deg, var(--bgColor) 15%, rgba(251,252,255,0) 70%),
+                linear-gradient(0deg, var(--bgColor) 0%, rgba(251,252,255,0) 30%),
+                url("../img/hero-bg.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: right top;
+    background-position: center center;
+    font-size: 18px;
 }
 
+/* Contendedor del hero */
 .hero .centro
 {
     height: inherit;
@@ -268,63 +274,130 @@ picture img
     align-items: flex-start;
 }
 
+/* Estilos necesarios del epigrafe */
 .epigrafe
 {
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: .625em;
     color: var(--resaltante);
-    letter-spacing: 2px;
+    letter-spacing: .125em;
 }
 
-.title
+/* Estilo necesario para los titulos */
+.titulo
 {
-    font-size: 32px;
+    font-size: 2em;
     font-weight: 600;
     color: var(--fuenteImportante);
 }
 
-h2.title
-{
-    margin-bottom: 20px;
-}
-
-.rotate
-{
-    color: var(--fuenteRotativa);
-    font-weight: 700;
-}
-
+/* Estilo de los parrafos */
 .parrafo
 {
     font-weight: 400;
     color: var(--fuenteNormal);
-    font-size: 12px;
-    margin-bottom: 35px;
+    font-size: .75em;
+    margin-bottom: 2.91em;
 }
 
+/* Tamaño que abarca el parrafo en el hero */
 .hero .parrafo
 {
-    width: 560px;
+    width: 50%;
 }
 
+/* Estilos generales del CTA del hero */
 .btn-cta
 {
     font-weight: 500;
-    font-size: 12px;
-    padding: 12px 25px;
+    font-size: .75em;
+    padding: 1em 2em;
     background-color: var(--resaltante);
     box-shadow: 0px 10px 23px -15px var(--resaltante);
     color: var(--fuente);
     border-radius: 5px;
     text-decoration: none;
-    margin: 1px;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Hover del CTA del hero */
 .btn-cta:hover
 {
     transform: scale(1.05);
     box-shadow: 0px 10px 23px -10px var(--resaltante);
 }
 
+/* Estilo necesario para parecerse al H1 */
+h2.titulo
+{
+    margin-bottom: .625em;
+}
+
+/* Estilo de la lista que contiene los elementos que rotan */
+.tituloLista
+{
+    overflow: hidden;
+    display: inline-block;
+    /* border: 1px solid red; */
+    margin-left: .2em;
+    margin-bottom: -.3em;
+    height: 1.125em;
+    list-style: none;
+    line-height: 1em;
+}
+
+/* Estilo del texto que irá rotando */
+.rotate
+{
+    color: var(--fuenteRotativa);
+    font-weight: 700;
+    margin: 1em 0;
+}
+
+/* Estilos necesarios para que el primer elemento se vea en pantalla */
+.rotate:first-child
+{
+    margin-top: 0;
+    animation-name: moverTexto;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Animacion del texto que rota en el Hero */
+@keyframes moverTexto
+{
+    0%
+    {
+        margin-top: 0;
+    }
+    12.5%
+    {
+        margin-top: -2em;
+    }
+    25%
+    {
+        margin-top: -2em;
+    }
+    37.5%
+    {
+        margin-top: -4em;
+    }
+    50%
+    {
+        margin-top: -4em;
+    }
+    62.5%
+    {
+        margin-top: -6em;
+    }
+    75%
+    {
+        margin-top: -6em;
+    }
+    87.5%
+    {
+        margin-top: 0;
+    }
+}
