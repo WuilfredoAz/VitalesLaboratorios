@@ -55,6 +55,52 @@ body
     background-color: var(--bgColor);
 }
 
+/* Scroll personalizado (Disponible solo en PC's) */
+@media screen and (-webkit-max-device-pixel-ratio: 1),
+       screen and (-o-max-device-pixel-ratio: 1/1),
+       screen and (max-resolution: 1dppx)
+{
+    /* Tamaños del scroll */
+    *::-webkit-scrollbar
+    {
+        width: 12px;
+        height: 12px;
+        display: none;
+    }
+    /* Scroll visible generalmente */
+    body::-webkit-scrollbar
+    {
+        display: block;
+    }
+
+    /* mostrar el scroll al hacer hover */
+    *:hover::-webkit-scrollbar
+    {
+        display: block;
+    }
+
+    /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+    *::-webkit-scrollbar-thumb
+    {
+        background: #bdc7e0;
+        border-radius: 6px;
+    }
+
+    /* Cambiamos el fondo cuando esté en active */
+    *::-webkit-scrollbar-thumb:active
+    {
+        background-color: #919ec0;
+    }
+
+    /* Ponemos un color de fondo y redondeamos las esquinas del track */
+    *::-webkit-scrollbar-track
+    {
+        background: #ffffff;
+        border: 1px solid #ebebeb;
+        border-radius: 2px;
+    }
+}
+
 /* Clase que centra el contenido en la página */
 .centro
 {
@@ -387,8 +433,8 @@ h2.titulo
     margin-right: 1.875em;
     display: flex;
     border-radius: 6px;
-    box-shadow: 0px 30px 24px -30px rgba(206,215,255,1),
-                0px -18px 24px -30px rgba(206,215,255,1);
+    box-shadow: 0px 30px 24px -30px var(--sombras),
+                0px -18px 24px -30px var(--sombras);
 }
 
 /* Estilo de la ultima card para quitarle el margen) */
@@ -410,6 +456,48 @@ h2.titulo
     font-size: .875em;
     font-weight: 600;
     color: var(--resaltante);
+}
+
+.servicios
+{
+    font-size: 16px;
+    height: 100vh;
+}
+
+.serviciosCard
+{
+    width: 11.25em;
+    height: 13.75em;
+    margin-right: 1.875em;
+    padding: 1.5625em 1.09em;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 30px 24px -30px var(--sombras),
+                0px 0px 23px -9px var(--sombras);
+}
+
+.serviciosIcono
+{
+    height: 3.125em;
+    width: 3.125em;
+    margin-bottom: 1.25em;
+}
+
+.serviciosIcono img
+{
+    width: 100%;
+    height: auto;
+}
+
+.serviciosTexto .parrafo
+{
+    margin: 0;
+}
+
+.contenedorServicios
+{
+    display: flex;
 }
 
 /* Animacion del texto que rota en el Hero */
