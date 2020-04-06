@@ -28,7 +28,7 @@
     --arrowContenedor: #F5F7F8;
     --arrowSombra: rgba(1,84,190, .2);
     --arrowAzul: #0C1A49;
-    --arrowDisable:#AEC2CC;
+    --arrowIndicador:#AEC2CC;
 
     /* Footer */
     --bgFooter: #0F1733;
@@ -450,6 +450,12 @@ h2.titulo
     margin-right: .625em;
 }
 
+/* Pequeña correcion a los margenes de los parrafos de los beneficios */
+.beneficios .parrafo
+{
+    margin: 0;
+}
+
 /* Estilos de los titulos de las cards */
 .titulosCard
 {
@@ -462,6 +468,34 @@ h2.titulo
 {
     font-size: 16px;
     height: 100vh;
+    /* background: linear-gradient(90deg, rgba(251,252,255,0) 80%, var(--bgColor) 100%),
+                url("../img/servicios-bg.jpg");
+    background-size: cover;
+    background-position: -50vw center;
+    background-repeat: no-repeat; */
+}
+
+.servicios .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviciosImagen
+{
+    width: 40%;
+    border: 1px solid red;
+}
+
+.serviciosContenido
+{
+    width: 60%;
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
 }
 
 .serviciosCard
@@ -471,10 +505,16 @@ h2.titulo
     margin-right: 1.875em;
     padding: 1.5625em 1.09em;
     border-radius: 6px;
+    background: var(--fuente);
     display: flex;
     flex-direction: column;
     box-shadow: 0px 30px 24px -30px var(--sombras),
                 0px 0px 23px -9px var(--sombras);
+}
+
+.serviciosCard:last-child
+{
+    margin-right: 0;
 }
 
 .serviciosIcono
@@ -495,9 +535,114 @@ h2.titulo
     margin: 0;
 }
 
-.contenedorServicios
+.serviciosContenido-carrusel,
+.serviciosContenido-carrusel-container
 {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serviciosContenido-carrusel
+{
+    margin-bottom: 2.75em;
+}
+
+.serviciosContenido-carrusel-arrowBack,
+.serviciosContenido-carrusel-arrowForwards
+{
+    width: 2.375em;
+    height: 2.375em;
+    border-radius: 50%;
+    background: var(--arrowContenedor);
+    box-shadow: 0px 3px 10px -2px var(--sombraAzulNostros);
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    color: var(--arrowAzul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serviciosContenido-carrusel-arrowBack
+{
+    margin-right: .9375em;
+}
+
+.serviciosContenido-carrusel-arrowForwards
+{
+    margin-left: .9375em;
+}
+
+.serviciosContenido-carrusel-arrowBack.disable,
+.serviciosContenido-carrusel-arrowForwards.disable
+{
+    transform: scale(.9);
+    opacity: .8;
+}
+
+
+.serviciosContenido-carrusel-indicador,
+.circurlos
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.linea
+{
+    height: 2px;
+    width: 60px;
+    background: var(--arrowIndicador);
+    position: relative;
+}
+
+.circurlos
+{
+    position: absolute;
+    top: -4.8px;
+    left: -5px;
+}
+
+.circulo
+{
+    height: 7px;
+    width: 7px;
+    background: var(--arrowIndicador);
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.circulo.active
+{
+    height: 12px;
+    width: 12px;
+    background: var(--arrowAzul);
+}
+
+.circulo:first-child
+{
+    margin-left: 0;
+}
+
+.circulo:last-child
+{
+    margin-right: 0;
+}
+
+.prueba
+{
+    height: 100vh;
+    width: 40vw;
+    border: 1px solid orchid;
+
+    background: linear-gradient(90deg, rgba(251,252,255,0) 50%, var(--bgColor) 100%),
+    url("../img/serv.jpg");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
 }
 
 /* Animacion del texto que rota en el Hero */
