@@ -583,7 +583,7 @@ h2.titulo
 
 
 .serviciosContenido-carrusel-indicador,
-.circurlos
+.contenedorIndicadores
 {
     display: flex;
     align-items: center;
@@ -598,27 +598,28 @@ h2.titulo
     position: relative;
 }
 
-.circurlos
+.contenedorIndicadores
 {
     position: absolute;
-    top: -4.8px;
-    left: -5px;
+    top: -6px;
+    left: -10px;
 }
 
 .circulo
 {
-    height: 7px;
-    width: 7px;
+    height: 10px;
+    width: 10px;
     background: var(--arrowIndicador);
     border-radius: 50%;
     margin: 0 10px;
     cursor: pointer;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 .circulo.active
 {
-    height: 12px;
-    width: 12px;
+    height: 15px;
+    width: 15px;
     background: var(--arrowAzul);
 }
 
