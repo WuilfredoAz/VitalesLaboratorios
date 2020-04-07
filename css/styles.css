@@ -122,7 +122,14 @@ picture img
     vertical-align: top;
 }
 
-.header
+/*
+    * Estilo necesario para que la sombra del header se vea
+    * Estilo usado para posicionar la animacion del "pulse"
+    * Estilo necesario para posicionar el separador y no usar un HR
+*/
+.header,
+.serviciosContenido-carrusel-arrowForwards,
+.examanesTextos .titulo
 {
     position: relative;
 }
@@ -241,7 +248,8 @@ picture img
 /* Estilos de imagenes verticales */
 .logo img,
 .beneficiosIcono img,
-.serviciosIcono img
+.serviciosIcono img,
+.examanesCard-Picture img
 {
     height: 100%;
     width: auto;
@@ -477,13 +485,22 @@ h2.titulo
     color: var(--resaltante);
 }
 
-/* Estilos generales de la seccion de servicios */
+/*
+    * Estilos generales de la seccion de servicios
+    * Estilos generales de la seccion de Examanes
+*/
+.examenes,
 .servicios
 {
     font-size: 16px;
     height: 100vh;
 }
 
+/* Estilos generales para que el texto este centrado con el primer elemento del carrusel (60px) */
+.servicios .alineado
+{
+    margin-left: 3.75em;
+}
 /* Estilos generales para el contenedor de la imagen referencial de servicios y el degradado */
 .serviciosImagen
 {
@@ -568,12 +585,6 @@ h2.titulo
     align-items: center;
 }
 
-/* Estilo usado para posicionar la animacion del "pulse" */
-.serviciosContenido-carrusel-arrowForwards
-{
-    position: relative;
-}
-
 /* Elemento que hace la animacion de pulse de la flecha de adelante */
 .pulse
 {
@@ -650,34 +661,27 @@ h2.titulo
     margin-left: 0;
 }
 
-.examenes
-{
-    height: 100vh;
-    font-size: 16px;
-}
-
-.examenes .centro
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
+/*
+    * Estilos generales para el contenedor que centra el contenido en la seccion de examenes
+    * Estilos generales para el contenedor de los textos en las cards de las categorias de examenes
+*/
+.examenes .centro,
+.examanesCard-Textos,
 .examanesTextos
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+
+/* Estilos para los margenes de los titulos encontrados en la seccion de Examenes */
+.examanesTextos
+{
     margin: 3.75em 0 2.8125em;
 }
 
-.examanesTextos .titulo
-{
-    position: relative;
-}
-
+/* Estilo necesario para CREAR el separador en lugar de usar un HR */
 .examanesTextos .titulo::after
 {
     font-size: 16px;
@@ -692,6 +696,7 @@ h2.titulo
     left: calc((100% - 1.875em) / 2);
 }
 
+/* Estilos necesarios para crear la grilla de las categorias de examenes */
 .examenesContenedor
 {
     height: 33.125em;
@@ -702,18 +707,21 @@ h2.titulo
     gap: 1.875em;
 }
 
+/* Estilos para que la grilla sea un enlace y no tenga decorados */
 .examenesCard-Link
 {
     text-decoration: none;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Estilo para que los elementos al hacer hover crezcan */
 .examenesCard-Link:hover
 {
     transform: scale(1.05);
     box-shadow: 0px 10px 23px -10px var(--sombras)
 }
 
+/* Estilos generales de las cards de Examanes */
 .examanesCard
 {
     height: 100%;
@@ -730,6 +738,7 @@ h2.titulo
                 0px 0px 23px -9px var(--sombras);
 }
 
+/*  Estilos generales del contenedor de las imagenes de las cards de examenes*/
 .examanesCard-Picture
 {
     height: 3.75em;
@@ -739,25 +748,13 @@ h2.titulo
     justify-content: center;
 }
 
-.examanesCard-Picture img
-{
-    height: 100%;
-    width: auto;
-}
-
-.examanesCard-Textos
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Margen que le doy al titulo de las cards de examanes*/
 .examanesCard-Textos .titulosCard
 {
     margin-bottom: 1.875em;
 }
 
+/* Se le quita el margen a los textos de las cards de examanes */
 .examanesCard-Textos .parrafo
 {
     margin: 0;
