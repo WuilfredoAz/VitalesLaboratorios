@@ -650,6 +650,119 @@ h2.titulo
     margin-left: 0;
 }
 
+.examenes
+{
+    height: 100vh;
+    font-size: 16px;
+}
+
+.examenes .centro
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.examanesTextos
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3.75em 0 2.8125em;
+}
+
+.examanesTextos .titulo
+{
+    position: relative;
+}
+
+.examanesTextos .titulo::after
+{
+    font-size: 16px;
+    display: inline-block;
+    content: "";
+    height: .1875em;
+    width: 1.875em;
+    background: var(--resaltante);
+    position: absolute;
+    bottom: -1.25em;
+    /* Al tamaño total le resto el ancho de mi elemento y lo divido entre 2 */
+    left: calc((100% - 1.875em) / 2);
+}
+
+.examenesContenedor
+{
+    height: 33.125em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.875em;
+}
+
+.examenesCard-Link
+{
+    text-decoration: none;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.examenesCard-Link:hover
+{
+    transform: scale(1.05);
+    box-shadow: 0px 10px 23px -10px var(--sombras)
+}
+
+.examanesCard
+{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+    border-radius: 6px;
+    padding: 2.18125em 2.778125em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--fuente);
+    box-shadow: 0px 30px 24px -30px var(--sombras),
+                0px 0px 23px -9px var(--sombras);
+}
+
+.examanesCard-Picture
+{
+    height: 3.75em;
+    width: 100%;
+    margin-bottom: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.examanesCard-Picture img
+{
+    height: 100%;
+    width: auto;
+}
+
+.examanesCard-Textos
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.examanesCard-Textos .titulosCard
+{
+    margin-bottom: 1.875em;
+}
+
+.examanesCard-Textos .parrafo
+{
+    margin: 0;
+}
+
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {
