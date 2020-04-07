@@ -145,14 +145,24 @@ picture img
     align-items: center;
 }
 
-/* Estilos básicos de la parte superior, inferior del header y de los datos del header superior y la caja de las RS del up*/
+/*
+    * Estilos básicos de la parte superior, inferior del header y de los datos del header superior y la caja de las RS del up
+    * para centrar los elementos dentro de la secciion de servicios
+    * Estilos generales para los contenedores usados en el carrusel
+    * Estilos generales de los contenedores usados en los elementos de indicadores
+*/
 .headerUp_left,
 .headerUp_Right,
-.headerUp_dato,
-.headerUp_Right_Caja
+.headerUp_Right_Caja,
+.servicios .centro,
+.serviciosContenido-carrusel,
+.serviciosContenido-carrusel-container,
+.serviciosContenido-carrusel-indicador,
+.contenedorIndicadores
 {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* Margen entre el primer elemento del header superior */
@@ -228,9 +238,10 @@ picture img
     width: auto;
 }
 
-/* Imagene del logo normal */
+/* Estilos de imagenes verticales */
 .logo img,
-.beneficiosIcono img
+.beneficiosIcono img,
+.serviciosIcono img
 {
     height: 100%;
     width: auto;
@@ -283,7 +294,7 @@ picture img
 /* Estilos que se aplican al hacer hover sobre un elemento del menu */
 .menu ul li a:hover
 {
-    color: var(--fuenteImportante);
+    color: var(--seleccionMenu);
 }
 
 /* Estilo que se aplica segun la pagina que este visualizando */
@@ -437,10 +448,12 @@ h2.titulo
                 0px -18px 24px -30px var(--sombras);
 }
 
-/* Estilo de la ultima card para quitarle el margen) */
-.beneficios:last-child
+/* Estilos para quitar margen a los ultimas cards */
+.beneficios:last-child,
+.serviciosCard:last-child,
+.circulo:last-child
 {
-    margin: 0;
+    margin-right: 0;
 }
 
 /* Estilos del contenedor de la imagen */
@@ -464,40 +477,46 @@ h2.titulo
     color: var(--resaltante);
 }
 
+/* Estilos generales de la seccion de servicios */
 .servicios
 {
     font-size: 16px;
     height: 100vh;
-    /* background: linear-gradient(90deg, rgba(251,252,255,0) 80%, var(--bgColor) 100%),
-                url("../img/servicios-bg.jpg");
-    background-size: cover;
-    background-position: -50vw center;
-    background-repeat: no-repeat; */
 }
 
-.servicios .centro
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
+/* Estilos generales para el contenedor de la imagen referencial de servicios y el degradado */
 .serviciosImagen
 {
     width: 40%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(251,252,255,0) 60%, var(--bgColor) 100%);
+    position: relative;
 }
 
+/* Estilo para la imagen referencial de servicios */
+.serviciosImagen img
+{
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+/* Estilos generales para el contendor del contendio (valga la redundancia) en servicios */
 .serviciosContenido
 {
     width: 60%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
 }
 
+/* Estilos de las cards del carrusel */
 .serviciosCard
 {
     width: 11.25em;
@@ -512,11 +531,7 @@ h2.titulo
                 0px 0px 23px -9px var(--sombras);
 }
 
-.serviciosCard:last-child
-{
-    margin-right: 0;
-}
-
+/* Estilo para el contenedor de las imagenes de las cards */
 .serviciosIcono
 {
     height: 3.125em;
@@ -524,35 +539,24 @@ h2.titulo
     margin-bottom: 1.25em;
 }
 
-.serviciosIcono img
-{
-    width: 100%;
-    height: auto;
-}
-
+/* Estilo necesario para corregir el margen que tienen los parrafos en las cards */
 .serviciosTexto .parrafo
 {
     margin: 0;
 }
 
-.serviciosContenido-carrusel,
-.serviciosContenido-carrusel-container
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* Estilo que le da un margen para separar al carusel de los indicadores */
 .serviciosContenido-carrusel
 {
     margin-bottom: 2.75em;
 }
 
+/* Estilos generales de las flechas de adelante y atras */
 .serviciosContenido-carrusel-arrowBack,
 .serviciosContenido-carrusel-arrowForwards
 {
-    width: 2.375em;
-    height: 2.375em;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
     background: var(--arrowContenedor);
     box-shadow: 0px 3px 10px -2px var(--sombraAzulNostros);
@@ -564,32 +568,46 @@ h2.titulo
     align-items: center;
 }
 
+/* Estilo usado para posicionar la animacion del "pulse" */
+.serviciosContenido-carrusel-arrowForwards
+{
+    position: relative;
+}
+
+/* Elemento que hace la animacion de pulse de la flecha de adelante */
+.pulse
+{
+    animation: pulseArrow 3s infinite;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 50%;
+    border: 1px solid rgba(143, 165, 247, 0.6);
+    position: absolute;
+    z-index: -1;
+}
+
+/* estilo que le da margen derecho a la flecha de atras */
 .serviciosContenido-carrusel-arrowBack
 {
     margin-right: .9375em;
 }
 
+/* Estilo que le da margen izquierdo a la flecha de adelante */
 .serviciosContenido-carrusel-arrowForwards
 {
     margin-left: .9375em;
 }
 
+/* Estilo general que se aplica cuando alguna de las flechas queda "deshabilitada" */
 .serviciosContenido-carrusel-arrowBack.disable,
 .serviciosContenido-carrusel-arrowForwards.disable
 {
-    transform: scale(.9);
+    transform: scale(.75);
     opacity: .8;
 }
 
 
-.serviciosContenido-carrusel-indicador,
-.contenedorIndicadores
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* Estilo de la "linea" que atraviesan los indicadores */
 .linea
 {
     height: 2px;
@@ -598,6 +616,7 @@ h2.titulo
     position: relative;
 }
 
+/* Estilo del contendor de los indicadores usados para centrarlos en la linea */
 .contenedorIndicadores
 {
     position: absolute;
@@ -605,6 +624,7 @@ h2.titulo
     left: -10px;
 }
 
+/* Estilo general de los indicadores */
 .circulo
 {
     height: 10px;
@@ -616,6 +636,7 @@ h2.titulo
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Estilo aplicado al inidcador activo */
 .circulo.active
 {
     height: 15px;
@@ -623,27 +644,10 @@ h2.titulo
     background: var(--arrowAzul);
 }
 
+/* Estilo para quitarle el margen al primer indicador */
 .circulo:first-child
 {
     margin-left: 0;
-}
-
-.circulo:last-child
-{
-    margin-right: 0;
-}
-
-.prueba
-{
-    height: 100vh;
-    width: 40vw;
-    border: 1px solid orchid;
-
-    background: linear-gradient(90deg, rgba(251,252,255,0) 50%, var(--bgColor) 100%),
-    url("../img/serv.jpg");
-    background-size: cover;
-    background-position: right center;
-    background-repeat: no-repeat;
 }
 
 /* Animacion del texto que rota en el Hero */
@@ -681,4 +685,18 @@ h2.titulo
     {
         margin-top: 0;
     }
+}
+/* Animacion correspondiente al pulse de los servicios */
+@keyframes pulseArrow
+{
+    0%
+    {
+        opacity: 1;
+        transform: scale(0);
+	}
+    100%
+    {
+        opacity: 0;
+        transform: scale(1.8);
+	}
 }

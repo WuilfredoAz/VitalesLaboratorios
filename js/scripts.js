@@ -71,6 +71,9 @@ const atras = document.querySelector(".js-atras");
 const adelante = document.querySelector(".js-adelante");
 // Indicadores (circulos)
 const indicador = document.querySelectorAll(".js-indicador");
+// Declaramos una varible para quitar la animacion al hacer click por primera vez en "adelante"
+const pulseAnimation = document.querySelector(".js-pulse");
+
 
 // Añadimos un escuchador de eventos para cuando haga clic en el boton de adelante
 // y le asiganamos la función pertinente
@@ -92,6 +95,8 @@ function moverveArrows(event)
     // Si le di a avanzar
     if(event.target===adelante)
     {
+        // Quito la animacion del elemento
+        pulseAnimation.classList.remove("pulse");
         // Habilito el boton para ir hacia atras
         atras.classList.remove("disable");
         // Ciclo para recorrer todos los elementos
@@ -169,6 +174,8 @@ function moverveManual (event)
         // Depuramos que no este seleccionando el elemento que esta activo
         if(event.target!=indicador[actual])
         {
+            // Quito la animacion del elemento
+            pulseAnimation.classList.remove("pulse");
             // Le quito el active al indicador actual
             indicador[actual].classList.remove("active");
             // Le añado el active al indicador desaro
@@ -209,16 +216,20 @@ function moverveManual (event)
 // Funcion complementaria para actualizar las flechas cuando llego a los extremos
 function actualizarFlechas()
 {
-    // Deshabilito la flecha de atras
+    // Condicion para saber si estoy en el principio
     if(actual===0)
     {
+        // Deshabilito la flecha de atras
         atras.classList.add("disable");
+        // En caso de que me este moviendo de un extremo a otro habilito la de adelante
         adelante.classList.remove("disable");
     }
-    // Deshabilito la flecha de adelante
+    // Condicion para saber si estoy en el ultimo
     else if(actual===ultimo)
     {
+        // Deshabilito la flecha de adelante
         adelante.classList.add("disable");
+        // En caso de que me este moviendo de un extremo a otro habilito la de atras
         atras.classList.remove("disable");
     }
     // Si no estoy en el primero ni el ultimo
