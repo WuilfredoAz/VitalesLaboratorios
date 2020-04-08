@@ -760,6 +760,116 @@ h2.titulo
     margin: 0;
 }
 
+.faqs
+{
+    font-size: 16px;
+    height: 100vh;
+}
+
+.faqs .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faqsTextos,
+.faqsImagen
+{
+    width: 50%;
+    border: 1px solid red;
+    height: 100vh;
+}
+
+.faqsFiltros
+{
+    margin: 1.25em 0 1.875em;
+}
+
+.faqsFiltros-btn
+{
+    font-weight: 400;
+    font-size: .875em;
+    margin-right: 2em;
+    color: var(--fuenteNormal);
+    text-decoration: none;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.faqsFiltros-btn:last-child
+{
+    margin-right: 0;
+}
+
+.faqsFiltros-btn.active
+{
+    font-weight: 500;
+    color: var(--seleccionMenu);
+    padding: .60em 1em;
+    background: var(--fuente);
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px -5px var(--sombras),
+                0px 0px 15px -5px var(--sombras);
+}
+
+.faqsFiltros-btn:hover
+{
+    color: var(--seleccionMenu);
+}
+
+.cta-secundary
+{
+    font-size: .875em;
+    font-weight: 500;
+    color: var(--resaltante);
+    text-decoration: none;
+    position: relative;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.cta-secundary:hover
+{
+    letter-spacing: .15px;
+}
+
+.cta-secundary::after
+{
+    content: ">";
+    position: absolute;
+    top: .07em;
+    right: -1em;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+.cta-secundary:hover::after
+{
+    right: -1.5em;
+}
+
+.tituloPregunta
+{
+    font-size: .875em;
+    font-weight: 500;
+    color: var(--fuenteImportante);
+    margin-bottom: .4375em;
+}
+
+.faqsPreguntas-Sangre
+{
+    /* Añadimos nuestro contador */
+    counter-reset: faqsCounter;
+}
+
+.tituloPregunta::before
+{
+    counter-increment: faqsCounter;
+    content: counter(faqsCounter)". ";
+}
+
+.faqsCard .parrafo
+{
+    margin-bottom: 2em;
+}
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {

@@ -239,3 +239,65 @@ function actualizarFlechas()
         atras.classList.remove("disable");
     }
 }
+
+// Capturo en variables al padre de los filtros
+const padreFiltros = document.querySelector(".js-padreFiltro")
+// Capturo en  variables a todos los elementos que hacen de filtro en las FAQS
+const filtro = document.querySelectorAll(".js-filtro");
+// Creo una variable para saber la cantidad de filtros que hay
+const cFiltros = filtro.length;
+
+// Asigno un escuchador de eventos al padre de los filtros para mayor comodidad
+padreFiltros.addEventListener("click", filtrandoFaqs);
+
+// creo la funcion que usa el padre de los filtros
+function filtrandoFaqs(event)
+{
+    // Pregunto si hice clic en elemento válido
+    if(event.target.classList.contains("js-filtro"))
+    {
+        // ciclo para recorrer todos los filtros
+        for(i=0; i<cFiltros; i++)
+        {
+            // Condicion para saber cual filtro fue el que toque y si este filtro NO ESTA activo
+            if(event.target===filtro[i] && (event.target.classList.contains("active"))==false)
+            {
+                // Ciclo para buscar el filtro activo anteriormente
+                for(antiguo=0;antiguo<cFiltros;antiguo++)
+                {
+                    // Condicion para saber cual filtro estaba activo
+                    if(filtro[antiguo].classList.contains("active"))
+                    {
+                        // le quito le quito el active a ese filtro
+                        filtro[antiguo].classList.remove("active");
+                        // cierro el ciclo
+                        break;
+                    }
+                }
+                // Activo el filtro deseado
+                filtro[i].classList.add("active");
+                // Condicion para mostrar los elementos correspondiente a la primera categoria
+                if(i===0)
+                {
+                    console.log("Muestro los elementos de " + i);
+                }
+                // Condicion para mostrar los elementos correspondientes a la segunda categoria
+                else if(i===1)
+                {
+                    console.log("Muestro los elementos de " + i);
+                }
+                // Condicion para mostrar los elementos correspondientes a la tercera categoria
+                else if(i===2)
+                {
+                    console.log("Muestro los elementos de " + i);
+                }
+                // Condicion para mostrar los elementos correspondientes a la cuarta categoria
+                else if(i===3)
+                {
+                    console.log("Muestro los elementos de " + i);
+                }
+                break;
+            }
+        }
+    }
+}
