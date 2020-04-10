@@ -246,6 +246,8 @@ const padreFiltros = document.querySelector(".js-padreFiltro")
 const filtro = document.querySelectorAll(".js-filtro");
 // Creo una variable para saber la cantidad de filtros que hay
 const cFiltros = filtro.length;
+// Creo una variable para guardar todos los bloques que contienen las preguntas
+const faqs = document.querySelectorAll(".js-faqs");
 
 // Asigno un escuchador de eventos al padre de los filtros para mayor comodidad
 padreFiltros.addEventListener("click", filtrandoFaqs);
@@ -276,26 +278,24 @@ function filtrandoFaqs(event)
                 }
                 // Activo el filtro deseado
                 filtro[i].classList.add("active");
-                // Condicion para mostrar los elementos correspondiente a la primera categoria
-                if(i===0)
+
+                // Ciclo para recorrer todos los contenedores de  preguntas
+                for(indice=0; indice<cFiltros; indice++)
                 {
-                    console.log("Muestro los elementos de " + i);
+                    // Si el contenedor tiene el mismo indice que el seleccionado y NO ESTA activo
+                    if(i===indice && (faqs[i].classList.contains("active"))==false)
+                    {
+                        // Muestro el bloque de preguntas
+                        faqs[i].classList.add("active");
+                    }
+                    // Si no es el contenedor deseado
+                    else
+                    {
+                        // Quito el active de dicho contenedor
+                        faqs[indice].classList.remove("active");
+                    }
                 }
-                // Condicion para mostrar los elementos correspondientes a la segunda categoria
-                else if(i===1)
-                {
-                    console.log("Muestro los elementos de " + i);
-                }
-                // Condicion para mostrar los elementos correspondientes a la tercera categoria
-                else if(i===2)
-                {
-                    console.log("Muestro los elementos de " + i);
-                }
-                // Condicion para mostrar los elementos correspondientes a la cuarta categoria
-                else if(i===3)
-                {
-                    console.log("Muestro los elementos de " + i);
-                }
+                // Detengo el ciclo
                 break;
             }
         }

@@ -153,19 +153,22 @@ picture img
 }
 
 /*
-    * Estilos básicos de la parte superior, inferior del header y de los datos del header superior y la caja de las RS del up
+    * Estilos básicos de la parte superior e inferior del header y de los datos del header superior y la caja de las RS del up
     * para centrar los elementos dentro de la secciion de servicios
     * Estilos generales para los contenedores usados en el carrusel
     * Estilos generales de los contenedores usados en los elementos de indicadores
+    * Estilos generales del contenedor principal de la seccion de FAQs
 */
 .headerUp_left,
 .headerUp_Right,
+.headerUp_dato,
 .headerUp_Right_Caja,
 .servicios .centro,
 .serviciosContenido-carrusel,
 .serviciosContenido-carrusel-container,
 .serviciosContenido-carrusel-indicador,
-.contenedorIndicadores
+.contenedorIndicadores,
+.faqs .centro
 {
     display: flex;
     justify-content: center;
@@ -249,7 +252,8 @@ picture img
 .logo img,
 .beneficiosIcono img,
 .serviciosIcono img,
-.examanesCard-Picture img
+.examanesCard-Picture img,
+.faqsImagen img
 {
     height: 100%;
     width: auto;
@@ -459,7 +463,8 @@ h2.titulo
 /* Estilos para quitar margen a los ultimas cards */
 .beneficios:last-child,
 .serviciosCard:last-child,
-.circulo:last-child
+.circulo:last-child,
+.faqsFiltros-btn:last-child
 {
     margin-right: 0;
 }
@@ -488,9 +493,11 @@ h2.titulo
 /*
     * Estilos generales de la seccion de servicios
     * Estilos generales de la seccion de Examanes
+    * Estilos generales de la seccion de FAQs
 */
 .examenes,
-.servicios
+.servicios,
+.faqs
 {
     font-size: 16px;
     height: 100vh;
@@ -583,6 +590,7 @@ h2.titulo
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 /* Elemento que hace la animacion de pulse de la flecha de adelante */
@@ -760,32 +768,37 @@ h2.titulo
     margin: 0;
 }
 
-.faqs
-{
-    font-size: 16px;
-    height: 100vh;
-}
-
+/* Pequeño ajuste tras eliminacion de la seccion que contenia la imagen y pasarla a fondo */
 .faqs .centro
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
 }
 
-.faqsTextos,
-.faqsImagen
+/* Estilo general de las partes que contiene el contenido en la seccion de FAQs */
+.faqsTextos
 {
     width: 50%;
-    border: 1px solid red;
+    /* margin-right: 50%; */
+    /* border: 1px solid red; */
     height: 100vh;
 }
 
+/* Estilos generales del contenedor de los filtros */
 .faqsFiltros
 {
     margin: 1.25em 0 1.875em;
 }
 
+/* Estilos generales para el contenedor de los textos en la seccion de FAQs */
+.faqsTextos
+{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Estilos generales de los filtros */
 .faqsFiltros-btn
 {
     font-weight: 400;
@@ -793,14 +806,12 @@ h2.titulo
     margin-right: 2em;
     color: var(--fuenteNormal);
     text-decoration: none;
+    cursor: pointer;
+    user-select: none;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
-.faqsFiltros-btn:last-child
-{
-    margin-right: 0;
-}
-
+/* Estilos generales que toma el filtro al estar activo */
 .faqsFiltros-btn.active
 {
     font-weight: 500;
@@ -812,11 +823,13 @@ h2.titulo
                 0px 0px 15px -5px var(--sombras);
 }
 
+/* Estilo que toma el filtro al hovearlo */
 .faqsFiltros-btn:hover
 {
     color: var(--seleccionMenu);
 }
 
+/* Estilo general de un CTA secundario */
 .cta-secundary
 {
     font-size: .875em;
@@ -827,11 +840,13 @@ h2.titulo
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Estilo que tiene el CTA secundario al hovearlo */
 .cta-secundary:hover
 {
     letter-spacing: .15px;
 }
 
+/* Detalle del "angulo" > de un CTA secundario */
 .cta-secundary::after
 {
     content: ">";
@@ -841,11 +856,13 @@ h2.titulo
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Detalle de la flecha del CTA secundario al Hovearlo */
 .cta-secundary:hover::after
 {
     right: -1.5em;
 }
 
+/* Estilos generales para el titulo de las preguntas */
 .tituloPregunta
 {
     font-size: .875em;
@@ -854,22 +871,44 @@ h2.titulo
     margin-bottom: .4375em;
 }
 
-.faqsPreguntas-Sangre
+/* Estilos generales para los divs que contienen las preguntas */
+.faqs-Bloque
 {
     /* Añadimos nuestro contador */
     counter-reset: faqsCounter;
+    display: none;
+    min-height: 31em;
 }
 
+/* Estilo general para mostrar las preguntas */
+.faqs-Bloque.active
+{
+    display: block;
+}
+
+/* Estilo general para el contador de la pregunta */
 .tituloPregunta::before
 {
     counter-increment: faqsCounter;
     content: counter(faqsCounter)". ";
 }
 
+/*  Correcion de margen de los parrafos (respuestas) de las preguntas*/
 .faqsCard .parrafo
 {
     margin-bottom: 2em;
 }
+
+/* Degradado de y fondo de la seccion FAQs */
+.faqs
+{
+    background: linear-gradient(90deg, var(--bgColor) 0%, rgba(251,252,255,0) 40%),
+                url("../img//faqs-bg.jpg");
+    background-size: cover;
+    background-position: 45vw center;
+    background-repeat: no-repeat;
+}
+
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {
