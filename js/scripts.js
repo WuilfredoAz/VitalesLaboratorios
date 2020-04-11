@@ -21,6 +21,12 @@ const cotizaciones = "https://spotify.com";
 const reactivos ="https://amazon.com";
 // Para encuentas
 const encuestas ="https://gmail.com";
+// Para el copyright
+const copyright ="Vitales Laboratorios, Copyright 2020. Todos los derechos reservados"
+// Para el horario Semanal (lunes-viernes)
+const horarioSemanal = "8:00am - 6:00pm";
+// Para el horario del fin de semana (sabado)
+const horarioWeekend = "8:00am - 12:00pm";
 
 // ============= Capturamos los elementos que se le asignaran los datos =============
 // Dato del telefono
@@ -57,6 +63,22 @@ const linkReactivosContacto = document.querySelector(".js-datoVentaReactivo");
 // Capturamos el elemento de encuestas de la seccion de contacto para modificar su href
 const linkEncuestaContacto = document.querySelector(".js-datoEncuesta");
 
+// Capturamos el elemento que muestra el texto del copyright en el footer para modificar su texto
+const textoCopyright = document.querySelector(".js-copyright");
+// Capturamos el elemento de ancla para el facebook en el Footer para modificar su href
+const linkFacebookFooter = document.querySelector(".js-fbFooter");
+// Capturamos el elemento de ancla para el whatsapp en el Footer para modificar su href
+const linkWhatsAppFooter = document.querySelector(".js-waFooter");
+// Capturamos el elemento de ancla para el instagram en el footer para modificar su href
+const linkInstagramFooter = document.querySelector(".js-igFooter");
+// Capturamos el elemento de ancla para el correo en el Footer para moficar su Href y texto
+const linkCorreoFooter = document.querySelector(".js-correoFooter");
+// Capturamos ele elemento de ancla para el telefono en el Footer para modificar su href y texto
+const linkTelefonoFooter = document.querySelector(".js-telefonoFooter");
+// Capturamos el elemento de ancla para la direccion en el footer para modificar su href y texto
+const linkDireccionFooter = document.querySelector(".js-direccionFooter");
+// Capturamos todos los elementos a los cuales se eles adjunta la hora
+const horas = document.querySelectorAll(".js-horario");
 
 // ============= Asignamos los datos que mostrarán los elementos =============
 // Datos del telefono
@@ -108,6 +130,47 @@ const linkEncuestaContacto = document.querySelector(".js-datoEncuesta");
 
     // encuestas link
     linkEncuestaContacto.href= encuestas;
+
+
+// Datos del footer
+    // Copyright
+    textoCopyright.innerText= copyright;
+    // link de facebook
+    linkFacebookFooter.href= facebook;
+    // link de whatsapp
+    linkWhatsAppFooter.href= whatsApp;
+    // link de instagram
+    linkInstagramFooter.href = instagram;
+    // Datos del correo
+    linkCorreoFooter.href= "mailto:" + correo;
+    linkCorreoFooter.innerText = correo;
+    // Datos del telefono
+    linkTelefonoFooter.href = "telf:+" + numeroTelefono;
+    linkTelefonoFooter.innerText = numeroTelefono;
+    // Datos de la direccion
+    linkDireccionFooter.href= googleMaps;
+    linkDireccionFooter.innerText = direccionCompleta;
+    // Asignamos las horarios del footer
+    asignarHoras();
+
+
+function asignarHoras()
+{
+    // Ciclo para buscar todos los elementos de hora
+    for(i=0; i<horas.length; i++)
+    {
+        // asigno los horarios samanales (LU,MA,MI,JU,VI)
+        if(i <=4)
+        {
+            horas[i].innerText= horarioSemanal;
+        }
+        // Si es para el fin de semana
+        else
+        {
+            horas[i].innerText= horarioWeekend;
+        }
+    }
+}
 
 
 // Capturamos el titulo de la página para el selected automático

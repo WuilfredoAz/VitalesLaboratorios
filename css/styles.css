@@ -259,7 +259,8 @@ picture img
 .serviciosIcono img,
 .examanesCard-Picture img,
 .faqsImagen img,
-.contactoCard-ico img
+.contactoCard-ico img,
+.logoFooter img
 {
     height: 100%;
     width: auto;
@@ -468,7 +469,8 @@ h2.titulo
 .beneficios:last-child,
 .serviciosCard:last-child,
 .circulo:last-child,
-.faqsFiltros-btn:last-child
+.faqsFiltros-btn:last-child,
+.footerRS:last-child
 {
     margin-right: 0;
 }
@@ -1034,6 +1036,225 @@ h2.titulo
     margin-bottom: 0;
 }
 
+/* Estilos generales del footer */
+.footer
+{
+    font-size: 16px;
+    /* height: 15em; */
+    background: var(--bgFooter);
+    color: var(--fuenteFooterTxt);
+    padding: 2em 0;
+}
+
+/* Estilos generales del contenedor usado en el Footer */
+.footer .centro
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Contenedor de las columnas que contienen los datos del footer */
+.contenidoFooter
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+/* Contenedor que contiene los datos del copyright en el footer */
+.col-copy
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 15.625em;
+    /* border: 1px solid red; */
+}
+
+/* Contenedor del logo del footer */
+.logoFooter
+{
+    height: 3.125em;
+    margin-bottom: 1.5em;
+}
+
+/* Estilo general que tiene el texto donde se muestra el copyright */
+.copyright
+{
+    font-weight: 300;
+    font-size: .75em;
+    margin-bottom: 1em;
+}
+
+/*
+    * Estilo general del contenedor de las redes sociales del footer
+    * Estilo general del contenedor de la columna derecha (datos - horarios) del footer
+*/
+.footerRSCaja,
+.colFooterDerecha
+{
+    display: flex;
+}
+
+/* Pequeño detalle al contenedor de las redes sociales del footer  */
+.footerRSCaja
+{
+    margin-top: 1em;
+}
+
+/* Estilo general de los elementos de ancla de las redes sociales del footer */
+.footerRS
+{
+    text-decoration: none;
+    margin-right: 1em;
+    opacity: .6;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo general para las imagenes que se encuentran dentro del elemento de ancla de las
+   redes sociales del footer
+ */
+.footerRS img
+{
+    width: 1.125em;
+    height: auto;
+}
+
+/* Pequeño detalle al hovear una red social en el footer */
+.footerRS:hover
+{
+    opacity: 1;
+}
+
+/* Estilos generales del contenedor de los datos del footer */
+.col-datos
+{
+    width: 13.75em;
+    margin-right: 8.5em;
+    /* border: 1px solid red; */
+}
+
+/* Estilo general de los titulos que se encuentran en el footer */
+.tituloFooter
+{
+    font-size: .875em;
+    font-weight: 500;
+    margin-bottom: 1.71em;
+}
+
+/* Contenedor de los datos del footer */
+.datoFooter
+{
+    font-size: .75em;
+    font-weight: 300;
+    margin-bottom: 1.416em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+/* Estilo general de la imagen de los datos del footer */
+.datoFooterIco
+{
+    width: 1.33em;
+    height: auto;
+    display: block;
+    margin-right: 1.16em;
+}
+
+/* Estilo general de los link de los datos en el footer */
+.datoFooterLink
+{
+    text-decoration: none;
+    color: var(--fuenteFooterTxt);
+}
+
+/* Pequeño detalle para quitar el margen al ultimo elemento de los datos del footer */
+.datoFooter:last-child
+{
+    margin-bottom: 0;
+}
+
+/* Contenedor de la informacion del dia en el footer */
+.contenedorDia
+{
+    width: 15.8em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-bottom: .3125em;
+    /* border: 1px solid red; */
+}
+
+/* Pequeño detalle para quitar margenes al ultimo elemento */
+.contenedorDia:last-child
+{
+    margin: 0;
+}
+
+/* Estilo general que muestra el dia en el footer */
+.dia
+{
+    font-size: .75em;
+}
+
+/* Estilo general que muestra las horas en el footer */
+.horario
+{
+    font-size: .75em;
+    color: var(--resaltante);
+}
+
+/* Estilo general que tiene la linea en el footer */
+.lineaFooter
+{
+    background: var(--lineFooter);
+    margin: 0 1em;
+    height: 2px;
+    width: 60px;
+}
+
+/* Pequeño detalle para mostrar una linea superior "divisora" para la seccion del autor en el footer */
+.autorFooter
+{
+    border-top: 1px solid rgba(255,255,255, .2);
+}
+
+/* Estilo general del texto donde se muestra el autor en el footer */
+.txtFooter
+{
+    margin-top: 2.66em;
+    font-weight: 300;
+    color: var(--fuenteFooterTxt);
+    font-size: .75em;
+    text-align: right;
+}
+
+/* Estilo general del corazon en el footer */
+.heartbeat
+{
+    animation: 1s latido infinite;
+    margin: 0 5px;
+    height: .8em;
+    position: relative;
+}
+
+/* Estilo general del link del autor en el footer */
+.autor
+{
+    text-decoration: none;
+    color: var(--fuente);
+    font-weight: 600;
+}
+
+/* Pequeño detalle al hovear al autor en el footer */
+.autor:hover
+{
+    border-bottom: 2px solid var(--resaltante)
+}
+
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {
@@ -1099,5 +1320,18 @@ h2.titulo
     to
     {
         box-shadow: 0px 0px 0px 5px var(--sombraTelefono);
+    }
+}
+
+/* Animacion de latido de corazon del footer */
+@keyframes latido
+{
+    0%,40%,80%,100%
+    {
+        transform: scale(.9);
+    }
+    20%,60%
+    {
+        transform: scale(1.2);
     }
 }
