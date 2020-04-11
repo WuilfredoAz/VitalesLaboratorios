@@ -30,6 +30,9 @@
     --arrowAzul: #0C1A49;
     --arrowIndicador:#AEC2CC;
 
+    /* Sombra del widget del telefono */
+    --sombraTelefono: #F8BEDB;
+
     /* Footer */
     --bgFooter: #0F1733;
     --lineFooter: #1E2E66;
@@ -158,6 +161,7 @@ picture img
     * Estilos generales para los contenedores usados en el carrusel
     * Estilos generales de los contenedores usados en los elementos de indicadores
     * Estilos generales del contenedor principal de la seccion de FAQs
+    * Estilos generales del contenedor del widget del telefono
 */
 .headerUp_left,
 .headerUp_Right,
@@ -168,7 +172,8 @@ picture img
 .serviciosContenido-carrusel-container,
 .serviciosContenido-carrusel-indicador,
 .contenedorIndicadores,
-.faqs .centro
+.faqs .centro,
+.telefonoMid-Container
 {
     display: flex;
     justify-content: center;
@@ -253,19 +258,18 @@ picture img
 .beneficiosIcono img,
 .serviciosIcono img,
 .examanesCard-Picture img,
-.faqsImagen img
+.faqsImagen img,
+.contactoCard-ico img
 {
     height: 100%;
     width: auto;
 }
 
-/* Ajuste necesario para colocar el border del selected */
-.headerDown .centro
-{
-    height: inherit;
-}
+/*
+    * Ajuste necesario para colocar el border del selected
 
-/* Ajuste necesario para colocar el border del selected */
+*/
+.headerDown .centro,
 .menu
 {
     height: inherit;
@@ -544,7 +548,8 @@ h2.titulo
 .serviciosCard
 {
     width: 11.25em;
-    height: 13.75em;
+    /* height: 14.5em; */
+    height: 16em;
     margin-right: 1.875em;
     padding: 1.5625em 1.09em;
     border-radius: 6px;
@@ -909,6 +914,126 @@ h2.titulo
     background-repeat: no-repeat;
 }
 
+/* Estilo necesario para quitar el decorado que genera el ancla al widget del telefono */
+.telefonoMid
+{
+    text-decoration: none;
+}
+
+/* Estilo necesario para pausar la animacion al hovear el widget del telefono */
+.telefonoMid:hover .telefonoMid-ico
+{
+    animation-play-state: paused;
+}
+
+/* Estilos generales de la parte del contenedor del icono del widget del telefono */
+.telefonoMid-ico
+{
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 50%;
+    margin-right: 1.2em;
+    background: var(--resaltante);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 2.5s pulseTelefono infinite;
+}
+
+/* Estilo general del icono del widget del telefono */
+.telefonoMid-ico img
+{
+    height: 60%;
+    width: auto;
+}
+
+/* Estilo general del texto que muestra el texto en el widget de telefono */
+.tituloTelefono
+{
+    font-weight: 500;
+    font-size: .75em;
+    text-transform: uppercase;
+    color: var(--fuenteImportante);
+}
+
+/* Estilo general del texto que muestra el numero de telefono en el widget de telefono */
+.numeroTelefono
+{
+    font-weight: 500;
+    font-size: 2em;
+    color: var(--resaltante);
+}
+
+/* Estilo general de la seccion de contacto */
+.contacto
+{
+    height: 100vh;
+    font-size: 16px;
+    background: url("../img/contacto-bg.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Estilo general del contenedor de la seccion de contacto */
+.contacto .centro
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: inherit;
+}
+
+/* Estilo general de la card del contiene los datos en contacto */
+.contactoCard
+{
+    width: 28.125em;
+    border-radius: 6px;
+    padding: 1.875em;
+    background: var(--fuente);
+    box-shadow: 0px 5px 15px -5px rgba(0,0,0, .5),
+                0px 0px 15px -5px rgba(0,0,0, .5);
+}
+
+/* Estilo general del ancla que contiene los elementos en la card de contacto  */
+.contactoCard-ElementoContainer
+{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+    text-decoration: none;
+}
+
+/* Estilo que toma los titulos del ancla en la card de contacto */
+.contactoCard-ElementoContainer:hover .tituloElementoCard
+{
+    color: var(--seleccionMenu);
+}
+
+/* Estilo general del icono de las cards de contacto */
+.contactoCard-ico
+{
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 1.5em;
+}
+
+/* Estilo general de los titulos de los elementos de ancla en la card de contacto */
+.tituloElementoCard
+{
+    font-size: .75em;
+    font-weight: 500;
+    color: var(--fuenteImportante);
+    margin-bottom: .375em;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Pequeña correcion de margen en los parrafos de las cards de contacto */
+.contactoCard-texto .parrafo
+{
+    margin-bottom: 0;
+}
+
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {
@@ -958,4 +1083,21 @@ h2.titulo
         opacity: 0;
         transform: scale(1.8);
 	}
+}
+
+/* Animacion correspondiente al pulse del mid widget telefono */
+@keyframes pulseTelefono
+{
+    from
+    {
+        box-shadow: 0px 0px 0px 5px var(--sombraTelefono);
+    }
+    50%
+    {
+        box-shadow: 0px 0px 0px 7px var(--sombraTelefono);
+    }
+    to
+    {
+        box-shadow: 0px 0px 0px 5px var(--sombraTelefono);
+    }
 }

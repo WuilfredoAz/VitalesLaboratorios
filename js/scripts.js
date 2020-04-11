@@ -1,4 +1,28 @@
-// Capturamos los elementos que tienen datos repetidos
+// ============= Datos asignables =============
+// Direccion Abreviada
+const direccionAbreviada = "El Tigre, Edo. Anzoátegui";
+// Direccion Completa
+const direccionCompleta = "Calle 22 sur,  Edif. Remanzo,  piso 1 local 01, Pueblo nuevo sur, El Tigre, edo. Anzoátegui.";
+// Link de googleMaps
+const googleMaps = "https://www.google.co.ve";
+// Telefono
+const numeroTelefono = "0281-299.27.90";
+// Link de WhastApp
+const whatsApp= "https://youtube.com";
+// Link de Instagram
+const instagram = "https://instagram.com";
+// Link de facebook
+const facebook = "https://facebook.com";
+// Correo
+const correo = "info@vitaleslaboratorios.com";
+// Para cotizaciones
+const cotizaciones = "https://spotify.com";
+// Para venta de reactivos
+const reactivos ="https://amazon.com";
+// Para encuentas
+const encuestas ="https://gmail.com";
+
+// ============= Capturamos los elementos que se le asignaran los datos =============
 // Dato del telefono
 const telefono = document.querySelector(".js-datoTelefono");
 // Dato de la direccion abreviada
@@ -10,30 +34,80 @@ const linkWhatsApp= document.querySelector(".js-wa");
 // Dato del Instagram
 const linkInstagram = document.querySelector(".js-ig");
 
+// Capturamos el elemento de telefono de la seccion de MID (FAQS - Contacto) para modificar su href
+const linkTelefono = document.querySelector(".js-telefonoLink");
+// Capturamos el elemento de telefono de la seccion de MID (FAQS - Contacto) para modificar su texto
+const textoTelefono = document.querySelector(".js-telefonoLink .numeroTelefono");
+// Capturamos el elemento de direccion de la seccion de contacto para modificar su href
+const linkDireccionContacto = document.querySelector(".js-datoDireccion");
+// Capturamos el elemento de direccion de la seccion de contacto para modificar su texto
+const textoDireccionContacto = document.querySelector(".js-datoDireccion .parrafo");
+// Capturamos el elemento de telefono de la seccion de contacto para modificar su href
+const linkTelefonoContacto = document.querySelector(".js-datoTelefonoContacto");
+// Capturamos el elemento de telefono de la seccion de contacto para modificar su texto
+const textoTelefonoContacto = document.querySelector(".js-datoTelefonoContacto .parrafo");
+// Capturamos el elemento de correo de la seccion de contacto para modificar su href
+const linkCorreoContacto = document.querySelector(".js-datoCorreo");
+// Capturamos el elemento de correo de la seccion de contacto para modificar su texto
+const textoCorreoContacto = document.querySelector(".js-datoCorreo .parrafo");
+// Capturamos el elemento de cotizaciones de la seccion de contacto para modificar su href
+const linkCotizacionesContacto = document.querySelector(".js-datoCotizaciones");
+// Capturamoes el elemento de reactivos de la seccion de contacto para modificar su href
+const linkReactivosContacto = document.querySelector(".js-datoVentaReactivo");
+// Capturamos el elemento de encuestas de la seccion de contacto para modificar su href
+const linkEncuestaContacto = document.querySelector(".js-datoEncuesta");
 
 
-// Asignamos los datos que mostrarán los elementos
-
+// ============= Asignamos los datos que mostrarán los elementos =============
 // Datos del telefono
     // Numero que se muestra
-    telefono.innerText="0281-299.27.90";
+    telefono.innerText= numeroTelefono;
     // href que marca
-    telefono.href="telf:+5802812992790";
+    telefono.href="telf:+" + numeroTelefono;
+
+    // Texto que marca el widget
+    textoTelefono.innerText = numeroTelefono
+    // href que marca el widget
+    linkTelefono.href="telf:+" + numeroTelefono;
+
+    // Texto que muestra en contacto
+    textoTelefonoContacto.innerText= numeroTelefono;
+    // href que tiene en contacto
+    linkTelefonoContacto.href= "telf:+" + numeroTelefono;
 
 // Datos de la direccion
     // Texto que muestra
-    direccionAbre.innerText="El Tigre, Edo. Anzoátegui";
+    direccionAbre.innerText= direccionAbreviada;
     // href que tiene
-    direccionAbre.href="https://www.google.co.ve"
+    direccionAbre.href= googleMaps
+
+    // Texto que muestra en contacto
+    textoDireccionContacto.innerText = direccionCompleta;
+    // href que tiene en contacto
+    linkDireccionContacto.href= googleMaps;
 
 // Datos de los links de las redes sociales
     // facebook
-    linkFacebook.href="https://facebook.com";
+    linkFacebook.href= facebook;
     // whatsapp
-    linkWhatsApp.href="https://youtube.com";
+    linkWhatsApp.href= whatsApp;
     // Instagram
-    linkInstagram.href="https://instagram.com";
+    linkInstagram.href= instagram;
 
+// Otros datos
+    // correo link
+    linkCorreoContacto.href= "mailto:" + correo;
+    // Correo texto
+    textoCorreoContacto.innerText = correo;
+
+    // cotizaciones link
+    linkCotizacionesContacto.href= cotizaciones;
+
+    // reactivos link
+    linkReactivosContacto.href= reactivos;
+
+    // encuestas link
+    linkEncuestaContacto.href= encuestas;
 
 
 // Capturamos el titulo de la página para el selected automático
