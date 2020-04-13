@@ -210,6 +210,16 @@ const adelante = document.querySelector(".js-adelante");
 const indicador = document.querySelectorAll(".js-indicador");
 // Declaramos una varible para quitar la animacion al hacer click por primera vez en "adelante"
 const pulseAnimation = document.querySelector(".js-pulse");
+// Añadimos en una variable al contenedor del carrusel
+const fila = document.querySelector(".js-filaCarrusel");
+// Añadimos en una varible a las cards del carrusel
+const cardServicios = document.querySelectorAll(".js-serviciosCard");
+
+// Añadimos una variable para saber la cantidad de indicadores que necesitamos
+// La cantidad de indicadores sera igual a la cantidad de tarjetas existentes / numero de tarjetas que se muestran
+// Redondeo hacia arriba por si la division devuelve decimal cree un indicador para la card que sobra
+// La constante debe de cambiar dependiendo del tamaño de panatalla o elementos que se quieran mostrar
+const numeroDeIndicadores = Math.ceil(cardServicios.length / 3);
 
 
 // Añadimos un escuchador de eventos para cuando haga clic en el boton de adelante
@@ -220,160 +230,129 @@ adelante.addEventListener("click", moverveArrows)
 // y le asigno la funcion pertinente
 atras.addEventListener("click", moverveArrows)
 
-// guardo en una variable la posición actual en la que me encuentro
-var actual = 0;
-//guardo en una variable la cantidad de circulos que hay
-var cantidad = indicador.length;
-// guardaro en una variable la posicion del  ultimo en los nodos
-var ultimo = cantidad - 1;
 
 function moverveArrows(event)
 {
     // Si le di a avanzar
     if(event.target===adelante)
     {
+        // -----Efectos visuales-----\\
         // Quito la animacion del elemento
         pulseAnimation.classList.remove("pulse");
         // Habilito el boton para ir hacia atras
         atras.classList.remove("disable");
-        // Ciclo para recorrer todos los elementos
-        for(i=0; i<cantidad; i++)
+
+        // -----Muevo el Scroll----\\
+        // El scroll left sera igual a = la posicion donde este + el ancho
+        fila.scrollLeft = fila.scrollLeft + fila.offsetWidth;
+
+        // Guardo en una variable al indicador activo en ese momento
+        const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
+
+        // Condicion para saber si tengo un elemento adelante
+        if(indicadorActivo.nextSibling)
         {
-            // Condición para buscar al elemento que esta seleccionado
-            if(indicador[i].classList.contains("active"))
-            {
-                // Condicion para saber si NO ES el ultimo
-                if(i<ultimo)
-                {
-                    // Retiramos el active del indicador donde estamos
-                    indicador[i].classList.remove("active");
-                    // Añadimos el active al indicador siguiente
-                    indicador[i+1].classList.add("active");
-                    // Guardo la posición actual del elemento
-                    actual = i +1;
-                    // Condición para desabilitar el botón "visualmente" si me muevo al ultimo elemento
-                    actualizarFlechas();
-                    // Despues de moverme y actualizar me salgo del ciclo
-                    break;
-                }
-            }
+            // Añado la clase active al elemento que esta adelante
+            indicadorActivo.nextSibling.classList.add("active");
+            // Le quito la clase active al elemento anterior
+            indicadorActivo.classList.remove("active");
+
+            actualizarFlecha();
         }
     }
     // Si le di a retroceder
     else if(event.target===atras)
     {
-        // compruebo si ya me he movido anteriormente
-        if(actual>0)
+        // -----Muevo el Scroll----\\
+        // El scroll left sera igual a = la posicion donde este - el ancho
+        fila.scrollLeft = fila.scrollLeft - fila.offsetWidth;
+
+        // Guardo en una variable al indicador activo en ese momento
+        const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
+
+
+        // Condicion para saber si tengo un elemento atras
+        if(indicadorActivo.previousElementSibling)
         {
-            // Ciclo para recorrer todos los elementos
-            for(i=0; i<cantidad; i++)
-            {
-                // Condicion para saber cual es el elemento seleccionado
-                if(indicador[i].classList.contains("active"))
-                {
-                    // Condicion para saber si NO ES el primero
-                    if(actual > 0)
-                    {
-                        // Le quito el estado de active al elemento actual
-                        indicador[i].classList.remove("active");
-                        // Le añado el estado de active al elemento anterior
-                        indicador[i-1].classList.add("active");
-                        // Condicion para habilitar el boton "visualmente" el ultimo elemento tras haberme movido
-                        if(actual===ultimo)
-                        {
-                            adelante.classList.remove("disable");
-                        }
-                        // Guardo la posicion actual del elemento
-                        actual = i -1;
-                        // Condicion para deshabilitar el boton "visualmente" si me muevo al primer elemento
-                        actualizarFlechas();
-                        // Despues de moverme y actualizar me salgo del ciclo
-                        break;
-                    }
-                }
-            }
-        }
-    }
-}
+            // Añado la clase active al elemento que esta atras
+            indicadorActivo.previousSibling.classList.add("active");
+            // Le quito la clase active al elemento de anterior (el que estaba antes)
+            indicadorActivo.classList.remove("active");
 
-// Declaro en una variable al contendor de los circulos para manejarlo mejor
-const contenedorIndicadores = document.querySelector(".js-contenedorIndicadores");
-
-// Le asigno un escuchador de eventos al contendor de indicadores para cuando haga click en el
-contenedorIndicadores.addEventListener("click", moverveManual);
-
-// Creo la funcion que usare en el contenedor de indicadores
-function moverveManual (event)
-{
-    // Depuramos que solo capte a los elementos que son los indicadores
-    if(event.target.classList.contains("circulo"))
-    {
-        // Depuramos que no este seleccionando el elemento que esta activo
-        if(event.target!=indicador[actual])
-        {
-            // Quito la animacion del elemento
-            pulseAnimation.classList.remove("pulse");
-            // Le quito el active al indicador actual
-            indicador[actual].classList.remove("active");
-            // Le añado el active al indicador desaro
-            event.target.classList.add("active");
-            // Acualizo la posicion actual
-            // Primero hago un ciclo para buscar al nuevo elemento seleccionado
-            for(i=0; i<cantidad; i++)
-            {
-                // Condición para seleccionar al elemento seleccionado
-                if(indicador[i].classList.contains("active"))
-                {
-                    // Condicion para saber si me muevo hacia adelante
-                    if(actual<i)
-                    {
-                        // Actualizo la posicion actual
-                        actual= i;
-                        // Actualizo las flechas
-                        actualizarFlechas();
-                        // Salgo del ciclo
-                        break;
-                    }
-                    else if(actual>i)
-                    {
-                        // Actualizo la posicion actual
-                        actual = i;
-                        // Actualizo las flechas
-                        actualizarFlechas();
-                        // Salgo del ciclo
-                        break;
-                    }
-                }
-            }
+            actualizarFlecha();
         }
     }
 }
 
 
-// Funcion complementaria para actualizar las flechas cuando llego a los extremos
-function actualizarFlechas()
+function actualizarFlecha()
 {
-    // Condicion para saber si estoy en el principio
-    if(actual===0)
+    // Guardo en una variable la posicion del ultimo elemento
+    var ultimo = (document.querySelectorAll(".js-indicador").length) - 1;
+
+    // Condicion para saber si estoy en el ultimo y deshabilitar la flecha de adelante
+    if(document.querySelectorAll(".js-indicador")[ultimo].classList.contains("active"))
     {
-        // Deshabilito la flecha de atras
-        atras.classList.add("disable");
-        // En caso de que me este moviendo de un extremo a otro habilito la de adelante
-        adelante.classList.remove("disable");
-    }
-    // Condicion para saber si estoy en el ultimo
-    else if(actual===ultimo)
-    {
-        // Deshabilito la flecha de adelante
+        // Deshabilito el boton de avanzar
         adelante.classList.add("disable");
         // En caso de que me este moviendo de un extremo a otro habilito la de atras
         atras.classList.remove("disable");
     }
-    // Si no estoy en el primero ni el ultimo
-    else if(actual!=0 && actual!=ultimo)
+    // Condicion para saber si estoy en el primreo
+    else if(document.querySelectorAll(".js-indicador")[0].classList.contains("active"))
     {
+        // Deshabilito el boton de retroceder
+        atras.classList.add("disable");
+        // En caso de que me este moviendo de un extremo a otro habilito la de adelante
         adelante.classList.remove("disable");
+    }
+    // Condicion por defecto
+    else
+    {
         atras.classList.remove("disable");
+        adelante.classList.remove("disable");
+    }
+}
+
+
+// -----Crear los indicadores-----\\
+// Creo un ciclo para crear los indicadores
+for(let a=0; a< numeroDeIndicadores; a++)
+{
+    // Creo una constante que sera el indicador que se va a crear
+    const indicadorCarrusel = document.createElement("div")
+
+    // le damos clases que usaran los indicadores
+    indicadorCarrusel.classList.add("js-indicador");
+    indicadorCarrusel.classList.add("circulo");
+
+    // Condicional para darle la clase active al primer elemento en la primera ejecucion
+    if(a===0)
+    {
+        indicadorCarrusel.classList.add("active");
+    }
+
+    // Introduzco el indicador creado en su contenedor en el HTML
+    document.querySelector(".js-contenedorIndicadores").appendChild(indicadorCarrusel);
+
+    // Creo un escuchador de eventos para cada indicador
+    indicadorCarrusel.addEventListener("click", movermeManual);
+
+    // Creo la funcion que usaran cada indicador cuando me mueva haciendo uso de ellos
+    function movermeManual(event)
+    {
+        // Muevo el scroll \
+        // El scroll sera: numero de posicion del inidcador * ancho total del contenedor del carrusel
+        fila.scrollLeft = a * fila.offsetWidth;
+
+        // Actualizamos la posicion del indicador active\\
+        // Busco al elemento que este dentro del contenedor de los indicadores y tenga la clase active y se la quito
+        document.querySelector(".js-contenedorIndicadores .active").classList.remove("active");
+        // Le doy la clase active al elemento clicleado
+        event.target.classList.add("active");
+
+        // Actualizo las flechas
+        actualizarFlecha();
     }
 }
 

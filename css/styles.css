@@ -169,8 +169,6 @@ picture img
 .headerUp_Right_Caja,
 .servicios .centro,
 .serviciosContenido-carrusel,
-.serviciosContenido-carrusel-container,
-.serviciosContenido-carrusel-indicador,
 .contenedorIndicadores,
 .faqs .centro,
 .telefonoMid-Container
@@ -514,10 +512,28 @@ h2.titulo
 {
     margin-left: 3.75em;
 }
+
+/* Contenedor del carrusel  FM*/
+.serviciosContenido-carrusel-container
+{
+    /* width: 100%; */
+    width: 38.875em;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* MIO */
+    padding: 0 10px;
+    height: 18.5em;
+    flex-wrap: nowrap;
+}
+
 /* Estilos generales para el contenedor de la imagen referencial de servicios y el degradado */
 .serviciosImagen
 {
-    width: 40%;
+    width: 39%;
     /* border: 1px solid red; */
     height: 100vh;
     background: linear-gradient(90deg, rgba(251,252,255,0) 60%, var(--bgColor) 100%);
@@ -538,7 +554,7 @@ h2.titulo
 /* Estilos generales para el contendor del contendio (valga la redundancia) en servicios */
 .serviciosContenido
 {
-    width: 60%;
+    width: 61%;
     /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
@@ -550,9 +566,11 @@ h2.titulo
 .serviciosCard
 {
     width: 11.25em;
+    /* MIO para que no se redimencione */
+    flex-shrink: 0;
     /* height: 14.5em; */
     height: 16em;
-    margin-right: 1.875em;
+    margin-left: 1.875em;
     padding: 1.5625em 1.09em;
     border-radius: 6px;
     background: var(--fuente);
@@ -560,6 +578,22 @@ h2.titulo
     flex-direction: column;
     box-shadow: 0px 30px 24px -30px var(--sombras),
                 0px 0px 23px -9px var(--sombras);
+}
+
+/* Quito el margen IZQUIERDO del primer elemento */
+.serviciosCard:first-child
+{
+    margin-left: 0;
+}
+
+/* DETALLE NECESARIO PARA CORREGIR EL MARGEN DEL CARRUSEL del ultimo elemento */
+.serviciosContenido-carrusel-container::after
+{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
 }
 
 /* Estilo para el contenedor de las imagenes de las cards */
@@ -598,6 +632,7 @@ h2.titulo
     justify-content: center;
     align-items: center;
     user-select: none;
+    flex-shrink: 0;
 }
 
 /* Elemento que hace la animacion de pulse de la flecha de adelante */
@@ -615,13 +650,13 @@ h2.titulo
 /* estilo que le da margen derecho a la flecha de atras */
 .serviciosContenido-carrusel-arrowBack
 {
-    margin-right: .9375em;
+    margin-right: .5625em;
 }
 
 /* Estilo que le da margen izquierdo a la flecha de adelante */
 .serviciosContenido-carrusel-arrowForwards
 {
-    margin-left: .9375em;
+    margin-left: .5625em;
 }
 
 /* Estilo general que se aplica cuando alguna de las flechas queda "deshabilitada" */
@@ -633,21 +668,26 @@ h2.titulo
 }
 
 
-/* Estilo de la "linea" que atraviesan los indicadores */
-.linea
+/* Estilo general del contenedor que hace de linea.
+   Se usa para capturar el ancho dinamico de la linea
+*/
+.serviciosContenido-carrusel-indicador-linea
 {
+    display: block;
+    margin: 0 auto;
+    width: auto;
     height: 2px;
-    width: 60px;
     background: var(--arrowIndicador);
-    position: relative;
+
 }
 
 /* Estilo del contendor de los indicadores usados para centrarlos en la linea */
 .contenedorIndicadores
 {
-    position: absolute;
+    position: relative;
     top: -6px;
-    left: -10px;
+    /* left: -10px; */
+    justify-content: space-between;
 }
 
 /* Estilo general de los indicadores */
@@ -660,6 +700,7 @@ h2.titulo
     margin: 0 10px;
     cursor: pointer;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    flex-shrink: 0;
 }
 
 /* Estilo aplicado al inidcador activo */

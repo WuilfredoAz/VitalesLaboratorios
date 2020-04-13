@@ -126,9 +126,12 @@
                             </p>
                         </div>
                         <div class="serviciosContenido-carrusel">
+                            <!-- Flecha izquierda -->
                             <div class="js-atras serviciosContenido-carrusel-arrowBack disable"><</div>
-                            <div class="serviciosContenido-carrusel-container">
-                                <article class="serviciosCard">
+                            <!-- Contenedor principal de los CARDS -->
+                            <!-- Deberia tener un contenedor dentro de este para delimitar OJO -->
+                            <div class="js-filaCarrusel serviciosContenido-carrusel-container">
+                                <article class="js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_1.png" alt="Consultas médicas" />
                                     </picture>
@@ -139,7 +142,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="serviciosCard">
+                                <article class="js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_2.png" alt="Toma de muestra a domicilio" />
                                     </picture>
@@ -150,7 +153,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="serviciosCard">
+                                <article class="js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_3.png" alt="Consultas médicas" />
                                     </picture>
@@ -161,7 +164,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <!-- <article class="serviciosCard">
+                                <article class="js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_4.png" alt="Exámenes médicos" />
                                     </picture>
@@ -171,21 +174,31 @@
                                             Tenemos para ti una amplia lista de análisis de sangre, orina y heces.
                                         </p>
                                     </div>
-                                </article> -->
+                                </article>
+                                <article class="js-serviciosCard serviciosCard">
+                                    <picture class="serviciosIcono">
+                                        <img src="img/icons/serv_5.png" alt="Próximamente más" />
+                                    </picture>
+                                    <div class="serviciosTexto">
+                                        <h2 class="titulosCard">Próximamente más</h2>
+                                        <p class="parrafo">
+                                            Siempre nos encontramos mejorando para tí, por eso espera nuestros servicios futuros.
+                                        </p>
+                                    </div>
+                                </article>
                             </div>
+                            <!-- Flecha derecha -->
                             <div class="js-adelante serviciosContenido-carrusel-arrowForwards">
                                 >
                                 <div class="js-pulse pulse"></div>
                             </div>
                         </div>
-                        <div class="serviciosContenido-carrusel-indicador">
-                            <div class="linea">
+                        <!-- Contenedor de paginacion -->
+                        <div class="serviciosContenido-carrusel-indicador-linea">
+                                <!-- Contenedor de los circulos -->
                                 <div class="js-contenedorIndicadores contenedorIndicadores">
-                                    <div class="js-indicador circulo active"></div>
-                                    <div class="js-indicador circulo"></div>
-                                    <div class="js-indicador circulo"></div>
+                                    <!-- Generados con Javascript -->
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
