@@ -2,6 +2,7 @@
 :root
 {
     /* Color de fondo principal */
+    /* bgColor to RGBA => rgba(251, 252, 255, 1) (Usado asi en los degradados OJO)*/
     --bgColor:#FBFCFF;
 
     /* Colores del Header */
@@ -42,6 +43,58 @@
     --sombraAzulNostros: rgba(1,84,190, .32);
 
 }
+
+@font-face
+{
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?m0zqbl');
+    src: url('../fonts/icomoon.eot?m0zqbl#iefix') format('embedded-opentype'),
+         url('../fonts/icomoon.ttf?m0zqbl') format('truetype'),
+         url('../fonts/icomoon.woff?m0zqbl') format('woff'),
+         url('../fonts/icomoon.svg?m0zqbl#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+    /* Propiedad para google page speed */
+    font-display: swap;
+}
+
+[class^="icon-"],
+[class*=" icon-"]
+{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-copyright::before
+{
+    content: "\e900";
+}
+.icon-heart::before
+{
+    content: "\e9da";
+    animation: 1s latido infinite;
+    display: inline-block;
+}
+.icon-arrow-right::before
+{
+    content: "\ea3c";
+}
+.icon-arrow-left::before
+{
+    content: "\ea40";
+}
+
 
 /* Reseteo de estilos */
 *
@@ -113,13 +166,13 @@ body
 }
 
 /* Ajuste para que los contenedores de las img abarquen todo el espacio */
-figure,
+/*MENOS*/figure,
 picture
 {
     width: 100%;
 }
 /* Ajuste para quitar el margen que queda abajo en las img */
-figure img,
+/*MENOS*/figure img,
 picture img
 {
     vertical-align: top;
@@ -256,7 +309,6 @@ picture img
 .beneficiosIcono img,
 .serviciosIcono img,
 .examanesCard-Picture img,
-.faqsImagen img,
 .contactoCard-ico img,
 .logoFooter img
 {
@@ -328,8 +380,8 @@ tamaño de fuente declarado para usar EMs para responsive*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background: linear-gradient(90deg, var(--bgColor) 15%, rgba(251,252,255,0) 70%),
-                linear-gradient(0deg, var(--bgColor) 0%, rgba(251,252,255,0) 30%),
+    background: linear-gradient(90deg, rgba(251, 252, 255, 1) 15%, rgba(251,252,255,0) 70%),
+                linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 30%),
                 url("../img/hero-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -416,7 +468,6 @@ h2.titulo
     margin-left: .2em;
     margin-bottom: -.3em;
     height: 1.125em;
-    list-style: none;
     line-height: 1em;
 }
 
@@ -426,6 +477,7 @@ h2.titulo
     color: var(--fuenteRotativa);
     font-weight: 700;
     margin: 1em 0;
+    display: block;
 }
 
 /* Estilos necesarios para que el primer elemento se vea en pantalla */
@@ -447,6 +499,11 @@ h2.titulo
     justify-content: center;
     align-items: center;
     /* border: 1px solid red; */
+}
+
+.tituloHidden
+{
+    display: none;
 }
 
 /* Estilos generales de las cards */
@@ -731,10 +788,22 @@ h2.titulo
     justify-content: center;
 }
 
+/*  Detalle para que la seccion de examenes no este tan pegada a los FAQs */
+.examenes
+{
+    margin: 1em 0 2em;
+}
+
+/* Detalle para que el contenedor de la seccion de examenes quede en el centro */
+.examenes .centro
+{
+    height: inherit;
+}
+
 /* Estilos para los margenes de los titulos encontrados en la seccion de Examenes */
 .examanesTextos
 {
-    margin: 3.75em 0 2.8125em;
+    margin-bottom: 2.8125em;
 }
 
 /* Estilo necesario para CREAR el separador en lugar de usar un HR */
@@ -950,7 +1019,7 @@ h2.titulo
 /* Degradado de y fondo de la seccion FAQs */
 .faqs
 {
-    background: linear-gradient(90deg, var(--bgColor) 0%, rgba(251,252,255,0) 40%),
+    background: linear-gradient(90deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 40%),
                 url("../img//faqs-bg.jpg");
     background-size: cover;
     background-position: 45vw center;
@@ -1210,6 +1279,13 @@ h2.titulo
 {
     text-decoration: none;
     color: var(--fuenteFooterTxt);
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Estilo al hovear el dato del link */
+.datoFooterLink:hover
+{
+    color: var(--fuente);
 }
 
 /* Pequeño detalle para quitar el margen al ultimo elemento de los datos del footer */
@@ -1276,10 +1352,10 @@ h2.titulo
 /* Estilo general del corazon en el footer */
 .heartbeat
 {
-    animation: 1s latido infinite;
     margin: 0 5px;
     height: .8em;
     position: relative;
+    color: var(--resaltante);
 }
 
 /* Estilo general del link del autor en el footer */

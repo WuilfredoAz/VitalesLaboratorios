@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" dir="ltr">
     <head>
-        <meta charset="UTF-8" />
-        <title>Vitales Laboratorios</title>
-        <link rel="stylesheet" href="css/styles.css" />
+        <!-- HTML Meta Tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <title>Vitales Laboratorios — Inicio</title>
+        <meta name="Revisit" content="15 day">
+        <!-- <base href="https://vitaleslaboratorios.com/"> -->
+        <meta name="description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="img/favicons/site.webmanifest">
+        <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- <link rel="canonical" href="https://vitaleslaboratorios.com/index.html">Cambiar dependiendo de las secciones -->
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="Vitales Laboratorios">
+        <meta itemprop="description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta itemprop="image" content="img/favicons/logoGoogle.png">
+
+        <!-- Facebook - WhatsApp Meta Tags -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vitaleslaboratorios.com/">
+        <meta property="og:title" content="Vitales Laboratorios">
+        <meta property="og:image" content="img/favicons/metaRS.png">
+        <meta property="og:description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta property="og:site_name" content="Vitales Laboratorios" />
+        <meta property="og:locale" content="es_VE">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <!-- <meta name="twitter:site" content="@"> -->
+        <meta name="twitter:creator" content="@WuilfredoAz">
+        <!-- <meta name="twitter:url" content="https://twitter.com/usuario"> -->
+        <meta name="twitter:title" content="Vitales Laboratorios">
+        <meta name="twitter:description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta name="twitter:image" content="img/favicons/metaRS.png">
+
+
+
+        <!-- CSS's above the fold-->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- JS's -->
+
+
+        <!-- Google Analytics-->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121195399-3"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121195399-3');
+        </script> -->
     </head>
     <body>
-        <header class="header">
+        <header class="header" role="banner">
             <div class="headerUp">
                 <div class="centro">
                     <div class="headerUp_left">
@@ -41,31 +98,30 @@
                         <!-- <source srcset="img/logoresponsive.png" media="()" /> -->
                         <img src="img/logo-black.png" alt="Vitales Laboratorios Logo" />
                     </picture>
-                    <nav class="menu">
+                    <nav class="menu" role="navigation">
                         <ul>
                             <li><a class="js-menuLink" href="#">Inicio</a></li>
                             <li><a class="js-menuLink" href="#">Nosotros</a></li>
                             <li><a class="js-menuLink" href="#">Servicios</a></li>
                             <li><a class="js-menuLink" href="#">Exámenes</a></li>
-                            <li><a class="js-menuLink" href="#">Acerca de</a></li>
                             <li><a class="js-menuLink" href="#">Contacto</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </header>
-        <main>
+        <main role="main">
             <section class="hero">
                 <div class="centro">
                     <p class="epigrafe">Bienvenidos a</p>
                     <h1 class="titulo">Vitales Laboratorios</h1>
                     <h2 class="titulo">Servimos a tu salud con
-                        <ul class="tituloLista">
-                            <li class="rotate">excelentes profesionales.</li>
-                            <li class="rotate">tecnología de punta.</li>
-                            <li class="rotate">la mayor rapidez.</li>
-                            <li class="rotate">precios competitivos.</li>
-                        </ul>
+                        <span class="tituloLista">
+                            <span class="rotate">excelentes profesionales.</span>
+                            <span class="rotate">tecnología de punta.</span>
+                            <span class="rotate">la mayor rapidez.</span>
+                            <span class="rotate">precios competitivos.</span>
+                        </span>
                     </h2>
                     <p class="parrafo">
                         Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.
@@ -76,36 +132,37 @@
                 </div>
             </section>
             <section class="intermedio centro">
+                <h2 class="tituloHidden">Beneficios</h2>
                 <article class="beneficios">
                     <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_1.png" alt="Exelentes Precios" />
+                        <img src="img/icons/benef_1.png" alt="Equipos modernos" />
                     </picture>
                     <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Excelentes precios</h2>
+                        <h2 class="titulosCard">Equipos modernos</h2>
                         <p class="parrafo">
-                            Tenemos los mejores precios en todos nuestros exámenes.
+                            Para un óptimo procesamiento de las muestras.
                         </p>
                     </div>
                 </article>
                 <article class="beneficios">
                     <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_2.png" alt="Exelentes Precios" />
+                        <img src="img/icons/benef_2.png" alt="Rapidez en resultados" />
                     </picture>
                     <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Personal capacitado</h2>
+                        <h2 class="titulosCard">Rapidez en resultados</h2>
                         <p class="parrafo">
-                            Para darte la garantía de que nuestros resultados siempre serán correctos.
+                            Confiables y en el menor tiempo posible.
                         </p>
                     </div>
                 </article>
                 <article class="beneficios">
                     <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_3.png" alt="Exelentes Precios" />
+                        <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
                     </picture>
                     <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Los mejores equipos</h2>
+                        <h2 class="titulosCard">Mayor trazabilidad</h2>
                         <p class="parrafo">
-                            Estamos a la vanguardia con nuestros equipos.
+                            Para brindar seguimiento y transparencia en cada proceso.
                         </p>
                     </div>
                 </article>
@@ -127,7 +184,8 @@
                         </div>
                         <div class="serviciosContenido-carrusel">
                             <!-- Flecha izquierda -->
-                            <div class="js-atras serviciosContenido-carrusel-arrowBack disable"><</div>
+                            <div class="js-atras serviciosContenido-carrusel-arrowBack icon-arrow-left disable">
+                            </div>
                             <!-- Contenedor principal de los CARDS -->
                             <!-- Deberia tener un contenedor dentro de este para delimitar OJO -->
                             <div class="js-filaCarrusel serviciosContenido-carrusel-container">
@@ -188,8 +246,7 @@
                                 </article>
                             </div>
                             <!-- Flecha derecha -->
-                            <div class="js-adelante serviciosContenido-carrusel-arrowForwards">
-                                >
+                            <div class="js-adelante serviciosContenido-carrusel-arrowForwards icon-arrow-right">
                                 <div class="js-pulse pulse"></div>
                             </div>
                         </div>
@@ -213,85 +270,7 @@
                         <a href="#" class="examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_1.png" alt="Parentesco por ADN" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Parentesco por ADN</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_2.png" alt="Orina" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Orina</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_3.png" alt="Drogas" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Drogas</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_4.png" alt="Examenes Rutinarios" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Exámenes rutinarios</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_5.png" alt="Pruebas cardíacas" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Pruebas cardíacas</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_6.png" alt="Inmunología" />
-                                    </picture>
-                                    <div class="examanesCard-Textos">
-                                        <h2 class="titulosCard">Inmunología</h2>
-                                        <div class="parrafo">
-                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
-                                        </div>
-                                    </div>
-                            </article>
-                        </a>
-                        <a href="#" class="examenesCard-Link">
-                            <article class="examanesCard">
-                                    <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_7.png" alt="Hematologías" />
+                                        <img src="img/icons/exa_1.png" alt="Hematologías" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Hematologías</h2>
@@ -304,7 +283,85 @@
                         <a href="#" class="examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_8.png" alt="Ver más" />
+                                        <img src="img/icons/exa_2.png" alt="Serologías" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Serologías</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_3.png" alt="Química Sanguínea" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Química Sanguínea</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_4.png" alt="Marcadores Tumorales" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Marcadores Tumorales</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_5.png" alt="Hormonas" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Hormonas</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_6.png" alt="Pruebas especiales" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Pruebas especiales</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_7.png" alt="Orina" />
+                                    </picture>
+                                    <div class="examanesCard-Textos">
+                                        <h2 class="titulosCard">Orina</h2>
+                                        <div class="parrafo">
+                                            Lorem ipsum dolor sit amet, a b cconsectetur adipiscing elit
+                                        </div>
+                                    </div>
+                            </article>
+                        </a>
+                        <a href="#" class="examenesCard-Link">
+                            <article class="examanesCard">
+                                    <picture class="examanesCard-Picture">
+                                        <img src="img/icons/exa_12.png" alt="Ver más" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Ver más</h2>
@@ -434,6 +491,7 @@
                 </div>
             </section>
             <section class="intermedio">
+                <h2 class="tituloHidden">Llámanos</h2>
                 <a href="#" class="js-telefonoLink telefonoMid">
                     <article class="telefonoMid-Container">
                         <picture class="telefonoMid-ico">
@@ -447,6 +505,7 @@
                 </a>
             </section>
             <section class="contacto">
+                <h2 class="tituloHidden">Contacto</h2>
                 <div class="centro">
                     <article class="contactoCard">
                         <h2 class="titulo">Acerca de</h2>
@@ -520,7 +579,10 @@
                             <picture class="logoFooter">
                                 <img src="img/logo-white.png" alt="Vitales Laboratorios" />
                             </picture>
-                            <p class="js-copyright copyright">Cargando</p>
+                            <p class="copyright">
+                                <i class="icon-copyright"></i>
+                                <span class="js-copyright">Cargando</span>
+                            </p>
                             <div class="footerRSCaja">
                                 <a href="#" class="js-fbFooter footerRS">
                                     <img src="img/icons/fb.png" alt="Facebook" />
@@ -553,32 +615,32 @@
                         <div class="col-horarios">
                             <h2 class="tituloFooter">Horario</h2>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Lunes</p>
+                                <p class="dia">Lunes</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Martes</p>
+                                <p class="dia">Martes</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Miercoles</p>
+                                <p class="dia">Miercoles</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Jueves</p>
+                                <p class="dia">Jueves</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Viernes</p>
+                                <p class="dia">Viernes</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
                             <div class="contenedorDia">
-                                <p class="js-dia dia">Sábado</p>
+                                <p class="dia">Sábado</p>
                                 <span class="lineaFooter"></span>
                                 <p class="js-horario horario">Cargando</p>
                             </div>
@@ -588,7 +650,7 @@
                 <div class="autorFooter">
                     <p class="txtFooter">
                         Hecho con
-                        <img class="heartbeat" src="img/icons/heart.png" alt="amor">
+                        <i class="icon-heart heartbeat"></i>
                         por
                         <a class="autor" href="https://github.com/WuilfredoAz" target="blank">WuilfredoAz</a>
                     </p>
@@ -596,5 +658,90 @@
             </div>
         </footer>
         <script type="text/javascript" src="js/scripts.js"></script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "DiagnosticLab",
+            "name": "Vitales Laboratorios",
+            "url": "https://vitaleslaboratorios.com/",
+            "logo": "https://vitaleslaboratorios.com/img/favicons/logoGoogle.png",
+            "image": "https://vitaleslaboratorios.com/img/favicons/logoGoogle.png",
+            "telephone": "TELEFONO",
+            "contactPoint":
+            [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "aqui va el numero de telefono",
+                    "email": "info@vitaleslaboratorios.com",
+                    "contactType": "customer service",
+                    "areaServed": "VE",
+                    "availableLanguage": "es",
+                    "hoursAvailable":
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek":
+                        [
+                            "Monday",
+                            "Tuesday",
+                            "Wednesday",
+                            "Thursday",
+                            "Friday"
+                        ],
+                        "opens": "09:00",
+                        "closes": "21:00"
+                    }
+                }
+            ],
+            "founders":
+                [
+                    {
+                        "@type": "Person",
+                        "name": "Nombre del fundador"
+                    }
+                ],
+            "address":
+                {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Calle 22 sur,  Edif. Remanzo,  piso 1 local 01, Pueblo nuevo sur, El Tigre, edo. Anzoátegui." ,
+                    "addressLocality": "El Tigre",
+                    "postalCode": "6050",
+                    "addressCountry": "VE"
+                },
+            "sameAs":
+            [
+                "https://www.facebook.com",
+                "https://www.instagram.com",
+                "https://vitaleslaboratorios.com/"
+            ],
+            "medicalSpecialty":
+            [
+                {
+                    "@type": "MedicalSpecialty",
+                    "name": "Nombre de la especialidad",
+                    "description": "descripcion de la especialidad"
+                },
+                {
+                    "@type": "MedicalSpecialty",
+                    "name": "Nombre de la especialidad",
+                    "description": "descripcion de la especialidad"
+                }
+            ],
+            "availableTest":
+            [
+                {
+                    "@type": "MedicalTest",
+                    "name": "Nombre del examen",
+                    "description": "Descripcion del examen",
+                    "url": "URL de la categoria"
+                },
+                {
+                    "@type": "MedicalTest",
+                    "name": "Otro Examen",
+                    "description": "Descripcion del Otro examen",
+                    "url": "URL de la categoria"
+                }
+            ]
+        }
+        </script>
     </body>
 </html>
