@@ -221,14 +221,14 @@ function asignarHoras()
 function validarMenu()
 {
     // Si estoy en el index
-    if(tituloPagina=="Vitales Laboratorios — Inicio")
+    if(tituloPagina=="Inicio — Vitales Laboratorios")
     {
         elementosMenu[0].classList.add("selected");
         // Cargamos todo el index
         datosIndex();
     }
     // Si estoy en nosotros
-    else if(tituloPagina=="Vitales Laboratorios — Nosotros")
+    else if(tituloPagina=="Nosotros — Vitales Laboratorios")
     {
         elementosMenu[1].classList.add("selected");
     }

@@ -311,7 +311,15 @@ picture img
 .serviciosIcono img,
 .examanesCard-Picture img,
 .contactoCard-ico img,
-.logoFooter img
+.logoFooter img,
+.imagenGrid-1 img,
+.imagenGrid-2 img,
+.imagenGrid-3 img,
+.imagenGrid-4 img,
+.imagenGrid-5 img,
+.imagenGrid-6 img,
+.imagenGrid-7 img,
+.especialistaImgContenedor img
 {
     height: 100%;
     width: auto;
@@ -526,7 +534,8 @@ h2.titulo
 .serviciosCard:last-child,
 .circulo:last-child,
 .faqsFiltros-btn:last-child,
-.footerRS:last-child
+.footerRS:last-child,
+.especialista:last-child
 {
     margin-right: 0;
 }
@@ -1374,6 +1383,7 @@ h2.titulo
     border-bottom: 2px solid var(--resaltante)
 }
 
+/* Estilo general para las paginas que son a columnas */
 .columna
 {
     display: flex;
@@ -1384,6 +1394,8 @@ h2.titulo
     /* border: 1px solid blue; */
 }
 
+
+/* Estilo general del contenedor de las paginas a columnas */
 .columna .centro
 {
     display: flex;
@@ -1394,11 +1406,13 @@ h2.titulo
     height: auto;
 }
 
+/* Detalle en el titulo de las paginas a columnas */
 .columna .titulo
 {
     margin: 0
 }
 
+/* Dimenciones de las columnas */
 .columna .left,
 .columna .right
 {
@@ -1408,6 +1422,7 @@ h2.titulo
     overflow: hidden;
 }
 
+/* detalle estetico (separador) en el titulo de las paginas a columnas */
 .columna .titulo::after
 {
     font-size: 16px;
@@ -1419,6 +1434,7 @@ h2.titulo
     margin: 1.25em 0;
 }
 
+/* Invertir el orden de las columnas en sección par */
 .columna:nth-of-type(even) .right
 {
     order: 1;
@@ -1426,11 +1442,13 @@ h2.titulo
     margin-right: 3em;
 }
 
+/* Invertir el orden de las columnas en sección par */
 .columna:nth-of-type(even) .left
 {
     order: 2;
 }
 
+/* Estilo general de la columna que contiene las imagenes */
 .columna .right
 {
     display: grid;
@@ -1441,101 +1459,84 @@ h2.titulo
     margin-left: 4.375em;
 }
 
+/* Estilo general de la priemra imagen de la grilla de descripcion */
 .imagenGrid-1
 {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 5;
+    grid-column: 1 / 6;
+    grid-row: 1 / 5;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la segunda imagen de la grilla de descripcion */
 .imagenGrid-2
 {
-    grid-column-start: 3;
-    grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 7;
+    grid-column: 3 / 6;
+    grid-row: 5 / 7;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la tercera imagen de la grilla de descripcion */
 .imagenGrid-3
 {
-    grid-column-start: 6;
-    grid-column-end: 9;
-    grid-row-start: 1;
-    grid-row-end: 9;
+    grid-column: 6 / 9;
+    grid-row: 1 / 9;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
-.imagenGrid-1 img,
-.imagenGrid-2 img,
-.imagenGrid-3 img,
-.imagenGrid-4 img,
-.imagenGrid-5 img,
-.imagenGrid-6 img,
-.imagenGrid-7 img
-{
-    height: 100%;
-    width: auto;
-}
-
+/* Estilo general de la primera imagen de la grilla de M&V */
 .imagenGrid-4
 {
-    grid-row-start: 1;
-    grid-row-end: 5;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1 / 4;
+    grid-row: 1 / 5;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la segunda imagen de la grilla de M&V */
 .imagenGrid-5
 {
-    grid-row-start: 5;
-    grid-row-end: 9;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-column: 1 / 4;
+    grid-row: 5 / 9;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la tercera imagen de la grilla de M&V */
 .imagenGrid-6
 {
-    grid-row-start: 2;
-    grid-row-end: 4;
-    grid-column-start: 4;
-    grid-column-end: 7;
+    grid-column: 4 / 7;
+    grid-row: 2 / 4;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la cuarta imagen de la grilla de M&V */
 .imagenGrid-7
 {
-    grid-row-start: 4;
-    grid-row-end: 8;
-    grid-column-start: 4;
-    grid-column-end: 9;
+    grid-column: 4 / 9;
+    grid-row: 4 / 8;
     border-radius: 6px;
-    /* border: 1px solid blue; */
     overflow: hidden;
+    /* border: 1px solid blue; */
 }
 
+/* Estilo general de la seccion que contiene a los especialistas */
 .especialistas
 {
     font-size: 16px;
     height: 100vh;
 }
 
+/* Contenedor de la seccion que contiene a los especialistas y el widget de telefono */
 .especialistas .centro
 {
     display: flex;
@@ -1545,6 +1546,18 @@ h2.titulo
     height: inherit;
 }
 
+/* Estilo general del conenedor que contiene a las cards de los especialistas */
+.contenedorEspecialistas
+{
+    margin-top: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 1px solid blue; */
+}
+
+/* Estilo general de la card del especialista */
 .especialista
 {
     display: flex;
@@ -1554,32 +1567,29 @@ h2.titulo
     margin-right: 3.5em;
 }
 
-.contenedorEspecialistas
+/* Animacion pertinente a la imagen del especialista al hovear el card */
+.especialista:hover .especialistaImgContenedor img
 {
-    margin-top: 3.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    transform: scale(1.05);
 }
 
-
-.especilistaImgContenedor
+/* Estilo general del picture que contiene a la foto del especialista */
+.especialistaImgContenedor
 {
     width: 11.25em;
     height: 11.875em;
     border-radius: 6px;
     overflow: hidden;
-    /* border: 1px solid red; */
     margin-bottom: .625em;
+    /* border: 1px solid red; */
 }
 
-.especilistaImgContenedor img
+.especialistaImgContenedor img
 {
-    height: 100%;
-    width: auto;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
+/* Estilo general del nombre del especialista */
 .especialistaNombre
 {
     font-size: .875em;
@@ -1587,6 +1597,7 @@ h2.titulo
     color: var(--fuenteImportante);
 }
 
+/* Estilo general del cargo del especialista */
 .especialistaCargo
 {
     font-size: .75em;
@@ -1595,6 +1606,7 @@ h2.titulo
     margin-bottom: 2.5em;
 }
 
+/* Estilo general del contenedor azul de las redes sociales del especialista */
 .especialistaRedes
 {
     background: var(--azulNosotros);
@@ -1608,22 +1620,25 @@ h2.titulo
     align-items: center;
 }
 
+/* Estilo de los elementos de ancla de los especialistas */
 .especialistaRedes_Link
 {
     text-decoration: none;
     height: 1.25em;
 }
 
-.especialistaRedes_Link:hover img
-{
-    transform: scale(1.1);
-}
-
+/* Detalles para la animacion al hovear el icono del especilista */
 .especialistaRedes_Link img
 {
     height: 100%;
     width: auto;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Estilos generales para los iconos de las redes sociales del espcialista */
+.especialistaRedes_Link:hover img
+{
+    transform: scale(1.1);
 }
 
 /* Animacion del texto que rota en el Hero */
