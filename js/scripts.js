@@ -150,16 +150,10 @@ const horarioWeekend = "8:00am - 12:00pm";
         telefono.innerText= numeroTelefono;
         // href que marca
         telefono.href="telf:+" + numeroTelefono;
-
         // Texto que marca el widget
         textoTelefono.innerText = numeroTelefono
         // href que marca el widget
         linkTelefono.href="telf:+" + numeroTelefono;
-
-        // Texto que muestra en contacto
-        textoTelefonoContacto.innerText= numeroTelefono;
-        // href que tiene en contacto
-        linkTelefonoContacto.href= "telf:+" + numeroTelefono;
     // ===== Termina el telefono
 
     // ===== Empieza la direccion
@@ -167,11 +161,6 @@ const horarioWeekend = "8:00am - 12:00pm";
         direccionAbre.innerText= direccionAbreviada;
         // href que tiene
         direccionAbre.href= googleMaps
-
-        // Texto que muestra en contacto
-        textoDireccionContacto.innerText = direccionCompleta;
-        // href que tiene en contacto
-        linkDireccionContacto.href= googleMaps;
     // ===== Termina la direccion
 
     // ===== Empieza las Redes sociales
@@ -183,21 +172,6 @@ const horarioWeekend = "8:00am - 12:00pm";
         linkInstagram.href= instagram;
     // ===== Termina las Redes sociales
 
-    // ===== Empieza otros datos
-        // correo link
-        linkCorreoContacto.href= "mailto:" + correo;
-        // Correo texto
-        textoCorreoContacto.innerText = correo;
-
-        // cotizaciones link
-        linkCotizacionesContacto.href= cotizaciones;
-
-        // reactivos link
-        linkReactivosContacto.href= reactivos;
-
-        // encuestas link
-        linkEncuestaContacto.href= encuestas;
-    // ===== Termina otros datos
     // ===== Empieza Datos del Footer
         // Copyright
         textoCopyright.innerText= copyright;
@@ -221,24 +195,6 @@ const horarioWeekend = "8:00am - 12:00pm";
     // ===== Termina Datos del Footer
 // ============= * Termina el proceso de asignacion de los datos dinamicos de la pagina * =============\\
 
-
-// ============= *Empieza la lista de los escuchadores de eventos* =============\\
-    // ===== Empiezan escuchadores pertenecientes al carrusel
-        // Añadimos un escuchador de eventos para cuando haga clic en el boton de adelante
-        // y le asiganamos la función pertinente
-        adelante.addEventListener("click", moverveArrows)
-
-        // Añado un escuchador de eventos para cuando haga clic en el boton de atras
-        // y le asigno la funcion pertinente
-        atras.addEventListener("click", moverveArrows)
-    // ===== Terminan escuchadores pertenecientes al carrusel
-
-    // ===== Empieza escuchadores pertenecientes al filtro de FAQs
-        // Asigno un escuchador de eventos al padre de los filtros para mayor comodidad
-        padreFiltros.addEventListener("click", filtrandoFaqs);
-    // ===== Termina escuchadores pertenecientes al filtro de FAQs
-
-// ============= *Termina la lista de los escuchadores de eventos* =============\\
 
 
 // ============= * Empieza funcion para asignar las horas en el footer* =============\\
@@ -268,9 +224,11 @@ function validarMenu()
     if(tituloPagina=="Vitales Laboratorios — Inicio")
     {
         elementosMenu[0].classList.add("selected");
+        // Cargamos todo el index
+        datosIndex();
     }
     // Si estoy en nosotros
-    else if(tituloPagina=="Nostros")
+    else if(tituloPagina=="Vitales Laboratorios — Nosotros")
     {
         elementosMenu[1].classList.add("selected");
     }
@@ -286,185 +244,232 @@ validarMenu();
 // ============= * Termina funcion para hacer el menu dinamico* =============\\
 
 
-// ============= * Empieza funcion para moverme en el carrusel con las flechas* =============\\
-function moverveArrows(event)
+function datosIndex()
 {
-    // Si le di a avanzar
-    if(event.target===adelante)
+    // ===== Empieza otros datos
+        // correo link
+        linkCorreoContacto.href= "mailto:" + correo;
+        // Correo texto
+        textoCorreoContacto.innerText = correo;
+
+        // cotizaciones link
+        linkCotizacionesContacto.href= cotizaciones;
+
+        // reactivos link
+        linkReactivosContacto.href= reactivos;
+
+        // encuestas link
+        linkEncuestaContacto.href= encuestas;
+
+        // Texto que muestra en contacto
+        textoDireccionContacto.innerText = direccionCompleta;
+        // href que tiene en contacto
+        linkDireccionContacto.href= googleMaps;
+
+        // Texto que muestra en contacto
+        textoTelefonoContacto.innerText= numeroTelefono;
+        // href que tiene en contacto
+        linkTelefonoContacto.href= "telf:+" + numeroTelefono;
+
+    // ===== Termina otros datos
+
+
+    // ============= *Empieza la lista de los escuchadores de eventos* =============\\
+        // ===== Empiezan escuchadores pertenecientes al carrusel
+            // Añadimos un escuchador de eventos para cuando haga clic en el boton de adelante
+            // y le asiganamos la función pertinente
+            adelante.addEventListener("click", moverveArrows)
+
+            // Añado un escuchador de eventos para cuando haga clic en el boton de atras
+            // y le asigno la funcion pertinente
+            atras.addEventListener("click", moverveArrows)
+        // ===== Terminan escuchadores pertenecientes al carrusel
+
+        // ===== Empieza escuchadores pertenecientes al filtro de FAQs
+            // Asigno un escuchador de eventos al padre de los filtros para mayor comodidad
+            padreFiltros.addEventListener("click", filtrandoFaqs);
+        // ===== Termina escuchadores pertenecientes al filtro de FAQs
+    // ============= *Termina la lista de los escuchadores de eventos* =============\\
+
+
+    // ============= * Empieza funcion para moverme en el carrusel con las flechas* =============\\
+    function moverveArrows(event)
     {
-        // -----Efectos visuales-----\\
-        // Quito la animacion del elemento
-        pulseAnimation.classList.remove("pulse");
-        // Habilito el boton para ir hacia atras
-        atras.classList.remove("disable");
-
-        // -----Muevo el Scroll----\\
-        // El scroll left sera igual a = la posicion donde este + el ancho
-        fila.scrollLeft = fila.scrollLeft + fila.offsetWidth;
-
-        // Guardo en una variable al indicador activo en ese momento
-        const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
-
-        // Condicion para saber si tengo un elemento adelante
-        if(indicadorActivo.nextSibling)
+        // Si le di a avanzar
+        if(event.target===adelante)
         {
-            // Añado la clase active al elemento que esta adelante
-            indicadorActivo.nextSibling.classList.add("active");
-            // Le quito la clase active al elemento anterior
-            indicadorActivo.classList.remove("active");
+            // -----Efectos visuales-----\\
+            // Quito la animacion del elemento
+            pulseAnimation.classList.remove("pulse");
+            // Habilito el boton para ir hacia atras
+            atras.classList.remove("disable");
 
-            actualizarFlecha();
-        }
-    }
-    // Si le di a retroceder
-    else if(event.target===atras)
-    {
-        // -----Muevo el Scroll----\\
-        // El scroll left sera igual a = la posicion donde este - el ancho
-        fila.scrollLeft = fila.scrollLeft - fila.offsetWidth;
+            // -----Muevo el Scroll----\\
+            // El scroll left sera igual a = la posicion donde este + el ancho
+            fila.scrollLeft = fila.scrollLeft + fila.offsetWidth;
 
-        // Guardo en una variable al indicador activo en ese momento
-        const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
+            // Guardo en una variable al indicador activo en ese momento
+            const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
 
-
-        // Condicion para saber si tengo un elemento atras
-        if(indicadorActivo.previousElementSibling)
-        {
-            // Añado la clase active al elemento que esta atras
-            indicadorActivo.previousSibling.classList.add("active");
-            // Le quito la clase active al elemento de anterior (el que estaba antes)
-            indicadorActivo.classList.remove("active");
-
-            actualizarFlecha();
-        }
-    }
-}
-// ============= * Termina funcion para moverme en el carrusel con las flechas* =============\\
-
-
-// ============= * Empieza funcion para actualizar el estado de las flechas en el carrusel* =============\\
-function actualizarFlecha()
-{
-    // Guardo en una variable la posicion del ultimo elemento
-    var ultimo = (document.querySelectorAll(".js-indicador").length) - 1;
-
-    // Condicion para saber si estoy en el ultimo y deshabilitar la flecha de adelante
-    if(document.querySelectorAll(".js-indicador")[ultimo].classList.contains("active"))
-    {
-        // Deshabilito el boton de avanzar
-        adelante.classList.add("disable");
-        // En caso de que me este moviendo de un extremo a otro habilito la de atras
-        atras.classList.remove("disable");
-    }
-    // Condicion para saber si estoy en el primreo
-    else if(document.querySelectorAll(".js-indicador")[0].classList.contains("active"))
-    {
-        // Deshabilito el boton de retroceder
-        atras.classList.add("disable");
-        // En caso de que me este moviendo de un extremo a otro habilito la de adelante
-        adelante.classList.remove("disable");
-    }
-    // Condicion por defecto
-    else
-    {
-        atras.classList.remove("disable");
-        adelante.classList.remove("disable");
-    }
-}
-// ============= * Termina funcion para actualizar el estado de las flechas en el carrusel* =============\\
-
-
-// ============= * Empieza el ciclo para crear los indicadores de paginacion del carrusel* =============\\
-// Creo un ciclo para crear los indicadores
-for(let a=0; a< numeroDeIndicadores; a++)
-{
-    // Creo una constante que sera el indicador que se va a crear
-    const indicadorCarrusel = document.createElement("div")
-
-    // le damos clases que usaran los indicadores
-    indicadorCarrusel.classList.add("js-indicador");
-    indicadorCarrusel.classList.add("circulo");
-
-    // Condicional para darle la clase active al primer elemento en la primera ejecucion
-    if(a===0)
-    {
-        indicadorCarrusel.classList.add("active");
-    }
-
-    // Introduzco el indicador creado en su contenedor en el HTML
-    document.querySelector(".js-contenedorIndicadores").appendChild(indicadorCarrusel);
-
-    // Creo un escuchador de eventos para cada indicador
-    indicadorCarrusel.addEventListener("click", movermeManual);
-
-    // Creo la funcion que usaran cada indicador cuando me mueva haciendo uso de ellos
-    function movermeManual(event)
-    {
-        // Muevo el scroll \
-        // El scroll sera: numero de posicion del inidcador * ancho total del contenedor del carrusel
-        fila.scrollLeft = a * fila.offsetWidth;
-
-        // Actualizamos la posicion del indicador active\\
-        // Busco al elemento que este dentro del contenedor de los indicadores y tenga la clase active y se la quito
-        document.querySelector(".js-contenedorIndicadores .active").classList.remove("active");
-        // Le doy la clase active al elemento clicleado
-        event.target.classList.add("active");
-
-        // Actualizo las flechas
-        actualizarFlecha();
-    }
-}
-// ============= * Termina el ciclo para crear los indicadores de paginacion del carrusel* =============\\
-
-
-// ============= * Empieza la funcion usada por el filtro de las FAQs* =============\\
-// creo la funcion que usa el padre de los filtros
-function filtrandoFaqs(event)
-{
-    // Pregunto si hice clic en elemento válido
-    if(event.target.classList.contains("js-filtro"))
-    {
-        // ciclo para recorrer todos los filtros
-        for(i=0; i<cFiltros; i++)
-        {
-            // Condicion para saber cual filtro fue el que toque y si este filtro NO ESTA activo
-            if(event.target===filtro[i] && (event.target.classList.contains("active"))==false)
+            // Condicion para saber si tengo un elemento adelante
+            if(indicadorActivo.nextSibling)
             {
-                // Ciclo para buscar el filtro activo anteriormente
-                for(antiguo=0;antiguo<cFiltros;antiguo++)
-                {
-                    // Condicion para saber cual filtro estaba activo
-                    if(filtro[antiguo].classList.contains("active"))
-                    {
-                        // le quito le quito el active a ese filtro
-                        filtro[antiguo].classList.remove("active");
-                        // cierro el ciclo
-                        break;
-                    }
-                }
-                // Activo el filtro deseado
-                filtro[i].classList.add("active");
+                // Añado la clase active al elemento que esta adelante
+                indicadorActivo.nextSibling.classList.add("active");
+                // Le quito la clase active al elemento anterior
+                indicadorActivo.classList.remove("active");
 
-                // Ciclo para recorrer todos los contenedores de  preguntas
-                for(indice=0; indice<cFiltros; indice++)
-                {
-                    // Si el contenedor tiene el mismo indice que el seleccionado y NO ESTA activo
-                    if(i===indice && (faqs[i].classList.contains("active"))==false)
-                    {
-                        // Muestro el bloque de preguntas
-                        faqs[i].classList.add("active");
-                    }
-                    // Si no es el contenedor deseado
-                    else
-                    {
-                        // Quito el active de dicho contenedor
-                        faqs[indice].classList.remove("active");
-                    }
-                }
-                // Detengo el ciclo
-                break;
+                actualizarFlecha();
+            }
+        }
+        // Si le di a retroceder
+        else if(event.target===atras)
+        {
+            // -----Muevo el Scroll----\\
+            // El scroll left sera igual a = la posicion donde este - el ancho
+            fila.scrollLeft = fila.scrollLeft - fila.offsetWidth;
+
+            // Guardo en una variable al indicador activo en ese momento
+            const indicadorActivo = document.querySelector(".js-contenedorIndicadores .active");
+
+
+            // Condicion para saber si tengo un elemento atras
+            if(indicadorActivo.previousElementSibling)
+            {
+                // Añado la clase active al elemento que esta atras
+                indicadorActivo.previousSibling.classList.add("active");
+                // Le quito la clase active al elemento de anterior (el que estaba antes)
+                indicadorActivo.classList.remove("active");
+
+                actualizarFlecha();
             }
         }
     }
+    // ============= * Termina funcion para moverme en el carrusel con las flechas* =============\\
+
+
+    // ============= * Empieza funcion para actualizar el estado de las flechas en el carrusel* =============\\
+    function actualizarFlecha()
+    {
+        // Guardo en una variable la posicion del ultimo elemento
+        var ultimo = (document.querySelectorAll(".js-indicador").length) - 1;
+
+        // Condicion para saber si estoy en el ultimo y deshabilitar la flecha de adelante
+        if(document.querySelectorAll(".js-indicador")[ultimo].classList.contains("active"))
+        {
+            // Deshabilito el boton de avanzar
+            adelante.classList.add("disable");
+            // En caso de que me este moviendo de un extremo a otro habilito la de atras
+            atras.classList.remove("disable");
+        }
+        // Condicion para saber si estoy en el primreo
+        else if(document.querySelectorAll(".js-indicador")[0].classList.contains("active"))
+        {
+            // Deshabilito el boton de retroceder
+            atras.classList.add("disable");
+            // En caso de que me este moviendo de un extremo a otro habilito la de adelante
+            adelante.classList.remove("disable");
+        }
+        // Condicion por defecto
+        else
+        {
+            atras.classList.remove("disable");
+            adelante.classList.remove("disable");
+        }
+    }
+    // ============= * Termina funcion para actualizar el estado de las flechas en el carrusel* =============\\
+
+    // ============= * Empieza el ciclo para crear los indicadores de paginacion del carrusel* =============\\
+    // Creo un ciclo para crear los indicadores
+    for(let a=0; a< numeroDeIndicadores; a++)
+    {
+        // Creo una constante que sera el indicador que se va a crear
+        const indicadorCarrusel = document.createElement("div")
+
+        // le damos clases que usaran los indicadores
+        indicadorCarrusel.classList.add("js-indicador");
+        indicadorCarrusel.classList.add("circulo");
+
+        // Condicional para darle la clase active al primer elemento en la primera ejecucion
+        if(a===0)
+        {
+            indicadorCarrusel.classList.add("active");
+        }
+
+        // Introduzco el indicador creado en su contenedor en el HTML
+        document.querySelector(".js-contenedorIndicadores").appendChild(indicadorCarrusel);
+
+        // Creo un escuchador de eventos para cada indicador
+        indicadorCarrusel.addEventListener("click", movermeManual);
+
+        // Creo la funcion que usaran cada indicador cuando me mueva haciendo uso de ellos
+        function movermeManual(event)
+        {
+            // Muevo el scroll \
+            // El scroll sera: numero de posicion del inidcador * ancho total del contenedor del carrusel
+            fila.scrollLeft = a * fila.offsetWidth;
+
+            // Actualizamos la posicion del indicador active\\
+            // Busco al elemento que este dentro del contenedor de los indicadores y tenga la clase active y se la quito
+            document.querySelector(".js-contenedorIndicadores .active").classList.remove("active");
+            // Le doy la clase active al elemento clicleado
+            event.target.classList.add("active");
+
+            // Actualizo las flechas
+            actualizarFlecha();
+        }
+    }
+    // ============= * Termina el ciclo para crear los indicadores de paginacion del carrusel* =============\\
+
+    // ============= * Empieza la funcion usada por el filtro de las FAQs* =============\\
+    // creo la funcion que usa el padre de los filtros
+    function filtrandoFaqs(event)
+    {
+        // Pregunto si hice clic en elemento válido
+        if(event.target.classList.contains("js-filtro"))
+        {
+            // ciclo para recorrer todos los filtros
+            for(i=0; i<cFiltros; i++)
+            {
+                // Condicion para saber cual filtro fue el que toque y si este filtro NO ESTA activo
+                if(event.target===filtro[i] && (event.target.classList.contains("active"))==false)
+                {
+                    // Ciclo para buscar el filtro activo anteriormente
+                    for(antiguo=0;antiguo<cFiltros;antiguo++)
+                    {
+                        // Condicion para saber cual filtro estaba activo
+                        if(filtro[antiguo].classList.contains("active"))
+                        {
+                            // le quito le quito el active a ese filtro
+                            filtro[antiguo].classList.remove("active");
+                            // cierro el ciclo
+                            break;
+                        }
+                    }
+                    // Activo el filtro deseado
+                    filtro[i].classList.add("active");
+
+                    // Ciclo para recorrer todos los contenedores de  preguntas
+                    for(indice=0; indice<cFiltros; indice++)
+                    {
+                        // Si el contenedor tiene el mismo indice que el seleccionado y NO ESTA activo
+                        if(i===indice && (faqs[i].classList.contains("active"))==false)
+                        {
+                            // Muestro el bloque de preguntas
+                            faqs[i].classList.add("active");
+                        }
+                        // Si no es el contenedor deseado
+                        else
+                        {
+                            // Quito el active de dicho contenedor
+                            faqs[indice].classList.remove("active");
+                        }
+                    }
+                    // Detengo el ciclo
+                    break;
+                }
+            }
+        }
+    }
+    // ============= * Termina la funcion usada por el filtro de las FAQs* =============\\
 }
-// ============= * Termina la funcion usada por el filtro de las FAQs* =============\\

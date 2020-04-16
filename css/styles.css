@@ -185,7 +185,8 @@ picture img
 */
 .header,
 .serviciosContenido-carrusel-arrowForwards,
-.examanesTextos .titulo
+.examanesTextos .titulo,
+.especialistas .titulo
 {
     position: relative;
 }
@@ -807,7 +808,8 @@ h2.titulo
 }
 
 /* Estilo necesario para CREAR el separador en lugar de usar un HR */
-.examanesTextos .titulo::after
+.examanesTextos .titulo::after,
+.especialistas .titulo::after
 {
     font-size: 16px;
     display: inline-block;
@@ -1370,6 +1372,258 @@ h2.titulo
 .autor:hover
 {
     border-bottom: 2px solid var(--resaltante)
+}
+
+.columna
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 16px;
+    /* border: 1px solid blue; */
+}
+
+.columna .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 36em;
+    max-height: 600px;
+    height: auto;
+}
+
+.columna .titulo
+{
+    margin: 0
+}
+
+.columna .left,
+.columna .right
+{
+    width: 50%;
+    height: inherit;
+    /* border: 1px solid red; */
+    overflow: hidden;
+}
+
+.columna .titulo::after
+{
+    font-size: 16px;
+    display: block;
+    content: "";
+    height: .1875em;
+    width: 1.875em;
+    background: var(--resaltante);
+    margin: 1.25em 0;
+}
+
+.columna:nth-of-type(even) .right
+{
+    order: 1;
+    margin-left: 0;
+    margin-right: 3em;
+}
+
+.columna:nth-of-type(even) .left
+{
+    order: 2;
+}
+
+.columna .right
+{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    max-height: inherit;
+    gap: 1em;
+    margin-left: 4.375em;
+}
+
+.imagenGrid-1
+{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 5;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-2
+{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-3
+{
+    grid-column-start: 6;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 9;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-1 img,
+.imagenGrid-2 img,
+.imagenGrid-3 img,
+.imagenGrid-4 img,
+.imagenGrid-5 img,
+.imagenGrid-6 img,
+.imagenGrid-7 img
+{
+    height: 100%;
+    width: auto;
+}
+
+.imagenGrid-4
+{
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-5
+{
+    grid-row-start: 5;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-6
+{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 7;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.imagenGrid-7
+{
+    grid-row-start: 4;
+    grid-row-end: 8;
+    grid-column-start: 4;
+    grid-column-end: 9;
+    border-radius: 6px;
+    /* border: 1px solid blue; */
+    overflow: hidden;
+}
+
+.especialistas
+{
+    font-size: 16px;
+    height: 100vh;
+}
+
+.especialistas .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+}
+
+.especialista
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 3.5em;
+}
+
+.contenedorEspecialistas
+{
+    margin-top: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.especilistaImgContenedor
+{
+    width: 11.25em;
+    height: 11.875em;
+    border-radius: 6px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    margin-bottom: .625em;
+}
+
+.especilistaImgContenedor img
+{
+    height: 100%;
+    width: auto;
+}
+
+.especialistaNombre
+{
+    font-size: .875em;
+    font-weight: 400;
+    color: var(--fuenteImportante);
+}
+
+.especialistaCargo
+{
+    font-size: .75em;
+    font-weight: 400;
+    color: var(--fuenteNormal);
+    margin-bottom: 2.5em;
+}
+
+.especialistaRedes
+{
+    background: var(--azulNosotros);
+    width: 5.5em;
+    height: 1.5em;
+    border-radius: 8px;
+    padding: .3125em .625em;
+    box-shadow: 0px 3px 6px var(--sombraAzulNostros);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.especialistaRedes_Link
+{
+    text-decoration: none;
+    height: 1.25em;
+}
+
+.especialistaRedes_Link:hover img
+{
+    transform: scale(1.1);
+}
+
+.especialistaRedes_Link img
+{
+    height: 100%;
+    width: auto;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 /* Animacion del texto que rota en el Hero */
