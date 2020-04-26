@@ -42,6 +42,8 @@
     --azulNosotros: #0154BE;
     --sombraAzulNostros: rgba(1,84,190, .32);
 
+    /* Fondo del modal */
+    --bgModal: #F2F4FD;
 }
 
 @font-face
@@ -547,8 +549,16 @@ h2.titulo
     margin-right: .625em;
 }
 
-/* Pequeña correcion a los margenes de los parrafos de los beneficios */
-.beneficios .parrafo
+/*
+    * Pequeña correcion a los margenes de los parrafos de los beneficios
+    * Estilo necesario para corregir el margen que tienen los parrafos en las cards
+    * Pequeña correcion a los margenes de los parrafos de los examenes especificos
+    * Pequeño detalle para quitar margenes al ultimo elemento
+*/
+.beneficios .parrafo,
+.serviciosTexto .parrafo,
+.examenEspecifico .parrafo,
+.contenedorDia:last-child
 {
     margin: 0;
 }
@@ -669,12 +679,6 @@ h2.titulo
     height: 3.125em;
     width: 3.125em;
     margin-bottom: 1.25em;
-}
-
-/* Estilo necesario para corregir el margen que tienen los parrafos en las cards */
-.serviciosTexto .parrafo
-{
-    margin: 0;
 }
 
 /* Estilo que le da un margen para separar al carusel de los indicadores */
@@ -798,6 +802,20 @@ h2.titulo
     justify-content: center;
 }
 
+/* Estilos necesarios para la pagina (solitaria) de examanes */
+.examenes.pagina
+{
+    height: auto;
+    min-height: 100vh;
+    margin: 2.8125em 0 4em;
+}
+
+/* Estilos necesarios para el contenedor de los examanes en la pagina (solitaria) de los mismos */
+.examenesContenedor.listado
+{
+    height: auto;
+}
+
 /*  Detalle para que la seccion de examenes no este tan pegada a los FAQs */
 .examenes
 {
@@ -839,7 +857,7 @@ h2.titulo
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-auto-rows: minmax(250px, 1fr);
     gap: 1.875em;
 }
 
@@ -882,18 +900,6 @@ h2.titulo
     margin-bottom: 2em;
     display: flex;
     justify-content: center;
-}
-
-/* Margen que le doy al titulo de las cards de examanes*/
-.examanesCard-Textos .titulosCard
-{
-    margin-bottom: 1.875em;
-}
-
-/* Se le quita el margen a los textos de las cards de examanes */
-.examanesCard-Textos .parrafo
-{
-    margin: 0;
 }
 
 /* Pequeño ajuste tras eliminacion de la seccion que contenia la imagen y pasarla a fondo */
@@ -1316,12 +1322,6 @@ h2.titulo
     /* border: 1px solid red; */
 }
 
-/* Pequeño detalle para quitar margenes al ultimo elemento */
-.contenedorDia:last-child
-{
-    margin: 0;
-}
-
 /* Estilo general que muestra el dia en el footer */
 .dia
 {
@@ -1641,6 +1641,390 @@ h2.titulo
     transform: scale(1.1);
 }
 
+/* Estilos generales dde la seccion de los listados de examenes */
+.listadoDeExamenes
+{
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+/* Estilos necesarios para centrar los elementos en el hero del listado de examenes */
+.listadoDeExamanes-Hero .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 18.75em;
+    width: 100%;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+/* Listado de de estilos para cambiar la imagen del hero de las categorias de examen */
+.listadoDeExamanes-Hero.hematologia
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #e9eff0
+                url("../img/examenes/hematologia.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.serologia
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+              #f3fdfe
+                url("../img/examenes/serologia.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.qsanguinea
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+              #fefefe
+                url("../img/examenes/qsanguinea.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.mtumoral
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+              #f7f8fc
+                url("../img/examenes/mtumoral.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.hormonas
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #fcfcfc
+                url("../img/examenes/hormonas.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.inmunologia
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #eeeeec
+                url("../img/examenes/inmunologia.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.uroanalisis
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #fafbf6
+                url("../img/examenes/uroanalisis.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.coprologia
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #fefefe
+                url("../img/examenes/coprologia.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.qurinaria
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #e9f2fb
+                url("../img/examenes/qurinaria.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.espermatograma
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #fcdcdf
+                url("../img/examenes/espermatograma.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+.listadoDeExamanes-Hero.gasometria
+{
+    background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 15%),
+                #e8e9eb
+                url("../img/examenes/gasometria.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/* Estilos generales para el contenedor de los breadcrumps */
+.breadcrumbs
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+}
+/* Estilos generales para los links de los breadcrumps */
+.breadcrumbs-link
+{
+    text-decoration: none;
+    font-size: .75em;
+    margin-right: 10px;
+    color: var(--fuenteRespuesta);
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    display: flex;
+    align-items: center;
+}
+/* Estilo general para darle fuerza visual al breadcrumps actual */
+.breadcrumbs-link.active
+{
+    color: var(--fuenteImportante);
+}
+/* efecto al hacer hover a un breadcrumps (que no sea el actual) */
+a.breadcrumbs-link:hover
+{
+    color: var(--seleccionMenu);
+}
+/* Estilo general para el icono del breadcrumps */
+.breadcrumbs-ico
+{
+    font-size: .4em;
+    margin-right: 10px;
+    color: var(--fuenteRespuesta)
+}
+/* Estilo general que determina el icono que separa los breadcrumps */
+.breadcrumbs-ico::before
+{
+    content: "/";
+}
+
+/* Estilos generales del contenedor del contador de examenes */
+.contadorDeExamanes-Texto
+{
+    font-weight: 400;
+    font-size: .75em;
+    color: var(--fuenteNormal);
+    padding-bottom: 1.66em;
+    margin-top: 2.916em;
+    margin-bottom: 1.66em;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+/* Estilo general para el numero del contador de examenes */
+.contadorDeExamanes-Cantidad
+{
+    color: var(--resaltante);
+}
+
+/* Estilos necesarios para crear un contador por css a los examenes */
+.listadoDeExamenes-Contenedor
+{
+    /* Añadimos nuestro contador */
+    counter-reset: ExaCounter;
+    margin-bottom: 2.81em;
+}
+
+/* Estilos generales para la fila que contiene el titulo de las columnas de los examenes */
+.filaConTitulos
+{
+    display: grid;
+    grid-template-columns: 516px repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    margin-bottom: 1.25em;
+    padding: 0 1.625em;
+}
+
+/* Estilos necesarios para el texto de los titulos de la fila con titulos */
+.filaConTitulos-texto
+{
+    font-size: .75em;
+    font-weight: 500;
+    color: var(--fuenteImportante);
+}
+
+/* Estilos necesarios para aplicar un simbolo de # al primer elemento de la fila con titulos */
+.filaConTitulos-texto:first-child::before
+{
+    content: "#";
+    margin-right: 3.325em;
+}
+
+/* Estilos generales del contenedor del examen */
+.examenEspecifico
+{
+    height: 4.0625em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 516px repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    padding: 1em 1.625em;
+    /* border: 1px solid red; */
+    border-radius: 8px;
+    background: var(--fuente);
+    margin-bottom: 1.2em;
+    box-shadow: 0px 0px 15px -5px var(--sombras);
+}
+
+/* Estilos necesarios para centrar los elementos verticalmente en sus columnas */
+.examenEspecifico-ColTitulo,
+.examenEspecifico-ColTiempo,
+.examenEspecifico-ColHorario,
+.examenEspecifico-ColCta
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilos necesario para centrar el boton en su posicion deseada */
+.examenEspecifico-ColCta
+{
+    justify-content: flex-end;
+}
+
+/* Estilos necesario para mostrar la enumeracion de los examenes */
+.examenEspecifico .titulosCard::before
+{
+    counter-increment: ExaCounter;
+    content: counter(ExaCounter)". ";
+    margin-right: 2.85em;
+}
+
+/* Estilos generales del boton que activa el modal con la vista detalle del examen */
+.btn-detallesExamen
+{
+    color: var(--resaltante);
+    font-size: .75em;
+    padding: .5em 1.25em;
+    border: 1px solid;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    cursor: pointer;
+}
+
+/* Estilo que se aplica al hacer hover en el boton que activa el modal en los examenes */
+.btn-detallesExamen:hover
+{
+    background: var(--resaltante);
+    color: var(--fuente);
+}
+
+/* Estilo general del overlay */
+.overlay
+{
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: rgba(64,64,64, .85);
+    backdrop-filter: saturate(100%) blur(5px);
+    z-index: 1;
+    display: none;
+}
+
+/* Estilo que muestra el modal */
+.overlay.active
+{
+    display: flex;
+}
+
+/* Estilos general del modal */
+.modal
+{
+    min-height: 34.375em;
+    width: 28.125em;
+    border-radius: 8px;
+    background: var(--bgModal);
+    padding: 1.875em;
+    animation: mostrarModal 1150ms linear both;
+    box-shadow: 5px 5px 10px -2px rgba(0,0,0, .5);
+}
+
+/* Estilo general de los titulos de en el modal */
+.tituloModal
+{
+    font-size: .875em;
+    font-weight: 500;
+    color: var(--resaltante);
+}
+
+/* Estilo del boton que cierra el modal */
+.btn-modal
+{
+    font-size: .75em;
+    color: var(--arrowAzul);
+    padding: 1em 2em;
+    border: 1px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 7.29583em;
+    margin: 2em auto 0;
+    display: block;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Estilo que se aplica al hacer hover en el boton que cierra el modal */
+.btn-modal:hover
+{
+    background: var(--arrowAzul);
+    color: var(--fuente);
+}
+
+/* Correcion aplicada al modal de Quimica Urinaria */
+.seleccionModal
+{
+    min-height: auto;
+}
+
+/* Pequeño ajuste para quitar el underline de los a en la quimica urinaria */
+.linkTipoMuestra
+{
+    text-decoration: none;
+}
+
+/*
+    Estilo general para el contendor de las cards de los tipos de muestras
+*/
+.contenedornMuestra
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+/*  Estilo general de las cards que contiene el icono y los textos */
+.contenedorMuestra
+{
+    height: 10.5em;
+    width: 10em;
+    border: 1px solid rgba(39, 22, 22, 0.25);
+    border-radius: 8px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+    box-shadow: 0px 0px 15px -5px var(--sombras);
+}
+
+/*  Estilo aplicadoo a la card cuando se hace hover */
+.linkTipoMuestra:hover .contenedorMuestra
+{
+    border: 1px solid var(--resaltante);
+    transform: scale(1.02);
+}
+
 /* Animacion del texto que rota en el Hero */
 @keyframes moverTexto
 {
@@ -1719,5 +2103,58 @@ h2.titulo
     20%,60%
     {
         transform: scale(1.2);
+    }
+}
+
+/* animacion para mostrar el modal de la vista detalle de los examenes */
+@keyframes mostrarModal
+{
+    0%
+    {
+        transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    3.1%
+    {
+        transform: matrix3d(0.486, 0, 0, 0, 0, 0.486, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    6.21%
+    {
+        transform: matrix3d(0.878, 0, 0, 0, 0, 0.878, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    9.31%
+    {
+        transform: matrix3d(1.084, 0, 0, 0, 0, 1.084, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    12.41%
+    {
+        transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    20.12%
+    {
+        transform: matrix3d(1.031, 0, 0, 0, 0, 1.031, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    27.73%
+    {
+        transform: matrix3d(0.985, 0, 0, 0, 0, 0.985, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    43.14%
+    {
+        transform: matrix3d(1.002, 0, 0, 0, 0, 1.002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    58.56%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    73.97%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    89.39%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
     }
 }

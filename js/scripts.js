@@ -141,6 +141,13 @@ const horarioWeekend = "8:00am - 12:00pm";
 
     // ===== Terminan  las variables usadas en el filtro de las faqs
 
+    // ===== Empiezan  las variables usadas en el modal
+        // Capturo en una variable al overlay
+        const overlay = document.querySelector(".js-overlay");
+        // Capturo en una variable al boton para cerrrar el modal
+        const cerraModal = document.querySelector(".js-btnModal");
+    // ===== Terminan  las variables usadas en el modal
+
 // ============= * TERMINAN LAS DECLARACIONES GENERALES DE VARIABLES * =============\\
 
 
@@ -150,10 +157,6 @@ const horarioWeekend = "8:00am - 12:00pm";
         telefono.innerText= numeroTelefono;
         // href que marca
         telefono.href="telf:+" + numeroTelefono;
-        // Texto que marca el widget
-        textoTelefono.innerText = numeroTelefono
-        // href que marca el widget
-        linkTelefono.href="telf:+" + numeroTelefono;
     // ===== Termina el telefono
 
     // ===== Empieza la direccion
@@ -231,11 +234,88 @@ function validarMenu()
     else if(tituloPagina=="Nosotros — Vitales Laboratorios")
     {
         elementosMenu[1].classList.add("selected");
+
+        // Texto que marca el widget
+        textoTelefono.innerText = numeroTelefono
+        // href que marca el widget
+        linkTelefono.href="telf:+" + numeroTelefono;
     }
     // Si estoy en los examenes
-    else if(tituloPagina=="Exámenes")
+    else if(tituloPagina=="Examanes — Vitales Laboratorios")
     {
         elementosMenu[3].classList.add("selected");
+    }
+    // Si estoy en la página de las hematologias
+    else if(tituloPagina=="Hematologías — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarHematologias();
+    }
+    // Si estoy en la pagina de serologías
+    else if(tituloPagina=="Serologías — Exámenes")
+    {
+       // Cargo los datos de los examenes
+       cargarSerologias();
+    }
+    // Si estoy en la pagina de la quimica sanguinea
+    else if(tituloPagina=="Química sanguínea — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarQSanguinea();
+    }
+    // Si estoy en la página de marcadores tumorales
+    else if(tituloPagina=="Marcadores tumorales — Exámenes")
+    {
+        // cargo los datos de los examenes
+        cargarMTumorales();
+    }
+    // Si estoy en la pagina de hormonas
+    else if(tituloPagina=="Hormonas — Exámenes")
+    {
+        // cargo los datos de los examanes
+        cargarHormonas();
+    }
+    // Si estoy en la pagina de inmunologia
+    else if(tituloPagina=="Inmunología — Exámenes")
+    {
+        // cargo los datos de los examenes
+        cargarInmunologia();
+    }
+    // Si estoy en la pagina de uroanalisis
+    else if(tituloPagina=="Uroanálisis — Exámenes")
+    {
+        // cargo los datos de los examenes
+        cargarUroanalisis();
+    }
+    // Si estoy en la pagina de coprologia
+    else if(tituloPagina=="Coprología — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarCoprologia();
+    }
+    // Si estoy en la pagina de la orina casual
+    else if(tituloPagina=="Química urinaria (Casual) — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarQUCasual();
+    }
+    // Si estoy en la pagina de todo el dia
+    else if(tituloPagina=="Química urinaria (24H) — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarQUDia();
+    }
+    // si estoy en la pagina de los espermatogramas
+    else if(tituloPagina=="Espermatograma — Exámenes")
+    {
+        // cargo los datos de los examenes
+        cargarEspermatograma();
+    }
+    // Si estoy en la pagina de gasometria
+    else if(tituloPagina=="Gasometría — Exámenes")
+    {
+        // Cargo los datos de los examenes
+        cargarGasometria();
     }
 }
 
@@ -270,6 +350,11 @@ function datosIndex()
         textoTelefonoContacto.innerText= numeroTelefono;
         // href que tiene en contacto
         linkTelefonoContacto.href= "telf:+" + numeroTelefono;
+
+        // Texto que marca el widget
+        textoTelefono.innerText = numeroTelefono
+        // href que marca el widget
+        linkTelefono.href="telf:+" + numeroTelefono;
 
     // ===== Termina otros datos
 
@@ -473,3 +558,2179 @@ function datosIndex()
     }
     // ============= * Termina la funcion usada por el filtro de las FAQs* =============\\
 }
+
+// ============= * Empieza funcion que carga los datos de las Hematologias* =============\\
+function cargarHematologias()
+{
+    // Figura literaria para el primer examen
+    var hema0=
+    {
+        titulo: "Hematología completa",
+        categoria: "Hematología",
+        listo: "4 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el segundo examen
+    var hema1=
+    {
+        titulo: "PT",
+        categoria: "Hematología",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (plasma)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el tercer examen
+    var hema2=
+    {
+        titulo: "PTT",
+        categoria: "Hematología",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (plasma)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el cuarto examen
+    var hema3=
+    {
+        titulo: "Velocidad de Sedimentación globular (VSG)",
+        categoria: "Hematología",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el quinto examen
+    var hema4=
+    {
+        titulo: "Grupo sanguíneo",
+        categoria: "Hematología",
+        listo: "4 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el sexto examen
+    var hema5=
+    {
+        titulo: "Drepanocitos",
+        categoria: "Hematología",
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el septimo examen
+    var hema6=
+    {
+        titulo: "Frotis de sangre periférica",
+        categoria: "Hematología",
+        listo: "4 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el octavo examen
+    var hema7=
+    {
+        titulo: "Fibrinógeno",
+        categoria: "Hematología",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (plasma)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el noveno examen
+    var hema8=
+    {
+        titulo: "Reticulocitos",
+        categoria: "Hematología",
+        listo: "4 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el decimo examen
+    var hema9=
+    {
+        titulo: "Gota gruesa",
+        categoria: "Hematología",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre total",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [hema0, hema1, hema2, hema3, hema4, hema5, hema6, hema7, hema8, hema9];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de las Hematologias* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de las Serologias* =============\\
+function cargarSerologias()
+{
+    // Figura literaria para el primer examen
+    var sero0=
+    {
+        titulo: "ASTO",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el segundo examen
+    var sero1=
+    {
+        titulo: "RA Test",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el tercer examen
+    var sero2=
+    {
+        titulo: "Monotest",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el cuarto examen
+    var sero3=
+    {
+        titulo: "PCR Cualitativo",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el quinto examen
+    var sero4=
+    {
+        titulo: "PCR  Cuantificado",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el sexto examen
+    var sero5=
+    {
+        titulo: "Antígenos febriles",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el septimo examen
+    var sero6=
+    {
+        titulo: "Helicobacter Pylori",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el octavo examen
+    var sero7=
+    {
+        titulo: "Dengue Test",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el noveno examen
+    var sero8=
+    {
+        titulo: "HIV prueba rápida",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el decimo examen
+    var sero9=
+    {
+        titulo: "Prueba de embarazo",
+        categoria: "Serologías",
+        listo: "1 hora",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el decimo primero examen
+    var sero10=
+    {
+        titulo: "LE Test",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el decimo segundo examen
+    var sero11=
+    {
+        titulo: "Malaria",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Figura literaria para el decimo tercero examen
+    var sero12=
+    {
+        titulo: "VDRL",
+        categoria: "Serologías",
+        listo: "4-6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:30 p.m."
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        sero0, sero1, sero2, sero3, sero4, sero5,
+                        sero6, sero7, sero8, sero9, sero10, sero11,
+                        sero12
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de las Serologias* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de las Quimica Sanguinea * =============\\
+function cargarQSanguinea()
+{
+    // Figura literaria para el primer examen
+    var qsanguinea0=
+    {
+        titulo: "Glicemia basal",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el segundo examen
+    var qsanguinea1=
+    {
+        titulo: "Glicemia post prandial",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el tercer examen
+    var qsanguinea2=
+    {
+        titulo: "Urea",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el cuarto examen
+    var qsanguinea3=
+    {
+        titulo: "Creatinina",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el quinto examen
+    var qsanguinea4=
+    {
+        titulo: "Colesterol total",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el sexto examen
+    var qsanguinea5=
+    {
+        titulo: "Colesterol fraccionado (HDL , LDL , VLDL)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el septimo examen
+    var qsanguinea6=
+    {
+        titulo: "Triglicéridos",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el octavo examen
+    var qsanguinea7=
+    {
+        titulo: "Ácido úrico",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el noveno examen
+    var qsanguinea8=
+    {
+        titulo: "TGO (AST)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo examen
+    var qsanguinea9=
+    {
+        titulo: "TGP (ALT)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo primero examen
+    var qsanguinea10=
+    {
+        titulo: "Gamma GlutamilTransferasa (GGT)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo segundo examen
+    var qsanguinea11=
+    {
+        titulo: "Amilasa",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo tercero examen
+    var qsanguinea12=
+    {
+        titulo: "Lipasa",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo cuarto examen
+    var qsanguinea13=
+    {
+        titulo: "Deshidrogenasa Láctica (LDH)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo quinto examen
+    var qsanguinea14=
+    {
+        titulo: "Fosfatasa Ácida Total",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo sexto examen
+    var qsanguinea15=
+    {
+        titulo: "Fosfatasa Alcalina (ALP)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo septo examen
+    var qsanguinea16=
+    {
+        titulo: "Fosfatasa Ácida Prostática",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo octavo examen
+    var qsanguinea17=
+    {
+        titulo: "Calcio",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el decimo noveno examen
+    var qsanguinea18=
+    {
+        titulo: "Fósforo",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo examen
+    var qsanguinea19=
+    {
+        titulo: "Hierro",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo primero examen
+    var qsanguinea20=
+    {
+        titulo: "Magnesio",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo segundo examen
+    var qsanguinea21=
+    {
+        titulo: "CK Total (CPK Total)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo tercer examen
+    var qsanguinea22=
+    {
+        titulo: "CK-MB",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo cuarto examen
+    var qsanguinea23=
+    {
+        titulo: "Cloro",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo quinto examen
+    var qsanguinea24=
+    {
+        titulo: "Sodio",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo sexto examen
+    var qsanguinea25=
+    {
+        titulo: "Potasio",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo septimo examen
+    var qsanguinea26=
+    {
+        titulo: "Proteínas totales y fraccionadas",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo octavo examen
+    var qsanguinea27=
+    {
+        titulo: "Bilirrubina total y fraccionada",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el vigesimo noveno examen
+    var qsanguinea28=
+    {
+        titulo: "PTOG 3 muestras (Prueba de tolerancia oral a la glucosa)",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+    // Figura literaria para el trigesimo  examen
+    var qsanguinea29=
+    {
+        titulo: "PTOG 4 muestras",
+        categoria: "Química sanguínea",
+        listo: "falta",
+        condicion: "falta",
+        tipoMuestra: "falta",
+        horarioMuestra: "falta"
+    }
+
+
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        qsanguinea0, qsanguinea1, qsanguinea2, qsanguinea3, qsanguinea4, qsanguinea5,
+                        qsanguinea6, qsanguinea7, qsanguinea8, qsanguinea9, qsanguinea10, qsanguinea11,
+                        qsanguinea12, qsanguinea13, qsanguinea14, qsanguinea15, qsanguinea16, qsanguinea17,
+                        qsanguinea18, qsanguinea19, qsanguinea20, qsanguinea21, qsanguinea22, qsanguinea23,
+                        qsanguinea24, qsanguinea25, qsanguinea26, qsanguinea27, qsanguinea28, qsanguinea29
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de las Quimica Sanguinea * =============\\
+
+
+// ============= * Empieza funcion que carga los datos de los marcadores Tumorales * =============\\
+function cargarMTumorales()
+{
+    // Figura literaria para el primer examen
+    var mt0=
+    {
+        titulo: "CEA",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el segundo examen
+    var mt1=
+    {
+        titulo: "AFP",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el tercer examen
+    var mt2=
+    {
+        titulo: "CA 125",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el cuarto examen
+    var mt3=
+    {
+        titulo: "CA 19-9",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el quinto examen
+    var mt4=
+    {
+        titulo: "CA15-3",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el sexto examen
+    var mt5=
+    {
+        titulo: "PSA total",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el septimo examen
+    var mt6=
+    {
+        titulo: "PSA libre",
+        categoria: "Marcadores tumorales",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [mt0, mt1, mt2, mt3, mt4, mt5, mt6];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de los marcadores Tumorales* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de las hormonas* =============\\
+function cargarHormonas()
+{
+    // Figura literaria para el primer examen
+    var horm0=
+    {
+        titulo: "T3 Total",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el segundo examen
+    var horm1=
+    {
+        titulo: "T3 Libre",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el tercer examen
+    var horm2=
+    {
+        titulo: "T4 Total",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el cuarto examen
+    var horm3=
+    {
+        titulo: "T4 Libre",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el quinto examen
+    var horm4=
+    {
+        titulo: "TSH",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el sexto examen
+    var horm5=
+    {
+        titulo: "LH",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el septimo examen
+    var horm6=
+    {
+        titulo: "FSH",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el octavo examen
+    var horm7=
+    {
+        titulo: "Progesterona",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el noveno examen
+    var horm8=
+    {
+        titulo: "Estradiol",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo examen
+    var horm9=
+    {
+        titulo: "Prolactina",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo primero examen
+    var horm10=
+    {
+        titulo: "Insulina",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo segundo examen
+    var horm11=
+    {
+        titulo: "Testosterona Total",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo tercero examen
+    var horm12=
+    {
+        titulo: "Testosterona Libre",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo cuarto examen
+    var horm13=
+    {
+        titulo: "17 OHP",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo quinto examen
+    var horm14=
+    {
+        titulo: "DHEA-S",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo sexto examen
+    var horm15=
+    {
+        titulo: "Cortisol",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo septimo examen
+    var horm16=
+    {
+        titulo: "βHCG",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo octavo examen
+    var horm17=
+    {
+        titulo: "PTH (Parathormona)",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el decimo noveno examen
+    var horm18=
+    {
+        titulo: "ACTH",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el vigesimo examen
+    var horm19=
+    {
+        titulo: "HGH (Hormana de crecimiento)",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el vigesimo primer examen
+    var horm20=
+    {
+        titulo: "Aldosterona",
+        categoria: "Hormonas",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        horm0, horm1, horm2, horm3, horm4, horm5, horm6, horm7, horm8, horm9,
+                        horm10, horm11, horm12, horm13, horm14, horm15, horm16, horm17, horm18,
+                        horm19, horm20
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de las hormonas* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Inmunologia* =============\\
+function cargarInmunologia()
+{
+    // Figura literaria para el 1 examen
+    var inmu0=
+    {
+        titulo: "Inmunoglobulina A (IgA)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 2 examen
+    var inmu1=
+    {
+        titulo: "Inmunoglobulina G (IgG)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 3 examen
+    var inmu2=
+    {
+        titulo: "Inmunoglobulina M (IgM)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 4 examen
+    var inmu3=
+    {
+        titulo: "Inmunoglobulina E (IgE)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 5 examen
+    var inmu4=
+    {
+        titulo: "MycoplasmaPneumoniaeIgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 6 examen
+    var inmu5=
+    {
+        titulo: "MycoplasmaPneumoniaeIgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 7 examen
+    var inmu6=
+    {
+        titulo: "Chlamydia PneumoniaeIgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 8 examen
+    var inmu7=
+    {
+        titulo: "Chlamydia PneumoniaeIgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 9 examen
+    var inmu8=
+    {
+        titulo: "Chlamydia TrachomatisigG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 10 examen
+    var inmu9=
+    {
+        titulo: "Chlamydia TrachomatisigM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el  11 examen
+    var inmu10=
+    {
+        titulo: "Toxoplasma IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 12 examen
+    var inmu11=
+    {
+        titulo: "Toxoplasma IgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 13 examen
+    var inmu12=
+    {
+        titulo: "Epstein BarrIgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 14 examen
+    var inmu13=
+    {
+        titulo: "Epstein BarrIgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 15 examen
+    var inmu14=
+    {
+        titulo: "CitomegalovirusIgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 16 examen
+    var inmu15=
+    {
+        titulo: "CitomegalovirusIgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 17 examen
+    var inmu16=
+    {
+        titulo: "Helicobacter Pylori IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 18 examen
+    var inmu17=
+    {
+        titulo: "Helicobacter Pylori IgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 19 examen
+    var inmu18=
+    {
+        titulo: "HSV I IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 20 examen
+    var inmu19=
+    {
+        titulo: "HSV II IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 21 examen
+    var inmu20=
+    {
+        titulo: "HSV II IgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 22 examen
+    var inmu21=
+    {
+        titulo: "Troponina I",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 23 examen
+    var inmu22=
+    {
+        titulo: "Procalcitonina",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 24 examen
+    var inmu23=
+    {
+        titulo: "NT pro BNP",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 25 examen
+    var inmu24=
+    {
+        titulo: "A.N.A",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 26 examen
+    var inmu25=
+    {
+        titulo: "Anti-D.N.A",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 27 examen
+    var inmu26=
+    {
+        titulo: "Complemento C3",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 28 examen
+    var inmu27=
+    {
+        titulo: "ComplementoC4",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 29 examen
+    var inmu28=
+    {
+        titulo: "Complemento CH50",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 30 examen
+    var inmu29=
+    {
+        titulo: "Hepatitis A IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 31 examen
+    var inmu30=
+    {
+        titulo: "Hepatitis A IgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 32 examen
+    var inmu31=
+    {
+        titulo: "Hepatitis B HBsAg",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 33 examen
+    var inmu32=
+    {
+        titulo: "Hepatitis B anti HBs",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 34 examen
+    var inmu33=
+    {
+        titulo: "Hepatitis B anti  HBc",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 35 examen
+    var inmu34=
+    {
+        titulo: "Hepatitis C",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 36 examen
+    var inmu35=
+    {
+        titulo: "Rubéola IgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 37 examen
+    var inmu36=
+    {
+        titulo: "Rubéola IgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 38 examen
+    var inmu37=
+    {
+        titulo: "HIV (Elisa)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 39 examen
+    var inmu38=
+    {
+        titulo: "Vitamina B12",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 40 examen
+    var inmu39=
+    {
+        titulo: "Vitamina D",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 41 examen
+    var inmu40=
+    {
+        titulo: "AnticardiolipinasIgG",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 42 examen
+    var inmu41=
+    {
+        titulo: "Anti cardiolipinasIgM",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 43 examen
+    var inmu42=
+    {
+        titulo: "Anticuerpos antitiroglobulina (Anti TG)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 44 examen
+    var inmu43=
+    {
+        titulo: "Anticuerpos antimicrosomales (anti TPO)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 45 examen
+    var inmu44=
+    {
+        titulo: "Tiroglobulina",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 46 examen
+    var inmu45=
+    {
+        titulo: "Ferritina",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 47 examen
+    var inmu46=
+    {
+        titulo: "Transferritina",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 48 examen
+    var inmu47=
+    {
+        titulo: "Hemoglobina glicosilada (HbA1c)",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 49 examen
+    var inmu48=
+    {
+        titulo: "Peptido C",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 50 examen
+    var inmu49=
+    {
+        titulo: "Dímero D",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 51 examen
+    var inmu50=
+    {
+        titulo: "Dímero D",
+        categoria: "Inmunología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        inmu0, inmu1, inmu2, inmu3, inmu4, inmu5, inmu6, inmu7, inmu8, inmu9,
+                        inmu10, inmu11, inmu12, inmu13, inmu14, inmu15, inmu16, inmu17, inmu18,
+                        inmu19, inmu20,inmu21, inmu22, inmu23, inmu24, inmu25, inmu26, inmu27,
+                        inmu28, inmu29, inmu30, inmu31, inmu32, inmu33, inmu34, inmu35, inmu36,
+                        inmu37, inmu38, inmu39, inmu40, inmu41, inmu42, inmu43, inmu44, inmu45,
+                        inmu46, inmu47, inmu48,inmu49, inmu50
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Inmunologia* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Uroanalisis* =============\\
+function cargarUroanalisis()
+{
+    // Figura literaria para el primer examen
+    var uro0=
+    {
+        titulo: "Examen general de orina",
+        categoria: "Uroanálisis",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el segundo examen
+    var uro1=
+    {
+        titulo: "Urocultivo",
+        categoria: "Uroanálisis",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [uro0, uro1];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Uroanalisis* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Coprologia* =============\\
+function cargarCoprologia()
+{
+    // Figura literaria para el 1 examen
+    var copro0=
+    {
+        titulo: "Coproanálisis",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 2 examen
+    var copro1=
+    {
+        titulo: "PH",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 3 examen
+    var copro2=
+    {
+        titulo: "Azúcares reductores",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 4 examen
+    var copro3=
+    {
+        titulo: "Leucograma fecal",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 5 examen
+    var copro4=
+    {
+        titulo: "Sangre oculta en heces",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 6 examen
+    var copro5=
+    {
+        titulo: "Helicobacter Pylori",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 7 examen
+    var copro6=
+    {
+        titulo: "Coprocultivo",
+        categoria: "Coprología",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [copro0, copro1, copro2, copro3, copro4, copro5, copro6];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Coprologia* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Quimica Urinaria (Casual)* =============\\
+function cargarQUCasual()
+{
+    // Figura literaria para el 1 examen
+    var casual0=
+    {
+        titulo: "Calcio",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 2 examen
+    var casual1=
+    {
+        titulo: "Creatinina",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 3 examen
+    var casual2=
+    {
+        titulo: "Ácido Úrico",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 4 examen
+    var casual3=
+    {
+        titulo: "Fósforo",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 5 examen
+    var casual4=
+    {
+        titulo: "Proteínas",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 6 examen
+    var casual5=
+    {
+        titulo: "Relación calcio/creatinina",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 7 examen
+    var casual6=
+    {
+        titulo: "Relación ácido úrico/creatinina",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 8 examen
+    var casual7=
+    {
+        titulo: "Relación proteínas/creatinina",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 9 examen
+    var casual8=
+    {
+        titulo: "Relación fósforo/creatinina",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 10 examen
+    var casual9=
+    {
+        titulo: "Electrolitos (sodio, potasio, cloro)",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 11 examen
+    var casual10=
+    {
+        titulo: "Microalbuminuria",
+        categoria: "Química urinaria (Orina Casual)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        casual0, casual1, casual2, casual3, casual4, casual5, casual6,
+                        casual7, casual8, casual9, casual10
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Quimica Urinaria (Casual)* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Quimica Urinaria (24H)* =============\\
+function cargarQUDia()
+{
+    // Figura literaria para el 1 examen
+    var quDia0=
+    {
+        titulo: "Depuración de creatinina",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 2 examen
+    var quDia1=
+    {
+        titulo: "Proteinuria 24 horas",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 3 examen
+    var quDia2=
+    {
+        titulo: "Calcio",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 4 examen
+    var quDia3=
+    {
+        titulo: "Creatinina",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 5 examen
+    var quDia4=
+    {
+        titulo: "Ácido Úrico",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 6 examen
+    var quDia5=
+    {
+        titulo: "Fósforo",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 7 examen
+    var quDia6=
+    {
+        titulo: "Electrolitos orina  (sodio, potasio, cloro)",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 8 examen
+    var quDia7=
+    {
+        titulo: "Microalbuminuria",
+        categoria: "Química urinaria (Orina de 24 horas)",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [
+                        quDia0, quDia1, quDia2, quDia3, quDia4, quDia5, quDia6,
+                        quDia7
+                    ];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Quimica Urinaria (24H)* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Espermatograma* =============\\
+function cargarEspermatograma()
+{
+    // Figura literaria para el 1 examen
+    var esperma0=
+    {
+        titulo: "Espermatograma",
+        categoria: "Espermatograma",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [esperma0];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Espermatograma* =============\\
+
+
+// ============= * Empieza funcion que carga los datos de Gasometria* =============\\
+function cargarGasometria()
+{
+    // Figura literaria para el 1 examen
+    var gaso0=
+    {
+        titulo: "Gasometría venosa",
+        categoria: "Gasometría",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Figura literaria para el 2 examen
+    var gaso1=
+    {
+        titulo: "Gasometría arterial",
+        categoria: "Gasometría",
+        listo: "",
+        condicion: "",
+        tipoMuestra: "",
+        horarioMuestra: ""
+    }
+
+    // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
+    var todosLosDatos = [];
+    // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
+    todosLosDatos = [gaso0, gaso1];
+    // Creo una variable para saber la cantidad de examenes
+    const cantidadDeExamenes= todosLosDatos.length;
+    // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
+    mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+}
+// ============= * Termina funcion que carga los datos de Gasometria* =============\\
+
+
+// ============= * Empieza  la funcion que se REUTILIZA para MOSTRAR los EXAMENES y SUS DETALLES* =============\\
+function mostrarExamenes(todosLosDatos, cantidadDeExamenes)
+{
+    //Asigno la cantidad total de examenes al contador
+    var totalExamenes = document.querySelector(".js-cantidad");
+    totalExamenes.innerText= cantidadDeExamenes;
+
+    // Creo la forma para cerrar el overlay
+    cerraModal.addEventListener("click", ()=>{
+        overlay.classList.toggle("active");
+    });
+
+    // Datos necesarios para actualizar el breadcrumps y el titulo
+    // Capturo el breadcrumps
+    const breadcrumps = document.querySelector(".js-breadcrumps");
+    // Capturo el titulo de la categoria
+    const tituloCategoria = document.querySelector(".js-titulo");
+    // Asigno los datos al breadcrumps
+    breadcrumps.innerText = todosLosDatos[0].categoria;
+    // Asigno el titutlo
+    tituloCategoria.innerText = breadcrumps.textContent;
+
+    // Creo un ciclo  para crear cada elemento del examen (DEBO SABER CUANTOS SON)
+    for(i=0; i<cantidadDeExamenes; i++)
+    {
+        // Creo Las constantes que seran los elementos a crearse mediante JS
+            // Creo una constante que sera el el article del examen
+            const examen = document.createElement("article")
+            // Creo la columna donde irá el titulo del examen
+            const colTitulo = document.createElement("div");
+            // Creo la columna donde irá el tiempo de entrega del examen
+            const colTiempo = document.createElement("div");
+            // Creo la columna donde irá el horario de recoleccion del examen
+            const colHorario = document.createElement("div");
+            // Creo la columna donde irá el boton para activar el modal
+            const colBoton = document.createElement("div");
+
+            // Creo una constante que sera el titulo del examen
+            const examenTitulo = document.createElement("h2");
+            // Creo una constante que sera el tiempo de entrega del examen
+            const examenTiempo =document.createElement("p");
+            // Creo una constate que sera el horario de recoleccion para el examen
+            const examenHorario = document.createElement("p");
+            // Creo una constante que sera el boton de detalles
+            const examenBoton = document.createElement("span");
+
+
+        // Les doy clases a los elementos que se crearan
+            // Le doy las clases necesarias  para los estilos de la card
+            examen.classList.add("examenEspecifico");
+            // Le doy la clase necesaria a la columna donde irá el titulo
+            colTitulo.classList.add("examenEspecifico-ColTitulo");
+            // Le doy la clase necesaria a la columna donde irá el tiempo
+            colTiempo.classList.add("examenEspecifico-ColTiempo");
+            // Le doy la clase necesaria a la columna donde irá el horario
+            colHorario.classList.add("examenEspecifico-ColHorario");
+            // Le doy la clase necesaria a la columna donde irá el boton
+            colBoton.classList.add("examenEspecifico-ColCta");
+            // Le doy las clases necesaria para Cargar el titulo
+            examenTitulo.classList.add("js-titulo-examen");
+            // Le doy la clase necesaria para el estilo del titulo
+            examenTitulo.classList.add("titulosCard");
+            // Le doy la clase necesaria para cargar el tiempo de entrega
+            examenTiempo.classList.add("js-tiempo-examen");
+            // Le doy la clase necesaria para el estilo del tiempo de entrega
+            examenTiempo.classList.add("parrafo");
+            // Le doy la clase necesaria para cargar el horario de entrega
+            examenHorario.classList.add("js-horario-examen");
+            // Le doy la clase necesaria para cargar los estilos al tiempo de entrega
+            examenHorario.classList.add("parrafo");
+            // le doy la clase necesearia al boton de detalles para el escuchar de eventos
+            examenBoton.classList.add("js-btn-detallesExamen");
+            // Le doy la clase necesaria al boton para los detalles esteticos
+            examenBoton.classList.add("btn-detallesExamen");
+
+
+        // Introduzco el elemento en su respectivo contenedor HTML
+            // Introduzco el examen creado en su contenedor en el HTML
+            document.querySelector(".js-listadoDeExamenes-Contenedor").appendChild(examen);
+            // guardo en una variable a los examenes
+            var arreExamanesCard = document.querySelectorAll(".examenEspecifico");
+
+            // Introduzco la columna  donde irá el titulo del examen en su contenedor HTML
+            arreExamanesCard[i].appendChild(colTitulo);
+            // Introduzco la columna donde irá el tiempo de entrega del examen en su contenedor HTML
+            arreExamanesCard[i].appendChild(colTiempo);
+            // Introduzco la columna donde irá el horario de entrega en su contenedor HTMl
+            arreExamanesCard[i].appendChild(colHorario);
+            // Introduzco la columna donde irá el boton en su contenedor HTML
+            arreExamanesCard[i].appendChild(colBoton);
+
+            // Guardo en una variable a las columnas de los titulos
+            var arreColTitulo = document.querySelectorAll(".examenEspecifico-ColTitulo");
+            // Guardo en una variable a las columnas de los tiempos de entrega
+            var arreColTiempo = document.querySelectorAll(".examenEspecifico-ColTiempo");
+            // Guardo en una variable a las columnas donde iras los horarios
+            var arreColHorario = document.querySelectorAll(".examenEspecifico-ColHorario");
+            // Guardo en una variable a las columnas donde ira el boton
+            var arreColBoton = document.querySelectorAll(".examenEspecifico-ColCta");
+
+
+            // Intrododuzco el titulo en su contenedor HTML
+            arreColTitulo[i].appendChild(examenTitulo);
+            // Introduzco el tiempo de entrega en su contenedor HTML
+            arreColTiempo[i].appendChild(examenTiempo);
+            // Introduzco el horario en su contenedor HTML
+            arreColHorario[i].appendChild(examenHorario);
+            // Introduzco el boton en su contenedor HTML
+            arreColBoton[i].appendChild(examenBoton);
+
+
+
+            // Creo una variable donde guardare todos los titulos de los examenes
+            var arreTituloExamen = document.querySelectorAll(".js-titulo-examen");
+            // Creo una variable donde guardare todos los tiempos de entrega de los examenes
+            var arreTiempoExamen = document.querySelectorAll(".js-tiempo-examen");
+            // Creo una variable donde guardare todos los horarios de los examenes
+            var arreHorarioExamen = document.querySelectorAll(".js-horario-examen");
+            // Creo una variable donde guardare todos los botoenes de los examenes
+            var arreBotonExamen = document.querySelectorAll(".js-btn-detallesExamen");
+
+
+        // Asigno los datos de los examenes
+            // Asigno el titulo
+            arreTituloExamen[i].innerText = todosLosDatos[i].titulo;
+            // Asigno el tiempo de entrega
+            arreTiempoExamen[i].innerText = todosLosDatos[i].listo;
+            // asigno el horario de recoleccion
+            arreHorarioExamen[i].innerText = todosLosDatos[i].horarioMuestra;
+            // Asigno el texto del boton
+            arreBotonExamen[i].innerText = "Ver detalles";
+
+        // // Creo los escuchadores de eventos para los botones
+        examenBoton.addEventListener("click", (event)=>{
+            // Capturo en una variable a el titulo
+            var tituloExamenModal= document.querySelector(".js-titulo-examen-modal");
+            // Capturo en una variable a la categoria
+            var categoriaExamenModal = document.querySelector(".js-categoria-examen-modal");
+            // Capturo en una variable al tiempo de entrega
+            var tiempoExamenModal = document.querySelector(".js-tiempo-examen-modal");
+            // Capturo en una variable a la condicion del examen
+            var condicionExamenModal= document.querySelector(".js-condicion-examen-modal");
+            // Capturo en una variable a la muestra requerida
+            var muestraExamenModal = document.querySelector(".js-muestra-examen-modal");
+            // capturo en una variable al horario de extraccion
+            var horarioExamenModal= document.querySelector(".js-horario-examen-modal");
+
+            for(i=0; i<arreBotonExamen.length; i++)
+            {
+                if(event.target===arreBotonExamen[i])
+                {
+                    // Asigno los datos correspondientes
+                    tituloExamenModal.innerText = todosLosDatos[i].titulo;
+                    categoriaExamenModal.innerText = todosLosDatos[i].categoria;
+                    tiempoExamenModal.innerText= todosLosDatos[i].listo;
+                    condicionExamenModal.innerText= todosLosDatos[i].condicion;
+                    muestraExamenModal.innerText = todosLosDatos[i].tipoMuestra;
+                    horarioExamenModal.innerText = todosLosDatos[i].horarioMuestra;
+                    // Muestro el overlay
+                    overlay.classList.add("active");
+                    // Salgo del ciclo
+                    break;
+                }
+            }
+        });
+    }
+}
+// ============= * termina  la funcion que se REUTILIZA para MOSTRAR los EXAMENES y SUS DETALLES* =============\\
+
+
