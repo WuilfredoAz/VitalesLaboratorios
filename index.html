@@ -50,7 +50,7 @@
         <link rel="stylesheet" href="css/styles.css">
 
         <!-- JS's -->
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
 
         <!-- Google Analytics-->
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -102,9 +102,9 @@
                         <ul>
                             <li><a class="js-menuLink" href="/">Inicio</a></li>
                             <li><a class="js-menuLink" href="/nosotros.html">Nosotros</a></li>
-                            <li><a class="js-menuLink" href="#">Servicios</a></li>
+                            <li><a class="js-menuLink" href="#servicios">Servicios</a></li>
                             <li><a class="js-menuLink" href="/examenes.html">Exámenes</a></li>
-                            <li><a class="js-menuLink" href="#">Contacto</a></li>
+                            <li><a class="js-menuLink" href="#contacto">Contacto</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -113,27 +113,29 @@
         <main role="main">
             <section class="hero">
                 <div class="centro">
-                    <p class="epigrafe">Bienvenidos a</p>
-                    <h1 class="titulo">Vitales Laboratorios</h1>
-                    <h2 class="titulo">Servimos a tu salud con
-                        <span class="tituloLista">
-                            <span class="rotate">excelentes profesionales.</span>
-                            <span class="rotate">tecnología de punta.</span>
-                            <span class="rotate">la mayor rapidez.</span>
-                            <span class="rotate">precios competitivos.</span>
-                        </span>
-                    </h2>
-                    <p class="parrafo">
+                    <div class="animado">
+                        <p class="epigrafe">Bienvenidos a</p>
+                        <h1 class="titulo">Vitales Laboratorios</h1>
+                        <h2 class="titulo">Servimos a tu salud con
+                            <span class="tituloLista">
+                                <span class="rotate">excelentes profesionales.</span>
+                                <span class="rotate">tecnología de punta.</span>
+                                <span class="rotate">la mayor rapidez.</span>
+                                <span class="rotate">precios competitivos.</span>
+                            </span>
+                        </h2>
+                    </div>
+                    <p class="animado parrafo">
                         Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.
                         Tenemos para ti, una amplia gama de  servicios para que puedas realizarte tus exámenes médicos de forma
                         rápida y con la calidad que solo nosotros podemos ofrecerte.
                     </p>
-                    <a href="#" class="btn-cta">Contáctanos</a>
+                    <a href="#contacto" class="animado btn-cta tiempoHover">Contáctanos</a>
                 </div>
             </section>
             <section class="intermedio centro">
                 <h2 class="tituloHidden">Beneficios</h2>
-                <article class="beneficios">
+                <article class="js-animado beneficios">
                     <picture class="beneficiosIcono">
                         <img src="img/icons/benef_1.png" alt="Equipos modernos" />
                     </picture>
@@ -144,7 +146,7 @@
                         </p>
                     </div>
                 </article>
-                <article class="beneficios">
+                <article class="js-animado beneficios">
                     <picture class="beneficiosIcono">
                         <img src="img/icons/benef_2.png" alt="Rapidez en resultados" />
                     </picture>
@@ -155,7 +157,7 @@
                         </p>
                     </div>
                 </article>
-                <article class="beneficios">
+                <article class="js-animado beneficios">
                     <picture class="beneficiosIcono">
                         <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
                     </picture>
@@ -167,13 +169,13 @@
                     </div>
                 </article>
             </section>
-            <section class="servicios">
+            <section id="servicios" class="servicios">
                 <div class="centro">
                     <picture class="serviciosImagen">
                         <img src="img/servicios-bg.jpg" alt="Servicios" />
                     </picture>
                     <div class="serviciosContenido">
-                        <div class="alineado">
+                        <div class="js-animado alineado">
                             <p class="epigrafe">Conoce nuestros</p>
                             <h2 class="titulo">Servicios</h2>
                             <p class="parrafo">
@@ -182,14 +184,14 @@
                                 quienes te ofrecerán una atención personalizada y de calidad.
                             </p>
                         </div>
-                        <div class="serviciosContenido-carrusel">
+                        <div class="js-animado serviciosContenido-carrusel">
                             <!-- Flecha izquierda -->
                             <div class="js-atras serviciosContenido-carrusel-arrowBack icon-arrow-left disable">
                             </div>
                             <!-- Contenedor principal de los CARDS -->
                             <!-- Deberia tener un contenedor dentro de este para delimitar OJO -->
-                            <div class="js-filaCarrusel serviciosContenido-carrusel-container">
-                                <article class="js-serviciosCard serviciosCard">
+                            <div id="carrusel" class="js-filaCarrusel serviciosContenido-carrusel-container">
+                                <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_1.png" alt="Consultas médicas" />
                                     </picture>
@@ -200,7 +202,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="js-serviciosCard serviciosCard">
+                                <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_2.png" alt="Toma de muestra a domicilio" />
                                     </picture>
@@ -211,7 +213,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="js-serviciosCard serviciosCard">
+                                <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_3.png" alt="Consultas médicas" />
                                     </picture>
@@ -222,7 +224,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="js-serviciosCard serviciosCard">
+                                <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_4.png" alt="Exámenes médicos" />
                                     </picture>
@@ -233,7 +235,7 @@
                                         </p>
                                     </div>
                                 </article>
-                                <article class="js-serviciosCard serviciosCard">
+                                <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
                                         <img src="img/icons/serv_5.png" alt="Próximamente más" />
                                     </picture>
@@ -262,12 +264,12 @@
             </section>
             <section class="examenes">
                 <div class="centro">
-                    <div class="examanesTextos">
+                    <div class="js-animado examanesTextos">
                         <p class="epigrafe">Listado de</p>
                         <h2 class="titulo">Exámenes</h2>
                     </div>
                     <div class="examenesContenedor">
-                        <a href="examenes/hematologias.html" class="examenesCard-Link">
+                        <a href="examenes/hematologias.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_1.png" alt="Hematologías" />
@@ -277,7 +279,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/serologias.html" class="examenesCard-Link">
+                        <a href="examenes/serologias.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_2.png" alt="Serologías" />
@@ -287,7 +289,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/qsanguinea.html" class="examenesCard-Link">
+                        <a href="examenes/qsanguinea.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_3.png" alt="Química sanguínea" />
@@ -297,7 +299,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/mtumoral.html" class="examenesCard-Link">
+                        <a href="examenes/mtumoral.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_4.png" alt="Marcadores tumorales" />
@@ -307,7 +309,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/hormonas.html" class="examenesCard-Link">
+                        <a href="examenes/hormonas.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_5.png" alt="Hormonas" />
@@ -317,7 +319,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/inmunologia.html" class="examenesCard-Link">
+                        <a href="examenes/inmunologia.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_6.png" alt="Inmunología" />
@@ -327,7 +329,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="examenes/uroanalisis.html" class="examenesCard-Link">
+                        <a href="examenes/uroanalisis.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_7.png" alt="Uroanálisis" />
@@ -337,7 +339,7 @@
                                     </div>
                             </article>
                         </a>
-                        <a href="/examenes.html" class="examenesCard-Link">
+                        <a href="/examenes.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
                                         <img src="img/icons/exa_12.png" alt="Ver más" />
@@ -353,21 +355,21 @@
             <section class="faqs">
                 <div class="centro">
                     <div class="faqsTextos">
-                        <h2 class="titulo">Preguntas frecuentes</h2>
+                        <h2 class="js-animado titulo">Preguntas frecuentes</h2>
                         <div class="js-padreFiltro faqsFiltros">
-                            <span  class="js-filtro faqsFiltros-btn active">Sangre</span>
-                            <span  class="js-filtro faqsFiltros-btn">Consejos</span>
-                            <span  class="js-filtro faqsFiltros-btn">Muestras</span>
-                            <span  class="js-filtro faqsFiltros-btn">Resultados</span>
+                            <span  class="js-animado js-filtro faqsFiltros-btn active">Sangre</span>
+                            <span  class="js-animado js-filtro faqsFiltros-btn">Consejos</span>
+                            <span  class="js-animado js-filtro faqsFiltros-btn">Muestras</span>
+                            <span  class="js-animado js-filtro faqsFiltros-btn">Resultados</span>
                         </div>
                         <div class="js-faqs faqs-Bloque active">
-                            <article class="faqsCard">
+                            <article class="js-animado faqsCard">
                                 <h2 class="tituloPregunta">¿Todos los exámenes de sangre requieren ayuno?</h2>
                                 <p class="parrafo">
                                     No todos, a menos que su médico le haya indicado seguir alguna instrucción para realizarse la prueba.
                                 </p>
                             </article>
-                            <article class="faqsCard">
+                            <article class="js-animado faqsCard">
                                 <h2 class="tituloPregunta">¿Qué comprende una hematología completa?</h2>
                                 <p class="parrafo">
                                     Esta prueba se realiza para obtener la descripción general de los componentes de la sangre humana,
@@ -375,21 +377,21 @@
                                     hemoglobina que hay en los glóbulos rojos.
                                 </p>
                             </article>
-                            <article class="faqsCard">
+                            <article class="js-animado faqsCard">
                                 <h2 class="tituloPregunta">¿Por qué es necesario interrogar al paciente cuando asiste a realizarse un examen de laboratorio?</h2>
                                 <p class="parrafo">
                                     Esto ayuda al especialista a obtener mejores resultados, ya que se toman en cuenta ciertas
                                     condiciones para realizar el estudio. Gracias a esto, el bioanalista puede trabajar con más confianza y seguridad.
                                 </p>
                             </article>
-                            <article class="faqsCard">
+                            <article class="js-animado faqsCard">
                                 <h2 class="tituloPregunta">¿Debo estar en ayuno para realizarme una hematología completa?</h2>
                                 <p class="parrafo">
                                     No, pues este examen solo refleja la descripción general de la sangre del paciente, cuyos valores
                                     no se alteran si se rompe el ayuno.
                                 </p>
                             </article>
-                            <article class="faqsCard">
+                            <article class="js-animado faqsCard">
                                 <h2 class="tituloPregunta">¿Las pruebas hormonales requieren ayuno?</h2>
                                 <p class="parrafo">
                                     Si, pues al ingerir alimentos el cuerpo humano libera ciertas sustancias, las cuales pueden
@@ -462,13 +464,13 @@
                                 </p>
                             </article>
                         </div>
-                        <a href="" class="cta-secundary">Hacer una pregunta</a>
+                        <a href="#" class="js-animado cta-secundary">Hacer una pregunta</a>
                     </div>
                 </div>
             </section>
             <section class="intermedio">
                 <h2 class="tituloHidden">Llámanos</h2>
-                <a href="#" class="js-telefonoLink telefonoMid">
+                <a href="#" class="js-animado js-telefonoLink telefonoMid">
                     <article class="telefonoMid-Container">
                         <picture class="telefonoMid-ico">
                             <img src="img/icons/telefono-out-white.png" alt="Teléfono" />
@@ -480,16 +482,16 @@
                     </article>
                 </a>
             </section>
-            <section class="contacto">
+            <section id="contacto" class="contacto">
                 <h2 class="tituloHidden">Contáctanos</h2>
                 <div class="centro">
-                    <article class="contactoCard">
-                        <h2 class="titulo">Contacto</h2>
-                        <p class="parrafo">
+                    <article class="js-animado contactoCard">
+                        <h2 class="js-animado titulo">Contacto</h2>
+                        <p class="js-animado parrafo">
                             Si deseas saber más sobre Vitales Laboratorios, dejamos a tu disposición nuestros medios de contacto
                             y con gusto te atenderemos.
                         </p>
-                        <a href="#" class="js-datoDireccion contactoCard-ElementoContainer" target="blank">
+                        <a href="#" class="js-datoDireccion js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/locacion-rosado.png" alt="Dirección" />
                             </picture>
@@ -498,7 +500,7 @@
                                 <p class="parrafo">Cargando</p>
                             </div>
                         </a>
-                        <a href="#" class="js-datoTelefonoContacto contactoCard-ElementoContainer">
+                        <a href="#" class="js-datoTelefonoContacto js-animado contactoCard-ElementoContainer">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/telefono-rosado.png" alt="Atención al cliente" />
                             </picture>
@@ -507,7 +509,7 @@
                                 <p class="parrafo">Cargando</p>
                             </div>
                         </a>
-                        <a href="#" class="js-datoCotizaciones contactoCard-ElementoContainer" target="blank">
+                        <a href="#" class="js-datoCotizaciones js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/cotizaciones.png" alt="Cotizaciones" />
                             </picture>
@@ -516,7 +518,7 @@
                                 <p class="parrafo">Clic aquí</p>
                             </div>
                         </a>
-                        <a href="#" class="js-datoVentaReactivo contactoCard-ElementoContainer" target="blank">
+                        <a href="#" class="js-datoVentaReactivo js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/empresa.png" alt="Venta de Reactivos" />
                             </picture>
@@ -525,7 +527,7 @@
                                 <p class="parrafo">Clic aquí</p>
                             </div>
                         </a>
-                        <a href="#" class="js-datoCorreo contactoCard-ElementoContainer">
+                        <a href="#" class="js-datoCorreo js-animado contactoCard-ElementoContainer">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/correo-rosado.png" alt="Correo" />
                             </picture>
@@ -534,7 +536,7 @@
                                 <p class="parrafo">Cargando</p>
                             </div>
                         </a>
-                        <a href="#" class="js-datoEncuesta contactoCard-ElementoContainer" target="blank">
+                        <a href="#" class="js-datoEncuesta js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
                                 <img src="img/icons/encuesta.png" alt="Encuesta" />
                             </picture>
@@ -633,6 +635,7 @@
                 </div>
             </div>
         </footer>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js"></script>
         <script type="text/javascript" src="js/scripts.js"></script>
         <script type="application/ld+json">
         {

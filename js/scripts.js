@@ -358,6 +358,16 @@ function datosIndex()
 
     // ===== Termina otros datos
 
+    // Configuracion para el Smooth Scroll
+    var scroll = new SmoothScroll('a[href*="#"]');
+
+    // Guardamos en una variable al CTA del hero en el index
+    const ctaHeroAnimation = document.querySelector(".btn-cta");
+    // Creamos un escuchador de eventos para solucionar el bug que se produce al terminar la animacion
+    // que hace que el hover no funcione
+    ctaHeroAnimation.addEventListener("animationend", ()=>{
+        ctaHeroAnimation.classList.remove("animado");
+    });
 
     // ============= *Empieza la lista de los escuchadores de eventos* =============\\
         // ===== Empiezan escuchadores pertenecientes al carrusel
@@ -854,10 +864,10 @@ function cargarQSanguinea()
     {
         titulo: "Glicemia basal",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el segundo examen
@@ -865,10 +875,10 @@ function cargarQSanguinea()
     {
         titulo: "Glicemia post prandial",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "1 ó 2 horas post-desayuno según indicación médica",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "8:30 a.m. a 10:30 a.m."
     }
 
     // Figura literaria para el tercer examen
@@ -876,10 +886,10 @@ function cargarQSanguinea()
     {
         titulo: "Urea",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el cuarto examen
@@ -887,10 +897,10 @@ function cargarQSanguinea()
     {
         titulo: "Creatinina",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el quinto examen
@@ -898,10 +908,10 @@ function cargarQSanguinea()
     {
         titulo: "Colesterol total",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el sexto examen
@@ -909,10 +919,10 @@ function cargarQSanguinea()
     {
         titulo: "Colesterol fraccionado (HDL , LDL , VLDL)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el septimo examen
@@ -920,10 +930,10 @@ function cargarQSanguinea()
     {
         titulo: "Triglicéridos",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el octavo examen
@@ -942,10 +952,10 @@ function cargarQSanguinea()
     {
         titulo: "TGO (AST)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo examen
@@ -953,10 +963,10 @@ function cargarQSanguinea()
     {
         titulo: "TGP (ALT)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo primero examen
@@ -964,10 +974,10 @@ function cargarQSanguinea()
     {
         titulo: "Gamma GlutamilTransferasa (GGT)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo segundo examen
@@ -975,10 +985,10 @@ function cargarQSanguinea()
     {
         titulo: "Amilasa",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo tercero examen
@@ -986,10 +996,10 @@ function cargarQSanguinea()
     {
         titulo: "Lipasa",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo cuarto examen
@@ -997,10 +1007,10 @@ function cargarQSanguinea()
     {
         titulo: "Deshidrogenasa Láctica (LDH)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo quinto examen
@@ -1008,10 +1018,10 @@ function cargarQSanguinea()
     {
         titulo: "Fosfatasa Ácida Total",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo sexto examen
@@ -1019,10 +1029,10 @@ function cargarQSanguinea()
     {
         titulo: "Fosfatasa Alcalina (ALP)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el decimo septo examen
@@ -1041,10 +1051,10 @@ function cargarQSanguinea()
     {
         titulo: "Calcio",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo noveno examen
@@ -1052,10 +1062,10 @@ function cargarQSanguinea()
     {
         titulo: "Fósforo",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo examen
@@ -1063,10 +1073,10 @@ function cargarQSanguinea()
     {
         titulo: "Hierro",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el vigesimo primero examen
@@ -1074,10 +1084,10 @@ function cargarQSanguinea()
     {
         titulo: "Magnesio",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo segundo examen
@@ -1085,10 +1095,10 @@ function cargarQSanguinea()
     {
         titulo: "CK Total (CPK Total)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "3 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo tercer examen
@@ -1096,10 +1106,10 @@ function cargarQSanguinea()
     {
         titulo: "CK-MB",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "3 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo cuarto examen
@@ -1107,10 +1117,10 @@ function cargarQSanguinea()
     {
         titulo: "Cloro",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo quinto examen
@@ -1118,10 +1128,10 @@ function cargarQSanguinea()
     {
         titulo: "Sodio",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo sexto examen
@@ -1129,10 +1139,10 @@ function cargarQSanguinea()
     {
         titulo: "Potasio",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo septimo examen
@@ -1140,10 +1150,10 @@ function cargarQSanguinea()
     {
         titulo: "Proteínas totales y fraccionadas",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo octavo examen
@@ -1151,10 +1161,10 @@ function cargarQSanguinea()
     {
         titulo: "Bilirrubina total y fraccionada",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el vigesimo noveno examen
@@ -1162,10 +1172,10 @@ function cargarQSanguinea()
     {
         titulo: "PTOG 3 muestras (Prueba de tolerancia oral a la glucosa)",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Ayuno. El paciente deberá permanecer en el laboratorio por un lapso de 2 a 3 horas aproximadamente.",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
     // Figura literaria para el trigesimo  examen
@@ -1173,10 +1183,10 @@ function cargarQSanguinea()
     {
         titulo: "PTOG 4 muestras",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "6 horas",
+        condicion: "Ayuno. El paciente deberá permanecer en el laboratorio por un lapso de 2 a 3 horas aproximadamente.",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
 
 
@@ -1207,10 +1217,10 @@ function cargarMTumorales()
     {
         titulo: "CEA",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el segundo examen
@@ -1218,10 +1228,10 @@ function cargarMTumorales()
     {
         titulo: "AFP",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el tercer examen
@@ -1229,10 +1239,10 @@ function cargarMTumorales()
     {
         titulo: "CA 125",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el cuarto examen
@@ -1240,10 +1250,10 @@ function cargarMTumorales()
     {
         titulo: "CA 19-9",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el quinto examen
@@ -1251,10 +1261,10 @@ function cargarMTumorales()
     {
         titulo: "CA15-3",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el sexto examen
@@ -1262,10 +1272,10 @@ function cargarMTumorales()
     {
         titulo: "PSA total",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el septimo examen
@@ -1273,10 +1283,10 @@ function cargarMTumorales()
     {
         titulo: "PSA libre",
         categoria: "Marcadores tumorales",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
@@ -1299,10 +1309,10 @@ function cargarHormonas()
     {
         titulo: "T3 Total",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el segundo examen
@@ -1310,10 +1320,10 @@ function cargarHormonas()
     {
         titulo: "T3 Libre",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el tercer examen
@@ -1321,10 +1331,10 @@ function cargarHormonas()
     {
         titulo: "T4 Total",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el cuarto examen
@@ -1332,10 +1342,10 @@ function cargarHormonas()
     {
         titulo: "T4 Libre",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el quinto examen
@@ -1343,10 +1353,10 @@ function cargarHormonas()
     {
         titulo: "TSH",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el sexto examen
@@ -1354,10 +1364,10 @@ function cargarHormonas()
     {
         titulo: "LH",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el septimo examen
@@ -1365,10 +1375,10 @@ function cargarHormonas()
     {
         titulo: "FSH",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el octavo examen
@@ -1376,10 +1386,10 @@ function cargarHormonas()
     {
         titulo: "Progesterona",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el noveno examen
@@ -1387,10 +1397,10 @@ function cargarHormonas()
     {
         titulo: "Estradiol",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo examen
@@ -1398,10 +1408,10 @@ function cargarHormonas()
     {
         titulo: "Prolactina",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo primero examen
@@ -1409,10 +1419,10 @@ function cargarHormonas()
     {
         titulo: "Insulina",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo segundo examen
@@ -1420,10 +1430,10 @@ function cargarHormonas()
     {
         titulo: "Testosterona Total",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo tercero examen
@@ -1431,10 +1441,10 @@ function cargarHormonas()
     {
         titulo: "Testosterona Libre",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo cuarto examen
@@ -1442,10 +1452,10 @@ function cargarHormonas()
     {
         titulo: "17 OHP",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo quinto examen
@@ -1453,10 +1463,10 @@ function cargarHormonas()
     {
         titulo: "DHEA-S",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo sexto examen
@@ -1464,10 +1474,10 @@ function cargarHormonas()
     {
         titulo: "Cortisol",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo septimo examen
@@ -1475,10 +1485,10 @@ function cargarHormonas()
     {
         titulo: "βHCG",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo octavo examen
@@ -1486,10 +1496,10 @@ function cargarHormonas()
     {
         titulo: "PTH (Parathormona)",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el decimo noveno examen
@@ -1497,10 +1507,10 @@ function cargarHormonas()
     {
         titulo: "ACTH",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el vigesimo examen
@@ -1508,10 +1518,10 @@ function cargarHormonas()
     {
         titulo: "HGH (Hormana de crecimiento)",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el vigesimo primer examen
@@ -1519,10 +1529,10 @@ function cargarHormonas()
     {
         titulo: "Aldosterona",
         categoria: "Hormonas",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
@@ -2614,6 +2624,8 @@ function mostrarExamenes(todosLosDatos, cantidadDeExamenes)
         // Les doy clases a los elementos que se crearan
             // Le doy las clases necesarias  para los estilos de la card
             examen.classList.add("examenEspecifico");
+            // Le doy las clases necesarias  para la animacion
+            examen.classList.add("js-animado-e");
             // Le doy la clase necesaria a la columna donde irá el titulo
             colTitulo.classList.add("examenEspecifico-ColTitulo");
             // Le doy la clase necesaria a la columna donde irá el tiempo
@@ -2733,4 +2745,14 @@ function mostrarExamenes(todosLosDatos, cantidadDeExamenes)
 }
 // ============= * termina  la funcion que se REUTILIZA para MOSTRAR los EXAMENES y SUS DETALLES* =============\\
 
+// Configuracion del ScrollReveal
+// Configuracion general (los elementos se revelaran cuando  el 20% (0.2) aparezca en pantalla)
+ScrollReveal().reveal('.js-animado', {interval: 80, delay: 300, scale: 0.85, viewFactor: 0.2, cleanup: true});
+
+// Animacion para los examenes
+ScrollReveal().reveal('.js-animado-e', {interval: 80, delay: 150, scale: 0.85, viewFactor: 0.2, cleanup: true});
+
+// Configuracion solo para el carrusel
+ScrollReveal().reveal('.js-animado-r', {interval: 80, delay: 300, scale: 0.85, viewFactor: 1, reset:true});
+ScrollReveal().reveal('#carrusel .js-animado-r', {container: '#carrusel' });
 

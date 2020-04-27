@@ -454,7 +454,32 @@ tamaño de fuente declarado para usar EMs para responsive*/
     color: var(--fuente);
     border-radius: 5px;
     text-decoration: none;
+}
+
+/* Estilo general para que el CTA del HERO siga teniendo un tiempo en el hover */
+.btn-cta.tiempoHover
+{
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Clase para la animacion */
+.animado
+{
+    animation: reveal .5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+/* Animadno el parrafo del hero */
+.hero .animado.parrafo
+{
+    animation-delay: .3s;
+}
+
+/* Animando el CTA del hero */
+.hero .animado.btn-cta
+{
+    animation-delay: .6s;
 }
 
 /* Hover del CTA del hero */
@@ -2023,6 +2048,27 @@ a.breadcrumbs-link:hover
 {
     border: 1px solid var(--resaltante);
     transform: scale(1.02);
+}
+
+/* Correcion para el ScrollReaeval */
+.js-animado,
+.js-animado-r
+{
+    visibility: hidden;
+}
+
+/* Animacion para revelar los elementos del hero */
+@keyframes reveal
+{
+    0%
+    {
+        transform: translateY(30px);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Animacion del texto que rota en el Hero */
