@@ -245,6 +245,7 @@ picture img
     width: auto;
     margin-right: 10px;
     opacity: .4;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
 /* Estilos para el texto de los datos del header superior */
@@ -284,7 +285,8 @@ picture img
 }
 
 /* Efecto al hacer hover en las RS del Up */
-.headerUp_RS_Img:hover
+.headerUp_RS_Img:hover,
+.headerUp_txt:hover .headerUp_ico
 {
     opacity: 1;
 }
@@ -2897,8 +2899,22 @@ a.breadcrumbs-link:hover
     {
         text-align: center;
     }
+    /* Correcion de margin collapsing en la pagina de examenes en solitario */
+    .examenes.pagina
+    {
+        padding: 2.8125em 0 4em;
+        margin: 0;
+    }
 }
-
+/* Correcion para el menu cuando esta en dispositivos pequeños pero en horizontal */
+/* 767px */
+@media screen and (max-width: 47.9375em) and (orientation: landscape)
+{
+    .menu ul
+    {
+        padding: 20px 20%;
+    }
+}
 /* Responsive design para 500px */
 @media screen and (max-width: 31.25em)
 {
@@ -3008,7 +3024,6 @@ a.breadcrumbs-link:hover
         padding: 1.5em;
     }
 }
-
 /* Responsive design para 480px */
 @media screen and (max-width: 30em)
 {
@@ -3201,6 +3216,11 @@ a.breadcrumbs-link:hover
         grid-template-columns: 250px;
         grid-auto-rows: 190px;
         justify-content: center;
+    }
+    /* Correcion de margenes en el titulo de las cards en la pagina de examanes en solitario */
+    .examanesCard-Picture
+    {
+        margin-bottom: 1em;
     }
     /* Quitamos el fondo en contactos por no apreciarce */
     .contacto
