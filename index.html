@@ -69,12 +69,16 @@
                 <div class="centro">
                     <div class="headerUp_left">
                         <div class="headerUp_dato">
-                            <img class="headerUp_ico" src="img/icons/locacion-blanco.png" alt="Ubicación:" />
-                            <a href="#" class="js-datoDireccionAbre headerUp_txt" target="blank">Cargando</a>
+                            <a href="#" class="js-datoDireccionAbre headerUp_txt" target="blank">
+                                <img class="headerUp_ico" src="img/icons/locacion-blanco.png" alt="Ubicación:" />
+                                <span class="js-txtDireccionAbre">Cargando</span>
+                            </a>
                         </div>
                         <div class="headerUp_dato">
-                            <img class="headerUp_ico" src="img/icons/telefono-blanco.png" alt="Telf:" />
-                            <a href="#" class="js-datoTelefono headerUp_txt">Cargando</a>
+                            <a href="#" class="js-datoTelefono headerUp_txt">
+                                <img class="headerUp_ico" src="img/icons/telefono-blanco.png" alt="Telf:" />
+                                <span class="js-txtdatoTelefono">Cargando</span>
+                            </a>
                         </div>
                     </div>
                     <div class="headerUp_Right">
@@ -92,13 +96,13 @@
                     </div>
                 </div>
             </div>
-            <div class="headerDown">
+            <div class="js-headerDown headerDown">
                 <div class="centro">
                     <picture class="logo">
-                        <!-- <source srcset="img/logoresponsive.png" media="()" /> -->
+                        <source srcset="img/logoresponsive.png" media="(max-width: 31.25em)" />
                         <img src="img/logo-black.png" alt="Vitales Laboratorios Logo" />
                     </picture>
-                    <nav class="menu" role="navigation">
+                    <nav class="js-menu menu" role="navigation">
                         <ul>
                             <li><a class="js-menuLink" href="/">Inicio</a></li>
                             <li><a class="js-menuLink" href="/nosotros.html">Nosotros</a></li>
@@ -107,6 +111,9 @@
                             <li><a class="js-menuLink" href="#contacto">Contacto</a></li>
                         </ul>
                     </nav>
+                    <i class="js-burguerMenu menuIcono">
+                        <i></i><i></i><i></i>
+                    </i>
                 </div>
             </div>
         </header>
@@ -133,41 +140,43 @@
                     <a href="#contacto" class="animado btn-cta tiempoHover">Contáctanos</a>
                 </div>
             </section>
-            <section class="intermedio centro">
-                <h2 class="tituloHidden">Beneficios</h2>
-                <article class="js-animado beneficios">
-                    <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_1.png" alt="Equipos modernos" />
-                    </picture>
-                    <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Equipos modernos</h2>
-                        <p class="parrafo">
-                            Para un óptimo procesamiento de las muestras.
-                        </p>
-                    </div>
-                </article>
-                <article class="js-animado beneficios">
-                    <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_2.png" alt="Rapidez en resultados" />
-                    </picture>
-                    <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Rapidez en resultados</h2>
-                        <p class="parrafo">
-                            Confiables y en el menor tiempo posible.
-                        </p>
-                    </div>
-                </article>
-                <article class="js-animado beneficios">
-                    <picture class="beneficiosIcono">
-                        <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
-                    </picture>
-                    <div class="beneficiosTextos">
-                        <h2 class="titulosCard">Mayor trazabilidad</h2>
-                        <p class="parrafo">
-                            Para brindar seguimiento y transparencia en cada proceso.
-                        </p>
-                    </div>
-                </article>
+            <section class="intermedio">
+                <div class="centro">
+                    <h2 class="tituloHidden">Beneficios</h2>
+                    <article class="js-animado beneficios">
+                        <picture class="beneficiosIcono">
+                            <img src="img/icons/benef_1.png" alt="Equipos modernos" />
+                        </picture>
+                        <div class="beneficiosTextos">
+                            <h2 class="titulosCard">Equipos modernos</h2>
+                            <p class="parrafo">
+                                Para un óptimo procesamiento de las muestras.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="js-animado beneficios">
+                        <picture class="beneficiosIcono">
+                            <img src="img/icons/benef_2.png" alt="Rapidez en resultados" />
+                        </picture>
+                        <div class="beneficiosTextos">
+                            <h2 class="titulosCard">Rapidez en resultados</h2>
+                            <p class="parrafo">
+                                Confiables y en el menor tiempo posible.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="js-animado beneficios">
+                        <picture class="beneficiosIcono">
+                            <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
+                        </picture>
+                        <div class="beneficiosTextos">
+                            <h2 class="titulosCard">Mayor trazabilidad</h2>
+                            <p class="parrafo">
+                                Para brindar seguimiento y transparencia en cada proceso.
+                            </p>
+                        </div>
+                    </article>
+                </div>
             </section>
             <section id="servicios" class="servicios">
                 <div class="centro">
@@ -354,6 +363,9 @@
             </section>
             <section class="faqs">
                 <div class="centro">
+                    <picture class="faqsImagen">
+                        <img src="img/faqs-bg.jpg" alt="Preguntas Frecuentes" />
+                    </picture>
                     <div class="faqsTextos">
                         <h2 class="js-animado titulo">Preguntas frecuentes</h2>
                         <div class="js-padreFiltro faqsFiltros">

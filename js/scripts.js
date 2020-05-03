@@ -46,6 +46,10 @@ const horarioWeekend = "8:00am - 12:00pm";
             const linkWhatsApp= document.querySelector(".js-wa");
             // Dato del Instagram
             const linkInstagram = document.querySelector(".js-ig");
+            // Texto del telefono
+            const txtTelefonoHeader = document.querySelector(".js-txtdatoTelefono");
+            // Texto de la direccion
+            const txtDireccionAbreHeader = document.querySelector(".js-txtDireccionAbre");
 
         // Variables del MID y seccion de Contacto
             // Capturamos el elemento de telefono de la seccion de MID (FAQS - Contacto) para modificar su href
@@ -154,14 +158,14 @@ const horarioWeekend = "8:00am - 12:00pm";
 // ============= * Empieza el proceso de asignacion de los datos dinamicos de la pagina * =============\\
     // ===== Empieza el telefono
         // Numero que se muestra
-        telefono.innerText= numeroTelefono;
+        txtTelefonoHeader.innerText= numeroTelefono;
         // href que marca
         telefono.href="telf:+" + numeroTelefono;
     // ===== Termina el telefono
 
     // ===== Empieza la direccion
         // Texto que muestra
-        direccionAbre.innerText= direccionAbreviada;
+        txtDireccionAbreHeader.innerText= direccionAbreviada;
         // href que tiene
         direccionAbre.href= googleMaps
     // ===== Termina la direccion
@@ -2753,6 +2757,28 @@ ScrollReveal().reveal('.js-animado', {interval: 80, delay: 300, scale: 0.85, vie
 ScrollReveal().reveal('.js-animado-e', {interval: 80, delay: 150, scale: 0.85, viewFactor: 0.2, cleanup: true});
 
 // Configuracion solo para el carrusel
-ScrollReveal().reveal('.js-animado-r', {interval: 80, delay: 300, scale: 0.85, viewFactor: 1, reset:true});
+ScrollReveal().reveal('.js-animado-r', {interval: 80, delay: 300, scale: 0.85, viewFactor: 0.1, reset:true});
 ScrollReveal().reveal('#carrusel .js-animado-r', {container: '#carrusel' });
 
+
+// Guardo el icono del burguer menu en una variable
+const burguerMenu = document.querySelector(".js-burguerMenu");
+// Guardo en una variable a la barra inferior (contenido) del header
+const downHeader = document.querySelector(".js-headerDown");
+// Guardo en una variable al menu
+const menu = document.querySelector(".js-menu");
+
+// Creo un escuchador de eventos para cuando haga click en el burguer menu
+burguerMenu.addEventListener("click", hideShowMenu);
+
+// Creo la funcion que mostrará el menu
+function hideShowMenu()
+{
+    // Estiramos/achicamos el background (MenuDown)
+    downHeader.classList.toggle("active");
+    // activamos/desactivamos animacion del burguer
+    burguerMenu.classList.toggle("active");
+    // mostramos/ocultamos los elementos del menu
+    menu.classList.toggle("active");
+
+}

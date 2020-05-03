@@ -216,7 +216,6 @@ picture img
     * para centrar los elementos dentro de la secciion de servicios
     * Estilos generales para los contenedores usados en el carrusel
     * Estilos generales de los contenedores usados en los elementos de indicadores
-    * Estilos generales del contenedor principal de la seccion de FAQs
     * Estilos generales del contenedor del widget del telefono
 */
 .headerUp_left,
@@ -226,7 +225,6 @@ picture img
 .servicios .centro,
 .serviciosContenido-carrusel,
 .contenedorIndicadores,
-.faqs .centro,
 .telefonoMid-Container
 {
     display: flex;
@@ -256,6 +254,8 @@ picture img
     font-size: 11px;
     color: var(--fuente);
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 /* Estilos para los enlaces de las RS en el Up */
@@ -383,14 +383,172 @@ picture img
     font-weight: 500;
 }
 
+/* Estilos del contenedor  principal del burguerbuttom */
+.menuIcono
+{
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    display: none;
+    justify-self: end;
+    align-self: center;
+    z-index: 2;
+}
+/* Estilos generales de cada linea del burguerbuttom*/
+.menuIcono i
+{
+    background-color: var(--fuenteRotativa);
+    border-radius: 1.5px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+/* Estilos de la primera linea del burguerButtom */
+.menuIcono i:nth-child(1)
+{
+    animation: outT 0.8s backwards;
+    animation-direction: reverse;
+}
+/* Estilos de la segunda linea del burguerButtom */
+.menuIcono i:nth-child(2)
+{
+    margin: 5px 0;
+    animation: outM 0.8s backwards;
+    animation-direction: reverse;
+}
+/* Estilos de la tercera linea del burguerButtom */
+.menuIcono i:nth-child(3)
+{
+    animation: outBtm 0.8s backwards;
+    animation-direction: reverse;
+}
+/* Estilos de la primera linea del burguerButtom al estar activa */
+.menuIcono.active i:nth-child(1)
+{
+    animation: inT 0.8s forwards;
+}
+/* Estilos de la segunda linea del burguerButtom al estar activa */
+.menuIcono.active i:nth-child(2)
+{
+    animation: inM 0.8s forwards;
+}
+/* Estilos de la tercera linea del burguerButtom al estar activa */
+.menuIcono.active i:nth-child(3)
+{
+    animation: inBtm 0.8s forwards;
+}
+@keyframes barridoMenu
+{
+    from
+    {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes inM
+{
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes outM
+{
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(45deg);
+    }
+}
+@keyframes inT
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+@keyframes outT
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+@keyframes inBtm
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+@keyframes outBtm
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
 /* Estilos necesarios para el hero (Imagen de fondo y degradado generado por css)
 tamaño de fuente declarado para usar EMs para responsive*/
 .hero
 {
-    height: calc(100vh - 105px);
+    height: auto;
+    min-height: calc(100vh - 105px);
+    /* border: 1px solid red; */
+    align-items: stretch;
+    padding: 2em 0;
+
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    /* align-items: center; */
     background: linear-gradient(90deg, rgba(251, 252, 255, 1) 15%, rgba(251,252,255,0) 70%),
                 linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 30%),
                 url("../img/hero-bg.jpg");
@@ -534,7 +692,14 @@ h2.titulo
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid red; */
+}
+
+/* Estilos  para el contenedor de las secciones intermedias*/
+.intermedio .centro
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tituloHidden
@@ -598,15 +763,14 @@ h2.titulo
 
 /*
     * Estilos generales de la seccion de servicios
-    * Estilos generales de la seccion de Examanes
     * Estilos generales de la seccion de FAQs
 */
-.examenes,
-.servicios,
+.servicios
 .faqs
 {
     font-size: 16px;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* Estilos generales para que el texto este centrado con el primer elemento del carrusel (60px) */
@@ -630,6 +794,8 @@ h2.titulo
     padding: 0 10px;
     height: 18.5em;
     flex-wrap: nowrap;
+    /* Propiedad para que el scroll sea suave en iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Estilos generales para el contenedor de la imagen referencial de servicios y el degradado */
@@ -841,10 +1007,15 @@ h2.titulo
     height: auto;
 }
 
-/*  Detalle para que la seccion de examenes no este tan pegada a los FAQs */
+/*  Detalle para que la seccion de examenes no este tan pegada a los FAQs y no se desborde al redimencionar*/
 .examenes
 {
     margin: 1em 0 2em;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Detalle para que el contenedor de la seccion de examenes quede en el centro */
@@ -878,7 +1049,8 @@ h2.titulo
 /* Estilos necesarios para crear la grilla de las categorias de examenes */
 .examenesContenedor
 {
-    height: 33.125em;
+    height: auto;
+    min-height: 33.125em;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -930,6 +1102,8 @@ h2.titulo
 /* Pequeño ajuste tras eliminacion de la seccion que contenia la imagen y pasarla a fondo */
 .faqs .centro
 {
+    display: flex;
+    align-items: flex-start;
     justify-content: flex-start;
 }
 
@@ -937,9 +1111,31 @@ h2.titulo
 .faqsTextos
 {
     width: 50%;
+    min-height: 100vh;
+    order: 1;
     /* margin-right: 50%; */
     /* border: 1px solid red; */
-    height: 100vh;
+    /* height: 100vh; */
+}
+
+.faqsImagen
+{
+    order: 2;
+    width: 50%;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 40%);
+}
+
+.faqsImagen img
+{
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 /* Estilos generales del contenedor de los filtros */
@@ -1061,11 +1257,10 @@ h2.titulo
 /* Degradado de y fondo de la seccion FAQs */
 .faqs
 {
-    background: linear-gradient(90deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,0) 40%),
-                url("../img//faqs-bg.jpg");
-    background-size: cover;
-    background-position: 45vw center;
-    background-repeat: no-repeat;
+    font-size: 16px;
+    min-height: 100vh;
+    height: auto;
+    overflow: hidden;
 }
 
 /* Estilo necesario para quitar el decorado que genera el ancla al widget del telefono */
@@ -1121,7 +1316,9 @@ h2.titulo
 /* Estilo general de la seccion de contacto */
 .contacto
 {
-    height: 100vh;
+    display: flex;
+    height: auto;
+    min-height: 100vh;
     font-size: 16px;
     background: url("../img/contacto-bg.jpg");
     background-position: center top;
@@ -1136,6 +1333,7 @@ h2.titulo
     justify-content: flex-end;
     align-items: center;
     height: inherit;
+    padding: 2em 0;
 }
 
 /* Estilo general de la card del contiene los datos en contacto */
@@ -1196,6 +1394,7 @@ h2.titulo
     background: var(--bgFooter);
     color: var(--fuenteFooterTxt);
     padding: 2em 0;
+    display: flex;
 }
 
 /* Estilos generales del contenedor usado en el Footer */
@@ -1339,9 +1538,9 @@ h2.titulo
 /* Contenedor de la informacion del dia en el footer */
 .contenedorDia
 {
-    width: 15.8em;
+    width: 16em;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: baseline;
     margin-bottom: .3125em;
     /* border: 1px solid red; */
@@ -1366,8 +1565,39 @@ h2.titulo
     background: var(--lineFooter);
     margin: 0 1em;
     height: 2px;
-    width: 60px;
 }
+
+/* Estilos de la linea para el lunes */
+.contenedorDia:nth-of-type(1) .lineaFooter
+{
+    width: 88px;
+}
+/* Estilo de la linea para el martes */
+.contenedorDia:nth-of-type(2) .lineaFooter
+{
+    width: 81px;
+}
+/* Estilo de la linea para el miercoles */
+.contenedorDia:nth-of-type(3) .lineaFooter
+{
+    width: 65px;
+}
+/* Estilo de la linea para el jueves */
+.contenedorDia:nth-of-type(4) .lineaFooter
+{
+    width: 80px;
+}
+/* Estilo de la linea para el viernes */
+.contenedorDia:nth-of-type(5) .lineaFooter
+{
+    width: 77px;
+}
+/* Estilo de la linea para el sabado */
+.contenedorDia:nth-of-type(6) .lineaFooter
+{
+    width: 72px;
+}
+
 
 /* Pequeño detalle para mostrar una linea superior "divisora" para la seccion del autor en el footer */
 .autorFooter
@@ -2202,5 +2432,860 @@ a.breadcrumbs-link:hover
     100%
     {
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+}
+/* Comienza responsive design (Correcion para margenes al tocar el limite del contenedor)*/
+
+/* Responsive design para 1200px */
+@media screen and (max-width: 75em)
+{
+    /* Margen a todos los contenedores para que no este pegado a los bordes */
+    .centro
+    {
+        margin: 0 20px;
+    }
+    /* Nuevas dimenciones para ajustar el contenedor de los beneficios */
+    .intermedio
+    {
+        min-height: 13.75em;
+        height: auto;
+        margin: 2em 0;
+    }
+    /* Estilos general para dar margenes automaticos a los beneficios */
+    .intermedio .centro
+    {
+        justify-content: space-between;
+        /* border: 1px solid palevioletred; */
+    }
+    /* Nuevas dimenciones de las cards */
+    .beneficios
+    {
+        margin: 0;
+        width: 21em;
+    }
+    /*  Estilos necesarios para centrar el contenedor de dichas secciones */
+    .servicios,
+    .faqs
+    {
+        display: flex;
+    }
+    /* Ajustes necesarios para quitar el carrusel y dejarlo en scrooll */
+    /*
+        * Quitamos las flechas
+        * Quitamos los indicadores
+    */
+    .serviciosContenido-carrusel-arrowBack,
+    .serviciosContenido-carrusel-arrowForwards,
+    .serviciosContenido-carrusel-indicador-linea
+    {
+        display: none;
+    }
+    /* le doy nuevas dimenciones al conteneodr del carrusel y posiciono las cards al principio verticalmente*/
+    .serviciosContenido-carrusel-container
+    {
+        height: 300px;
+        /* border: 1px solid red; */
+        overflow-x: auto;
+        align-items: flex-start;
+        margin-left: 3.75em;
+    }
+    /*  doy margen en la parte superior para de las cards para que se vea la sombra*/
+    .serviciosCard
+    {
+        margin-top: 10px;
+    }
+    /* Estilo necesario para centrar el contenedor en la seccion */
+    .examenes
+    {
+        display: flex;
+    }
+    /* Correcion aplicada a los textos para que cuando se redimencionen aun esten centrados */
+    .examenesCard-Link .titulosCard
+    {
+        text-align: center;
+    }
+}
+
+/* Responsive design de 1070px */
+@media screen and (max-width: 66.875em)
+{
+
+}
+
+/* Responsive design para 1024px */
+@media screen and (max-width: 64em)
+{
+    /* Estilos general para que el contenedor de las cards de beneficios muestre el contenido en columnas */
+    .intermedio .centro
+    {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Estilos general para que las cards de los beneficios ocupen todo el ancho de pantalla */
+    .beneficios
+    {
+        width: 100%;
+        margin: 0 0 1em;
+        display: flex;
+        align-items: center;
+        height: 5.5em;
+        box-shadow: 0px 8px 10px -5px var(--sombras),
+                    0px -2px 10px -5px var(--sombras);
+    }
+    /* Estilos para que el icono de los beneficios obtenga sus dimenciones de la altura */
+    .beneficiosIcono
+    {
+        height: 100%;
+        width: auto;
+    }
+    /* Pequeña correcion en el contenedor del texto de las cards de los beneficios */
+    .beneficiosTextos
+    {
+        margin-left: 1.5em;
+    }
+    /* Cambiamos la GRID de los examanes a 3 columnas */
+    .examenesContenedor
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Nuevas dimenciones para el contenedor de la imagen */
+    .faqsImagen
+    {
+        width: 40%;
+    }
+    /* Nuevas dimenciones para el contenedor de los textos y color de fondo para que la imagen no se vea desbordada */
+    .faqsTextos
+    {
+        width: 60%;
+        background: var(--bgColor);
+    }
+    /* Nuevo posicionamiento para que la imagen se vea mejor */
+    .faqsImagen img
+    {
+        left: -150px;
+    }
+    .col-datos
+    {
+        margin: 0 1em;
+    }
+    .col-copy
+    {
+        width: 14em;
+    }
+    .logoFooter img
+    {
+        width: 100%;
+        height: auto;
+    }
+    .contenedorDia
+    {
+        width: auto;
+    }
+    /* Estilos de la linea para el lunes */
+    .contenedorDia:nth-of-type(1) .lineaFooter
+    {
+        width: calc(88px - 40px);
+    }
+    /* Estilo de la linea para el martes */
+    .contenedorDia:nth-of-type(2) .lineaFooter
+    {
+        width: calc(81px - 40px);
+    }
+    /* Estilo de la linea para el miercoles */
+    .contenedorDia:nth-of-type(3) .lineaFooter
+    {
+        width: calc(65px - 40px);
+    }
+    /* Estilo de la linea para el jueves */
+    .contenedorDia:nth-of-type(4) .lineaFooter
+    {
+        width: calc(80px - 40px);
+    }
+    /* Estilo de la linea para el viernes */
+    .contenedorDia:nth-of-type(5) .lineaFooter
+    {
+        width: calc(77px - 40px);
+    }
+    /* Estilo de la linea para el sabado */
+    .contenedorDia:nth-of-type(6) .lineaFooter
+    {
+        width: calc(72px - 40px);
+    }
+}
+
+/* Responsive para 768px */
+@media screen and (max-width: 48em)
+{
+    /* Acomodo el tamaño de texto en el hero */
+    .hero
+    {
+        font-size: 14px;
+    }
+    /* Normalizo el tamaño del texto a 12px del parrafo */
+    .hero .parrafo
+    {
+        font-size: .85em;
+        width: 70%;
+    }
+    /* Normalizo el tamaño del texto a 12px del CTA del hero */
+    .hero .btn-cta
+    {
+        font-size: .85em;
+    }
+    /* Nuevas dimenciones de la seccion de servicios*/
+    .servicios
+    {
+        min-height: 100vh;
+        height: auto;
+        margin-top: 2.5em;
+    }
+    /* cambio la orientacion del contenedor que se encuentra en servicios */
+    .servicios .centro,
+    .faqs .centro
+    {
+        flex-direction: column;
+        /* overflow: hidden; */
+    }
+    /* Mostramos los elementos en el order inicial al pasarlos a columnas */
+    .faqsImagen,
+    .faqsTextos
+    {
+        order: initial;
+    }
+    /* cambio de dimenciones del contenedor del texto y del carrusel por camniar a column drop*/
+    .serviciosContenido,
+    .faqsTextos
+    {
+        height: auto;
+        width: 100%;
+    }
+    /* Correcion a los textos de los FAQS para cuando se use el filtro no se desorganice */
+    .faqsTextos
+    {
+        justify-content: flex-start;
+    }
+    /* Correcion a la altura de los bloques que contienen las Faqs */
+    .faqs-Bloque
+    {
+        min-height: initial;
+        height: auto;
+    }
+    /* Cambio la orientacion del degradado y nuevas dimenciones al contenedor de la imagen */
+    .serviciosImagen,
+    .faqsImagen
+    {
+        height: 300px;
+        min-height: 0;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(251,252,255,0) 60%, var(--bgColor) 100%);
+        margin-bottom: 2em;
+
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+    }
+    /* Doy las nuevas dimenciones para adaptar la imagen al cotenedor */
+    .serviciosImagen img,
+    .faqsImagen img
+    {
+        object-fit: cover;
+
+        position: initial;
+        width: 100%;
+        height: auto;
+    }
+    /* nueva dimencion al contenedor del carrusel y ajuste necesario para que el carrusel no tenga bordes */
+    .serviciosContenido-carrusel
+    {
+        position: relative;
+        height: 300px;
+    }
+    /* Estilos necesarios para que el carrusel no tenga bordes */
+    .serviciosContenido-carrusel-container
+    {
+        position: absolute;
+        top: 0;
+        left: -20px;
+        right: 0;
+        width: 100vw;
+        padding: 0 20px 0;
+        /* z-index: 1; */
+    }
+    /* Quito los margenes que teneia el texto y el carrusel a la izquierda */
+    .servicios .alineado,
+    .serviciosContenido-carrusel-container
+    {
+        margin: 0;
+    }
+    /* agrego margen a la ultima card para poder ver su sombra */
+    .serviciosCard:last-child
+    {
+        margin-right: 20px;
+    }
+    /* Cambiamos la GRID de los exanes a filas mas cortas */
+    .examenesContenedor
+    {
+        grid-auto-rows: minmax(220px, 1fr)
+    }
+}
+
+
+/* Responsive design para 767px */
+@media screen and (max-width: 47.9375em)
+{
+    /* Correcion de margenes del documento por usar fixed en el header */
+    main
+    {
+        margin-top: 105px;
+    }
+
+    /* Hago que el header se quede fijado */
+    .header
+    {
+        /* border: 1px solid red; */
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+        top: 0;
+    }
+    /* Muestro el icono del menu hamburguesa */
+    .menuIcono
+    {
+        display: block;
+    }
+    /* Nuevos estilos para el menu */
+    .menu
+    {
+        /* display: none; */
+        /* border: 1px solid red; */
+        backdrop-filter: saturate(180%) blur(10px);
+        background: rgba(245, 247, 248, 0.80);
+        position: fixed;
+        height: 100vh;
+        /* width: 0; */
+        right: -100%;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        transition: 0.93s cubic-bezier(0.5,0.5,0,1);
+    }
+    /* Clase para cuando se muestre el menu */
+    .menu.active
+    {
+        /* display: block; */
+        left: 0;
+        right: 0;
+        width: 100vw;
+        animation: barridoMenu 0.93s cubic-bezier(0.5,0.5,0,1) forwards;
+    }
+    /* Clase por defecto del menu (oculto)*/
+    .menu ul
+    {
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        padding: 20px 20%;
+    }
+    /* Estilos necesarios para corregir la altura de los elemento del menu y darle su animacion*/
+    .menu ul li
+    {
+        height: auto;
+        padding: 0;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        animation: barridoMenu 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
+        opacity: 0;
+    }
+    /* Delay necesaria para la secuencia animada de los links */
+    .menu ul li:nth-of-type(1)
+    {
+        animation-delay: .2s;
+    }
+    .menu ul li:nth-of-type(2)
+    {
+        animation-delay: .3s;
+    }
+    .menu ul li:nth-of-type(3)
+    {
+        animation-delay: .35s;
+    }
+    .menu ul li:nth-of-type(4)
+    {
+        animation-delay: .4s;
+    }
+    .menu ul li:nth-of-type(5)
+    {
+        animation-delay: .45s;
+    }
+    .menu ul li a
+    {
+        margin: 10px 0;
+    }
+    /* Nuevos estilos para el elemento del menu seleccionado */
+    .menu ul li a.selected
+    {
+        border-bottom: none;
+        border-right: 2px solid;
+        padding-right: 10px;
+        border-radius: 2px;
+    }
+    /* Margen izquierdo que tiene el titulo rorativo */
+    .tituloLista
+    {
+        margin-left: 0;
+    }
+    /* Redimenciona las filas y las columnas de la GRID de examnes */
+    .examenesContenedor
+    {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(250px, 1fr);
+    }
+    /* Cambiamos el footer a columnas */
+    .contenidoFooter
+    {
+        flex-direction: column;
+    }
+    /* Primera columna ocupa el 100% (la del corpyright) */
+    .col-copy
+    {
+        width: 100%;
+    }
+    /* Segunda columna tambien pasa a colapsarse en columnas */
+    .colFooterDerecha
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+    /* Correcion de margen en la primera columna de la columna derecha */
+    .col-datos
+    {
+        margin: 0 0 2em;
+    }
+    /* Ajuste de dimenciones en el contenedor del logo del footer */
+    .logoFooter
+    {
+        height: 50px;
+        text-align: center;
+    }
+    /* Ajustte de dimenciones del logo del footer */
+    .logoFooter img
+    {
+        height: 100%;
+        width: auto;
+    }
+    /* Ajuste del alineado en el texto del copyright */
+    .copyright
+    {
+        text-align: center;
+    }
+    /* cambio del alineado en las RS del footer */
+    .footerRSCaja
+    {
+        justify-content: center;
+        margin: 0 0 2em;
+    }
+    /* Ajuste del alineado en los titulos del footer */
+    .txtFooter,
+    .tituloFooter
+    {
+        text-align: center;
+    }
+}
+
+
+/* Responsive design para 500px */
+@media screen and (max-width: 31.25em)
+{
+    /* Estilos de la barra superiror azul */
+    .headerUp
+    {
+        backdrop-filter: saturate(180%) blur(20px);
+        background-color: rgba(1, 84, 190, 0.75);
+    }
+    /* Centramos contenido de la barra azul */
+    .headerUp .centro
+    {
+        justify-content: center;
+    }
+    /* Mostramos los iconos con su opacidad total */
+    .headerUp_RS_Img,
+    .headerUp_ico
+    {
+        opacity: 1;
+        height: 20px;
+        vertical-align: top;
+    }
+    /* Normalizamos el margene de los iconos izquierdos */
+    .headerUp_ico
+    {
+        margin-right: 20px;
+    }
+    /* Ocultamos el texto que contiene la informacion */
+    .headerUp_txt span
+    {
+        display: none;
+    }
+    /* Quitamos el margen que tiene el primer icono de la izquierda */
+    .headerUp_dato:nth-child(1)
+    {
+        margin-right: 0;
+    }
+    /* Nuevo color para la barra visible del header*/
+    .headerDown
+    {
+        backdrop-filter: saturate(180%) blur(20px);
+        background: rgba(245, 247, 248, 0.60);
+        box-shadow: 0px 5px 10px -5px var(--arrowSombra);
+        transition: 0.93s cubic-bezier(0.5,0.5,0,1);
+    }
+    /* Estilo necesario para que el background del menu al estar activo */
+    .headerDown.active
+    {
+        height: calc(100vh - 35px);
+    }
+    /* Estilos para la animacion pertinente a este breakpoint */
+    .menu
+    {
+        display: none;
+        /* border: 1px solid red; */
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 2;
+        backdrop-filter: none;
+        background: none;
+        animation: none;
+    }
+    /* Clase para cuando se muestre el menu */
+    .menu.active
+    {
+        display: block;
+    }
+    /* Estilo necesario para que el logo se vea al activar el menu */
+    .logo
+    {
+        position: fixed;
+        top: 13px;
+    }
+    /* Estilo necesario para que el burguermenu se vea al activar el menu */
+    .menuIcono
+    {
+        position: fixed;
+        right: 20px;
+        top: 23px;
+    }
+    /* cambiamos el tamaño de las filas de la GRID de examenes */
+    .examenesContenedor
+    {
+        grid-auto-rows: 1fr;
+    }
+    /* Centramos los elementos horizontalmente en la seccion de contactos */
+    .contacto .centro
+    {
+        justify-content: center;
+    }
+    /* Le damos todo el ancho a la card de contacto */
+    .contactoCard
+    {
+        width: 100%;
+        padding: 1.5em;
+    }
+}
+
+/* Responsive design para 480px */
+@media screen and (max-width: 30em)
+{
+    /* Correcion en el ancho del texto del hero */
+    .hero .parrafo
+    {
+        width: 80%;
+    }
+    /* Cambiamos el margen de los elemenes de la GRID de examenes */
+    .examenesContenedor
+    {
+        gap: 1em;
+    }
+    /* Ajuste necesario para que el contenedido de la seccion se vea centrado */
+    .faqs .centro
+    {
+        overflow: hidden;
+    }
+}
+
+/* Responsive para 425px */
+@media screen and (max-width: 26.5625em)
+{
+    /* Nuevo tamaño de fuente de la seccion */
+    .hero,
+    .servicios,
+    .examanesTextos,
+    .faqs,
+    .intermedio,
+    .contacto
+    {
+        font-size: 12px;
+    }
+    /* Nuevo tamaño de fuente */
+    .epigrafe,
+    .parrafo
+    {
+        font-size: 1em;
+    }
+    /* Nuevas dimenciones del CTA del hero */
+    .hero .btn-cta
+    {
+        width: 100%;
+        font-size: 1.16em;
+        text-align: center;
+    }
+    .hero .parrafo
+    {
+        font-size: 1em;
+    }
+    /* Estilo para el contenedor de los textos rotativos */
+    .tituloLista
+    {
+        display: inline;
+    }
+    /* Quitamos la animacion del texto rotativo */
+    .rotate:first-child
+    {
+        animation: none;
+        display: inline;
+    }
+    /* Ocultamos todos los demas textos rotativos que no se ven */
+    .rotate:nth-of-type(2),
+    .rotate:nth-of-type(3),
+    .rotate:nth-of-type(4)
+    {
+        display: none;
+    }
+    /* Nueva dimencion (mas pequeña) de las cards de beneficios */
+    .beneficios
+    {
+        padding: 1.2em 1.3em;
+        height: 5em;
+    }
+    /* Nueva dimencion (mas pequeña) del icono de los beneficios */
+    .beneficiosIcono
+    {
+        height: 70%;
+        max-height: 45px;
+    }
+    /* quitamos la descrpcions de los beneficios */
+    .beneficios .parrafo
+    {
+        display: none;
+    }
+    /* Correcion de tamaño de fuente necesaria para las Cards para mantener las mismas dimenciones */
+    .beneficios,
+    .serviciosContenido-carrusel-container,
+    .faqs-Bloque
+    {
+        font-size: 16px;
+    }
+    /* Correcion de tamaño de fuente al texto de las cards para mantener las mismas dimenciones */
+    .serviciosCard .parrafo,
+    .faqs-Bloque .parrafo
+    {
+        font-size: .75em;
+    }
+    /* Nueva dimencion del contenedor de la imagen de servicios */
+    .serviciosImagen,
+    .faqsImagen
+    {
+        height: 150px;
+    }
+    /* Colocamos la GRID de examenes a una columna */
+    .examenesContenedor
+    {
+        grid-template-columns: 1fr;
+    }
+    /* Nuevo tamaño de fuente para el cta de los faqs */
+    .cta-secundary,
+    .tituloElementoCard
+    {
+        font-size: 1.16em;
+    }
+    .cta-secundary
+    {
+        text-align: center;
+    }
+
+    /* Ajustes generales para que el contenedor de los filtros sea scrolleable y nuevas dimenciones */
+    .faqsFiltros
+    {
+        font-size: 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        /* border: 1px solid red; */
+        padding: 0 10px;
+        min-height: 75px;
+        margin: 0 0 1.25em;
+    }
+    /* Ajuste para que los elementos del filtro no se redimencionen */
+    .faqsFiltros-btn
+    {
+        flex-shrink: 0;
+    }
+    /* Ajuste para que el ultimo elemento de los filtros tenga un margen */
+    .faqsFiltros::after
+    {
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: block;
+        flex-shrink: 0;
+    }
+    /* Quitamos la palabra "contactanos" del widget */
+    .intermedio .tituloTelefono
+    {
+        display: none;
+    }
+    /* Nueva altura minima para la seccion intermedia */
+    .intermedio
+    {
+        min-height: 10em;
+    }
+}
+
+/* Responsive design para 320px */
+@media screen and (max-width: 20em)
+{
+    /* Estilos necesarios tras quitar el texto largo del hero */
+    .hero .centro
+    {
+        justify-content: space-around;
+    }
+    /* Nuevo ancho para el texto del hero / quitamos el texto del hero */
+    .hero .parrafo
+    {
+        /* width: 100%; */
+        display: none;
+    }
+    /* Nuevo tamaño de fuente de los textos del hero */
+    .hero div.animado
+    {
+        font-size: 1em;
+    }
+    /* Nuevo padding para las cards de beneficios */
+    .beneficios
+    {
+        padding: .5em;
+    }
+    /* Ultimo cambio de la GRID de los examanes */
+    .examenesContenedor
+    {
+        grid-template-columns: 250px;
+        grid-auto-rows: 190px;
+        justify-content: center;
+    }
+    /* Quitamos el fondo en contactos por no apreciarce */
+    .contacto
+    {
+        background: var(--bgColor);
+        min-height: auto;
+    }
+    /* Centramos el titulo de contactos */
+    .contacto .titulo
+    {
+        text-align: center;
+    }
+    /* Quitamos los estilos que hacen paracer una card en contactos */
+    .contactoCard
+    {
+        padding: 0;
+        box-shadow: none;
+    }
+    /* Correcion de los iconos de la card de contactos */
+    .contactoCard-ElementoContainer
+    {
+        align-items: baseline;
+    }
+}
+/* Configuracion para pantallas que son muy horizontales pero poco alto (iphone X, Pixel 2XL) */
+@media screen and (max-height: 420px) and (min-width: 800px)
+{
+    /* Pequeña correcion a la altura de la seccion de servicios */
+    .servicios
+    {
+        /* border: 1px solid purple; */
+        height: auto;
+        min-height: 100vh;
+    }
+    /* Estiramos el contenedor de la imagen a todo el alto del contenido */
+    .serviciosImagen
+    {
+        height: 100%;
+    }
+    /*  Estiramos el contenedor del texto a todo el alto del contenido */
+    .serviciosContenido
+    {
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+/* Configuracion para pantallas que son mas verticales que horizontales (EX: ipad normal) */
+@media screen and (min-height: 1024px) and (orientation: portrait)
+{
+    .servicios,
+    .faqsTextos
+    {
+        min-height: auto;
+    }
+    /* Correcion en la alineacion vertical del contenido que esta en el contenedor de servicios */
+    .servicios .centro
+    {
+        justify-content: flex-start;
+    }
+    /* Margen inferior agregado al contenedor de la imagen */
+    .serviciosImagen
+    {
+        margin-bottom: 5em;
+    }
+    /* Centramos la card que contiene la informacion de contacto en su contenedor */
+    .contacto .centro
+    {
+        justify-content: center;
+    }
+}
+
+/* Configuracion para pantallas que son mas verticales que horizontales (EX: ipad pro) */
+@media screen and (min-height: 1366px) and (orientation: portrait)
+{
+    /* Correcion de la altura minima para dispositivos que son muy altos */
+    .servicios,
+    .contacto,
+    .examenes,
+    .faqs,
+    .faqsImagen
+    {
+        min-height: auto;
+        /* border: 1px solid red; */
+    }
+    .serviciosImagen
+    {
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .serviciosContenido
+    {
+        height: auto;
+    }
+    .contacto .centro
+    {
+        justify-content: flex-end;
     }
 }
