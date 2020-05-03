@@ -2780,5 +2780,4 @@ function hideShowMenu()
     burguerMenu.classList.toggle("active");
     // mostramos/ocultamos los elementos del menu
     menu.classList.toggle("active");
-
 }

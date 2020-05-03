@@ -1649,7 +1649,6 @@ h2.titulo
     /* border: 1px solid blue; */
 }
 
-
 /* Estilo general del contenedor de las paginas a columnas */
 .columna .centro
 {
@@ -2469,8 +2468,7 @@ a.breadcrumbs-link:hover
     {
         display: flex;
     }
-    /* Ajustes necesarios para quitar el carrusel y dejarlo en scrooll */
-    /*
+    /* Ajustes necesarios para quitar el carrusel y dejarlo en scrooll
         * Quitamos las flechas
         * Quitamos los indicadores
     */
@@ -2565,19 +2563,23 @@ a.breadcrumbs-link:hover
     {
         left: -150px;
     }
+    /*  Nuevo margen añadido a la columna que contiene los datos en el footer*/
     .col-datos
     {
         margin: 0 1em;
     }
+    /* Nueva dimencion a la columna que contiene el copyright en el footer */
     .col-copy
     {
         width: 14em;
     }
+    /* Nueva dimencion al logo que esta en el footer */
     .logoFooter img
     {
         width: 100%;
         height: auto;
     }
+    /* Nueva dimencion al contenedor de los datos de los horarios que esta en el footer*/
     .contenedorDia
     {
         width: auto;
@@ -2785,11 +2787,13 @@ a.breadcrumbs-link:hover
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-end;
-        padding: 20px 20%;
+        padding: 105px 20% 20px;
+        /* border: 2px solid black; */
     }
     /* Estilos necesarios para corregir la altura de los elemento del menu y darle su animacion*/
     .menu ul li
     {
+        /* border: 1px solid blue; */
         height: auto;
         padding: 0;
         font-size: 18px;
@@ -2819,6 +2823,7 @@ a.breadcrumbs-link:hover
     {
         animation-delay: .45s;
     }
+    /* Margen vertical agregado a los elementos que estan en el menu */
     .menu ul li a
     {
         margin: 10px 0;
@@ -2894,7 +2899,6 @@ a.breadcrumbs-link:hover
     }
 }
 
-
 /* Responsive design para 500px */
 @media screen and (max-width: 31.25em)
 {
@@ -2935,6 +2939,7 @@ a.breadcrumbs-link:hover
     /* Nuevo color para la barra visible del header*/
     .headerDown
     {
+        position: relative;
         backdrop-filter: saturate(180%) blur(20px);
         background: rgba(245, 247, 248, 0.60);
         box-shadow: 0px 5px 10px -5px var(--arrowSombra);
@@ -2950,8 +2955,8 @@ a.breadcrumbs-link:hover
     {
         display: none;
         /* border: 1px solid red; */
-        position: fixed;
-        height: 100vh;
+        position: absolute;
+        height: calc(100vh - 35px);
         width: 100vw;
         left: 0;
         right: 0;
@@ -2962,21 +2967,27 @@ a.breadcrumbs-link:hover
         background: none;
         animation: none;
     }
+    /* Nuevo grosor para las fuentes del menu para que se aprecie mejor en dispositivos pequeños */
+    .menu ul li a,
+    .menu ul li a.selected
+    {
+        font-weight: 600;
+    }
     /* Clase para cuando se muestre el menu */
     .menu.active
     {
         display: block;
     }
-    /* Estilo necesario para que el logo se vea al activar el menu */
+    /* Estilo necesario para que el logo se quedara pegado en su lugar al desplegar el menu */
     .logo
     {
-        position: fixed;
+        position: absolute;
         top: 13px;
     }
-    /* Estilo necesario para que el burguermenu se vea al activar el menu */
+    /* Estilo necesario para que el burguermenu se quedara pegado en su lugar al desplegar el menu*/
     .menuIcono
     {
-        position: fixed;
+        position: absolute;
         right: 20px;
         top: 23px;
     }
@@ -3240,6 +3251,7 @@ a.breadcrumbs-link:hover
 /* Configuracion para pantallas que son mas verticales que horizontales (EX: ipad normal) */
 @media screen and (min-height: 1024px) and (orientation: portrait)
 {
+    /* Correcion en la altura minima a dichas secciones para que este determinado por su contenido */
     .servicios,
     .faqsTextos
     {
@@ -3275,15 +3287,18 @@ a.breadcrumbs-link:hover
         min-height: auto;
         /* border: 1px solid red; */
     }
+    /* Correcion de altura en el contenedor de la imagen de servicios */
     .serviciosImagen
     {
         height: 100%;
         margin-bottom: 0;
     }
+    /* Correcion en la altura en el contenedor del texto de servicios */
     .serviciosContenido
     {
         height: auto;
     }
+    /* Correcion de la justificacion en el eje X en contacto */
     .contacto .centro
     {
         justify-content: flex-end;
