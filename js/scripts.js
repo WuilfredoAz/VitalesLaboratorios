@@ -7,6 +7,8 @@ const direccionCompleta = "Calle 22 sur,  Edif. Remanzo,  piso 1 local 01, Puebl
 const googleMaps = "https://www.google.co.ve";
 // Telefono
 const numeroTelefono = "0281-299.27.90";
+// telefono para llamar (sin formato)
+const numeroTelefonoLlamar = "5802812992790";
 // Link de WhastApp
 const whatsApp= "https://youtube.com";
 // Link de Instagram
@@ -160,7 +162,7 @@ const horarioWeekend = "8:00am - 12:00pm";
         // Numero que se muestra
         txtTelefonoHeader.innerText= numeroTelefono;
         // href que marca
-        telefono.href="telf:+" + numeroTelefono;
+        telefono.href="tel:+" + numeroTelefonoLlamar;
     // ===== Termina el telefono
 
     // ===== Empieza la direccion
@@ -192,7 +194,7 @@ const horarioWeekend = "8:00am - 12:00pm";
         linkCorreoFooter.href= "mailto:" + correo;
         linkCorreoFooter.innerText = correo;
         // Datos del telefono
-        linkTelefonoFooter.href = "telf:+" + numeroTelefono;
+        linkTelefonoFooter.href = "tel:+" + numeroTelefonoLlamar;
         linkTelefonoFooter.innerText = numeroTelefono;
         // Datos de la direccion
         linkDireccionFooter.href= googleMaps;
@@ -242,7 +244,7 @@ function validarMenu()
         // Texto que marca el widget
         textoTelefono.innerText = numeroTelefono
         // href que marca el widget
-        linkTelefono.href="telf:+" + numeroTelefono;
+        linkTelefono.href="tel:+" + numeroTelefonoLlamar;
     }
     // Si estoy en los examenes
     else if(tituloPagina=="Examanes — Vitales Laboratorios")
@@ -353,12 +355,12 @@ function datosIndex()
         // Texto que muestra en contacto
         textoTelefonoContacto.innerText= numeroTelefono;
         // href que tiene en contacto
-        linkTelefonoContacto.href= "telf:+" + numeroTelefono;
+        linkTelefonoContacto.href= "tel:+" + numeroTelefonoLlamar;
 
         // Texto que marca el widget
         textoTelefono.innerText = numeroTelefono
         // href que marca el widget
-        linkTelefono.href="telf:+" + numeroTelefono;
+        linkTelefono.href="tel:+" + numeroTelefonoLlamar;
 
     // ===== Termina otros datos
 
