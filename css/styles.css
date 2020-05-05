@@ -105,6 +105,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    /* Linea necesaria para resolver bug de letras con Safari en iOS */
+    -webkit-text-size-adjust: 100%;
 }
 
 /* Asignamos el color de fondo */
@@ -1653,7 +1655,8 @@ h2.titulo
 
 .columna.primera
 {
-    height: calc(100vh - 105px);
+    min-height: calc(100vh - 105px);
+    height: auto;
 }
 
 /* Estilo general del contenedor de las paginas a columnas */
@@ -1662,8 +1665,7 @@ h2.titulo
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 36em;
-    max-height: 600px;
+    min-height: calc(100vh - 105px);
     height: auto;
 }
 
@@ -1715,9 +1717,11 @@ h2.titulo
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    max-height: inherit;
     gap: 1em;
     margin-left: 4.375em;
+    max-height: calc(100vh - 105px);
+    height: auto;
+    padding: 20px 0;
 }
 
 /* Estilo general de la priemra imagen de la grilla de descripcion */
@@ -1794,7 +1798,9 @@ h2.titulo
 .especialistas
 {
     font-size: 16px;
-    height: 100vh;
+    display: flex;
+    min-height: 100vh;
+    height: auto;
 }
 
 /* Contenedor de la seccion que contiene a los especialistas y el widget de telefono */
@@ -2509,6 +2515,7 @@ a.breadcrumbs-link:hover
     {
         text-align: center;
     }
+    /* Ajuste de altura a la seccion de nosotros */
     .columna,
     .columna.primera
     {
@@ -2516,15 +2523,10 @@ a.breadcrumbs-link:hover
         min-height: 100vh;
         height: auto;
     }
+    /* Ajuste de altura necesario para que la primera seccion de "nostros" este centrada */
     .columna.primera .left
     {
         min-height: calc(100vh - 105px);
-    }
-    .especialistas
-    {
-        display: flex;
-        min-height: 100vh;
-        height: auto;
     }
 }
 
@@ -2638,12 +2640,14 @@ a.breadcrumbs-link:hover
     {
         width: calc(72px - 40px);
     }
+    /* ajuste a la altura del contenedor de la secciones en nosotros */
     .columna .centro
     {
         min-height: 100vh;
         max-height: initial;
         height: auto;
     }
+    /* Ajuste para redimencionar el ancho del contenedor de las imagenes en nosotros */
     .columna .right,
     .columna:nth-of-type(even) .right
     {
@@ -2651,10 +2655,12 @@ a.breadcrumbs-link:hover
         margin: 0;
         width: 40%;
     }
+    /* Ajuste para redimencionar el ancho del contenedor del texto en nostros */
     .columna .left
     {
         width: 60%;
     }
+    /* Nueva forma del grid en las imagenes */
     .imagenGrid-1
     {
         grid-column: 4 / 9;
@@ -2690,6 +2696,7 @@ a.breadcrumbs-link:hover
         grid-column: 1 / 6;
         grid-row: 7 / 9;
     }
+    /* Ajuste necesario para que las imagenes se vean bien */
     .imagenGrid-1 img,
     .imagenGrid-2 img,
     .imagenGrid-3 img,
@@ -2701,6 +2708,7 @@ a.breadcrumbs-link:hover
         width: 100%;
         height: auto;
     }
+    /* Ajuste para que los especialistas se posicionen en forma de grilla */
     .contenedorEspecialistas
     {
         display: grid;
@@ -2708,6 +2716,7 @@ a.breadcrumbs-link:hover
         grid-template-columns: repeat(3, 1fr);
         gap: 2em;
     }
+    /* Quitamos el margen hacia la derecha que tenian las cards de los especialistas */
     .especialista
     {
         margin: 0;
@@ -3006,14 +3015,17 @@ a.breadcrumbs-link:hover
         padding: 2.8125em 0 4em;
         margin: 0;
     }
+    /* Caambiamos a columans la forma de mostrar el contendio en la seccion de nosotros */
     .columna .centro
     {
         flex-direction: column;
     }
+    /* Le declaramos un ancho al contenedor del grid con las imagenes */
     .columna .right
     {
         height: 400px;
     }
+    /* Nueva disposicion de imagenes en el grid */
     .imagenGrid-1
     {
         grid-column: 1 / 5;
@@ -3049,6 +3061,7 @@ a.breadcrumbs-link:hover
         grid-column: 5 / 9;
         grid-row: 5 / 9;
     }
+    /* Ajuste para que las imagenes se vean bien en el grid */
     .imagenGrid-1 img,
     .imagenGrid-2 img,
     .imagenGrid-3 img,
@@ -3061,15 +3074,18 @@ a.breadcrumbs-link:hover
         width: 100%;
         object-fit: cover;
     }
+    /* Colocamos el orden de las columnas en su forma original */
     .columna:nth-of-type(even) .left,
     .columna:nth-of-type(even) .right
     {
         order: initial;
     }
+    /* Cambiamos la cantidad de columnas del grid que muestra los especialistas */
     .contenedorEspecialistas
     {
         grid-template-columns: repeat(2, 1fr);
     }
+    /* Le doy un poco de margin  a la seccion de especialistas para separarla del contenido anterior*/
     .especialistas
     {
         margin-top: 2em;
@@ -3086,7 +3102,9 @@ a.breadcrumbs-link:hover
         background: rgba(245, 247, 248, 0.80);
     }
 }
-/* Correcion para el menu cuando esta en dispositivos pequeños pero en horizontal */
+/* Correcion para el menu cuando esta en dispositivos pequeños y en horizontal para que no tenga en cuenta
+    el tamaño del header
+*/
 /* 767px */
 @media screen and (max-width: 47.9375em) and (orientation: landscape)
 {
@@ -3238,6 +3256,7 @@ a.breadcrumbs-link:hover
     {
         overflow: hidden;
     }
+    /* Nueva separacion de las cards de los especialistas */
     .contenedorEspecialistas
     {
         gap: 1em;
@@ -3342,11 +3361,6 @@ a.breadcrumbs-link:hover
     {
         font-size: 1.16em;
     }
-    .cta-secundary
-    {
-        text-align: center;
-    }
-
     /* Ajustes generales para que el contenedor de los filtros sea scrolleable y nuevas dimenciones */
     .faqsFiltros
     {
@@ -3387,10 +3401,12 @@ a.breadcrumbs-link:hover
     {
         min-height: 10em;
     }
+    /* Agregamos una columna al grid de las imagenes de la seccion de nosotros */
     .columna .right
     {
         grid-template-rows: repeat(9, 1fr);
     }
+    /* Nueva disposicion de imagenes  */
     .imagenGrid-1,
     .imagenGrid-4
     {
@@ -3409,23 +3425,28 @@ a.breadcrumbs-link:hover
         grid-column: 1 / 9;
         grid-row: 7 / 10;
     }
+    /* Ocultamos la ultima imagen */
     .imagenGrid-7
     {
         display: none;
     }
+    /* Hacemos que el grid que contiene las cards de los especialistas muestre el contenido en columnas */
     .contenedorEspecialistas
     {
         display: block;
     }
+    /* Espaciado en la parte inferior de las cards de los especialistas */
     .especialista
     {
         margin-bottom: 3.5em;
     }
+    /* Nuevas dimenciones al contenedor de las redes sociales de los especialistas */
     .especialistaRedes
     {
         width: 7em;
         height: 2.2em;
     }
+    /* Nuevas dimenciones a los iconos d elas redes sociales de los especialistas */
     .especialistaRedes_Link
     {
         height: 1.6em;
@@ -3542,6 +3563,7 @@ a.breadcrumbs-link:hover
     {
         justify-content: center;
     }
+    /* Margen superior a a la seccion de los especialistas */
     .especialistas
     {
         margin-top: 3em;
