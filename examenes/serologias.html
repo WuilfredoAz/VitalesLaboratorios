@@ -69,36 +69,40 @@
                 <div class="centro">
                     <div class="headerUp_left">
                         <div class="headerUp_dato">
-                            <img class="headerUp_ico" src="../img/icons/locacion-blanco.png" alt="Ubicación:" />
-                            <a href="#" class="js-datoDireccionAbre headerUp_txt" target="blank">Cargando</a>
+                            <a href="#" class="js-datoDireccionAbre headerUp_txt" target="blank">
+                                <img class="headerUp_ico" src="../img/icons/locacion.png" srcset="../img/icons/locacion2x.png 1.5x" alt="Ubicación:" />
+                                <span class="js-txtDireccionAbre">Cargando</span>
+                            </a>
                         </div>
                         <div class="headerUp_dato">
-                            <img class="headerUp_ico" src="../img/icons/telefono-blanco.png" alt="Telf:" />
-                            <a href="#" class="js-datoTelefono headerUp_txt">Cargando</a>
+                            <a href="#" class="js-datoTelefono headerUp_txt">
+                                <img class="headerUp_ico" src="../img/icons/tel.png" srcset="../img/icons/tel2x.png 1.5x" alt="Telf:" />
+                                <span class="js-txtdatoTelefono">Cargando</span>
+                            </a>
                         </div>
                     </div>
                     <div class="headerUp_Right">
                         <div class="headerUp_Right_Caja">
-                            <a href="#" class="js-fb headerUp_RS">
-                                <img class="headerUp_RS_Img" src="../img/icons/fb.png" alt="Facebook" />
+                            <a href="#" class="js-fb headerUp_RS" target="blank">
+                                <img class="headerUp_RS_Img" src="../img/icons/fb.png" srcset="../img/icons/fb2x.png 1.5x" alt="Facebook" />
                             </a>
-                            <a href="#" class="js-wa headerUp_RS">
-                                <img class="headerUp_RS_Img" src="../img/icons/ws.png" alt="WhatsApp" />
+                            <a href="#" class="js-wa headerUp_RS" target="blank">
+                                <img class="headerUp_RS_Img" src="../img/icons/ws.png" srcset="../img/icons/ws2x.png 1.5x" alt="WhatsApp" />
                             </a>
-                            <a href="#" class="js-ig headerUp_RS">
-                                <img class="headerUp_RS_Img" src="../img/icons/ig.png" alt="Instagram" />
+                            <a href="#" class="js-ig headerUp_RS" target="blank">
+                                <img class="headerUp_RS_Img" src="../img/icons/ig.png" srcset="../img/icons/ig2x.png 1.5x" alt="Instagram" />
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="headerDown">
+            <div class="js-headerDown headerDown">
                 <div class="centro">
                     <picture class="logo">
-                        <!-- <source srcset="../img/logoresponsive.png" media="()" /> -->
+                        <source srcset="../img/logoresponsive.png" media="(max-width: 31.25em)" />
                         <img src="../img/logo-black.png" alt="Vitales Laboratorios Logo" />
                     </picture>
-                    <nav class="menu" role="navigation">
+                    <nav class="js-menu menu" role="navigation">
                         <ul>
                             <li><a class="js-menuLink" href="/">Inicio</a></li>
                             <li><a class="js-menuLink" href="../nosotros.html">Nosotros</a></li>
@@ -107,6 +111,9 @@
                             <li><a class="js-menuLink" href="../#contacto">Contacto</a></li>
                         </ul>
                     </nav>
+                    <i class="js-burguerMenu menuIcono">
+                        <i></i><i></i><i></i>
+                    </i>
                 </div>
             </div>
         </header>
@@ -125,33 +132,41 @@
                         <h1 class="js-titulo titulo">Cargando</h1>
                     </div>
                 </div>
-                <div class="centro">
-                    <p class="contadorDeExamanes-Texto">
-                        <span>Mostrando</span>
-                        <span class="js-cantidad contadorDeExamanes-Cantidad">0</span>
-                        <span>exámenes</span>
-                    </p>
-                    <div class="filaConTitulos">
-                        <p class="filaConTitulos-texto">Nombre del examen</p>
-                        <p class="filaConTitulos-texto">Tiempo de entrega</p>
-                        <p class="filaConTitulos-texto">Horario de recolección</p>
-                    </div>
-                    <div class="js-listadoDeExamenes-Contenedor listadoDeExamenes-Contenedor">
-                        <!-- se Generan por JS -->
-                        <!-- <article class="examenEspecifico">
-                            <div class="examenEspecifico-ColTitulo">
-                                <h2 class="js-titulo-examen titulosCard">Hematología completa</h2>
-                            </div>
-                            <div class="examenEspecifico-ColTiempo">
-                                <p class="js-tiempo-examen parrafo">Cargando</p>
-                            </div>
-                            <div class="examenEspecifico-ColHorario">
-                                <p class="js-horario-examen parrafo">Cargando</p>
-                            </div>
-                            <div class="examenEspecifico-ColCta">
-                                <span class="js-btn-detallesExamen btn-detallesExamen">Ver detalles</span>
-                            </div>
-                        </article> -->
+                <div class="listadoDeExamanes-Lista">
+                    <div class="centro">
+                        <div class="contadorDeExamanes-Texto">
+                            <p>
+                                <span>Mostrando</span>
+                                <span class="js-cantidad contadorDeExamanes-Cantidad">0</span>
+                                <span>exámenes</span>
+                            </p>
+                            <p class="js-instrucciones instrucciones disable">
+                                <i class="icon-info"></i>
+                                <span>Instrucciones</span>
+                            </p>
+                        </div>
+                        <div class="filaConTitulos">
+                            <p class="filaConTitulos-texto">Nombre del examen</p>
+                            <p class="filaConTitulos-texto">Tiempo de entrega</p>
+                            <p class="filaConTitulos-texto">Horario de recolección</p>
+                        </div>
+                        <div class="js-listadoDeExamenes-Contenedor listadoDeExamenes-Contenedor">
+                            <!-- se Generan por JS -->
+                            <!-- <article class="examenEspecifico">
+                                <div class="examenEspecifico-ColTitulo">
+                                    <h2 class="js-titulo-examen titulosCard">Hematología completa</h2>
+                                </div>
+                                <div class="examenEspecifico-ColTiempo">
+                                    <p class="js-tiempo-examen parrafo">Cargando</p>
+                                </div>
+                                <div class="examenEspecifico-ColHorario">
+                                    <p class="js-horario-examen parrafo">Cargando</p>
+                                </div>
+                                <div class="examenEspecifico-ColCta">
+                                    <span class="js-btn-detallesExamen btn-detallesExamen">Ver detalles</span>
+                                </div>
+                            </article> -->
+                        </div>
                     </div>
                 </div>
             </section>
@@ -186,14 +201,14 @@
                                 <span class="js-copyright">Cargando</span>
                             </p>
                             <div class="footerRSCaja">
-                                <a href="#" class="js-fbFooter footerRS">
-                                    <img src="../img/icons/fb.png" alt="Facebook" />
+                                <a href="#" class="js-fbFooter footerRS" target="blank">
+                                    <img src="../img/icons/fb.png" srcset="../img/icons/fb2x.png 1.5x" alt="Facebook" />
                                 </a>
-                                <a href="#" class="js-waFooter footerRS">
-                                    <img src="../img/icons/ws.png" alt="WhatsApp" />
+                                <a href="#" class="js-waFooter footerRS" target="blank">
+                                    <img src="../img/icons/ws.png" srcset="../img/icons/ws2x.png 1.5x" alt="WhatsApp" />
                                 </a>
-                                <a href="#" class="js-igFooter footerRS">
-                                    <img src="../img/icons/ig.png" alt="Instagram" />
+                                <a href="#" class="js-igFooter footerRS" target="blank">
+                                    <img src="../img/icons/ig.png" srcset="../img/icons/ig2x.png 1.5x" alt="Instagram" />
                                 </a>
                             </div>
                         </div>

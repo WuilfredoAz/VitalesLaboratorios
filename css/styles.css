@@ -96,6 +96,11 @@
 {
     content: "\ea40";
 }
+.icon-info::before
+{
+    content: "\e901";
+    margin-right: .5em;
+}
 
 
 /* Reseteo de estilos */
@@ -170,13 +175,11 @@ body
 }
 
 /* Ajuste para que los contenedores de las img abarquen todo el espacio */
-/*MENOS*/figure,
 picture
 {
     width: 100%;
 }
 /* Ajuste para quitar el margen que queda abajo en las img */
-/*MENOS*/figure img,
 picture img
 {
     vertical-align: top;
@@ -1117,9 +1120,6 @@ h2.titulo
     width: 50%;
     min-height: 100vh;
     order: 1;
-    /* margin-right: 50%; */
-    /* border: 1px solid red; */
-    /* height: 100vh; */
 }
 
 .faqsImagen
@@ -1685,8 +1685,9 @@ h2.titulo
     overflow: hidden;
 }
 
-/* detalle estetico (separador) en el titulo de las paginas a columnas */
-.columna .titulo::after
+/* detalle estetico (separador) en el titulo de las paginas a columnas y en el modal de las condiciones para los examenes*/
+.columna .titulo::after,
+.overlay-condiciones .titulo::after
 {
     font-size: 16px;
     display: block;
@@ -2072,7 +2073,7 @@ a.breadcrumbs-link:hover
     content: "/";
 }
 
-/* Estilos generales del contenedor del contador de examenes */
+/* Estilos generales del contenedor del texto de "mostando x examenes" y "condiciones"*/
 .contadorDeExamanes-Texto
 {
     font-weight: 400;
@@ -2082,6 +2083,31 @@ a.breadcrumbs-link:hover
     margin-top: 2.916em;
     margin-bottom: 1.66em;
     border-bottom: 1px solid #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilos generales para el texto que muestra las condiciones para el examene */
+.instrucciones
+{
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    color: var(--seleccionMenu);
+    cursor: pointer;
+    transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* Estilo general para no mostrar dicho texto en categorias de examenes que no lo ameritan */
+.instrucciones.disable
+{
+    display: none;
+}
+
+/* Pequeño cambio al hacerle hover a dicho texto */
+.instrucciones:hover
+{
+    color: var(--resaltante);
 }
 
 /* Estilo general para el numero del contador de examenes */
@@ -2101,9 +2127,6 @@ a.breadcrumbs-link:hover
 /* Estilos generales para la fila que contiene el titulo de las columnas de los examenes */
 .filaConTitulos
 {
-    display: grid;
-    grid-template-columns: 516px repeat(3, 1fr);
-    grid-template-rows: 1fr;
     margin-bottom: 1.25em;
     padding: 0 1.625em;
 }
@@ -2128,15 +2151,21 @@ a.breadcrumbs-link:hover
 {
     height: 4.0625em;
     width: 100%;
-    display: grid;
-    grid-template-columns: 516px repeat(3, 1fr);
-    grid-template-rows: 1fr;
     padding: 1em 1.625em;
     /* border: 1px solid red; */
     border-radius: 8px;
     background: var(--fuente);
     margin-bottom: 1.2em;
     box-shadow: 0px 0px 15px -5px var(--sombras);
+}
+
+/* Estilos que unifican la grilla para los examenes y el titulo de las grilla */
+.filaConTitulos,
+.examenEspecifico
+{
+    display: grid;
+    grid-template-columns: 516px repeat(2, 1fr) 106px;
+    grid-template-rows: 1fr;
 }
 
 /* Estilos necesarios para centrar los elementos verticalmente en sus columnas */
@@ -2185,8 +2214,9 @@ a.breadcrumbs-link:hover
     color: var(--fuente);
 }
 
-/* Estilo general del overlay */
-.overlay
+/* Estilo general de los overlay */
+.overlay,
+.overlay-condiciones
 {
     height: 100vh;
     width: 100vw;
@@ -2200,8 +2230,9 @@ a.breadcrumbs-link:hover
     display: none;
 }
 
-/* Estilo que muestra el modal */
-.overlay.active
+/* Estilo que muestran los modal */
+.overlay.active,
+.overlay-condiciones.active
 {
     display: flex;
 }
@@ -2209,13 +2240,19 @@ a.breadcrumbs-link:hover
 /* Estilos general del modal */
 .modal
 {
-    min-height: 34.375em;
+    min-height: auto;
     width: 28.125em;
     border-radius: 8px;
     background: var(--bgModal);
     padding: 1.875em;
     animation: mostrarModal 1150ms linear both;
     box-shadow: 5px 5px 10px -2px rgba(0,0,0, .5);
+}
+
+/* Corecion para el margen inferior de los parrafos que se encuentran en los modal */
+.modal .parrafo
+{
+    margin-bottom: 2em;
 }
 
 /* Estilo general de los titulos de en el modal */
@@ -2246,6 +2283,14 @@ a.breadcrumbs-link:hover
 {
     background: var(--arrowAzul);
     color: var(--fuente);
+}
+
+/* Pequeña correcion que se aplica solo al boton de cerrar del modal de las "condiciones de los examanes"*/
+.overlay-condiciones .btn-modal
+{
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 /* Correcion aplicada al modal de Quimica Urinaria */
@@ -2297,6 +2342,39 @@ a.breadcrumbs-link:hover
 .js-animado-r
 {
     visibility: hidden;
+}
+
+/* Quitamos la decoracion de la lista para las codiciones de los examanes */
+.condiciones
+{
+    list-style: none;
+}
+
+/* Estilo necesario para posicionar los elementos (el bullet y el texto) uno al lado del otro */
+.condiciones li
+{
+    display: flex;
+}
+
+/* Estilos del bullet de la lista de las condiciones del examen */
+.condiciones li::before
+{
+    content: "\2022";
+    padding-right: 8px;
+    color: var(--seleccionMenu);
+    font-size: 2em;
+    vertical-align: middle;
+    line-height: 12px;
+    position: relative;
+    top: 2px;
+}
+
+/* Estilos para los parrafos que se encuentran en los modals de condiciones para el examen */
+.condiciones .parrafo
+{
+    display: inline-block;
+    margin-bottom: 1em;
+    color: var(--fuenteRespuesta);
 }
 
 /* Animacion para revelar los elementos del hero */
@@ -2467,7 +2545,6 @@ a.breadcrumbs-link:hover
     .intermedio .centro
     {
         justify-content: space-between;
-        /* border: 1px solid palevioletred; */
     }
     /* Nuevas dimenciones de las cards */
     .beneficios
@@ -2477,13 +2554,16 @@ a.breadcrumbs-link:hover
     }
     /*  Estilos necesarios para centrar el contenedor de dichas secciones */
     .servicios,
-    .faqs
+    .faqs,
+    .listadoDeExamanes-Hero,
+    .listadoDeExamanes-Lista
     {
         display: flex;
     }
-    /* Ajustes necesarios para quitar el carrusel y dejarlo en scrooll
-        * Quitamos las flechas
-        * Quitamos los indicadores
+    /*
+        Ajustes necesarios para quitar el carrusel y dejarlo en scrooll
+          * Quitamos las flechas
+          * Quitamos los indicadores
     */
     .serviciosContenido-carrusel-arrowBack,
     .serviciosContenido-carrusel-arrowForwards,
@@ -2495,7 +2575,6 @@ a.breadcrumbs-link:hover
     .serviciosContenido-carrusel-container
     {
         height: 300px;
-        /* border: 1px solid red; */
         overflow-x: auto;
         align-items: flex-start;
         margin-left: 3.75em;
@@ -2528,12 +2607,6 @@ a.breadcrumbs-link:hover
     {
         min-height: calc(100vh - 105px);
     }
-}
-
-/* Responsive design de 1070px */
-@media screen and (max-width: 66.875em)
-{
-
 }
 
 /* Responsive design para 1024px */
@@ -2721,6 +2794,77 @@ a.breadcrumbs-link:hover
     {
         margin: 0;
     }
+    /*  Modificamos la grilla tanto del titulo como la de los examenes*/
+    .filaConTitulos,
+    .examenEspecifico
+    {
+        display: grid;
+        grid-template-columns: 516px repeat(2, 1fr) 104px;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    /* Ocultamos el la columna de tiempo de entrega por pasarla debajo del titulo en el card del examen */
+    .filaConTitulos-texto:nth-of-type(2)
+    {
+        display: none;
+    }
+    /* Nueva proporcion de la columna de tiempo de entrega por ocultar la columna anterior */
+    .filaConTitulos-texto:nth-of-type(3)
+    {
+        grid-column: 2 / 4;
+    }
+    /* Estilos generales del contenedor del examen */
+    .examenEspecifico
+    {
+        min-height: 4.0625em;
+        height: auto;
+    }
+    /* Texto que aparece cuando el contenido de la columna del tiempo de entrega pasa a estar debajo del titulo*/
+    .examenEspecifico-ColTiempo p::before
+    {
+        content: "Listo en ";
+        font-weight: 400;
+    }
+    /* Estilo para hacer enfasis en el tiempo de entrega de los examenes (negrita) */
+    .examenEspecifico-ColTiempo p.parrafo
+    {
+        font-weight: 500;
+    }
+    /* Reestrucura de la grilla de la card de los examenes especificos */
+    .examenEspecifico-ColTitulo
+    {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-bottom: .2em;
+    }
+    .examenEspecifico-ColTiempo
+    {
+        grid-column: 1 / 1;
+        grid-row: span 1;
+        margin-left: 3.2em;
+    }
+    .examenEspecifico-ColHorario
+    {
+        grid-column: 2 / 4;
+        grid-row: 1 / 3;
+    }
+    .examenEspecifico-ColCta
+    {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+    }
+}
+
+/* W: 900px */
+@media screen and (max-width: 56.25em)
+{
+    /* Ajuste para cuando ya el estilo a 3 columnas ya no cabe en la pantalla (grilla de examanes especificos) */
+    .filaConTitulos,
+    .examenEspecifico
+    {
+        display: grid;
+        grid-template-columns: 400px repeat(2, 1fr) 104px;
+        grid-template-rows: repeat(2, 1fr);
+    }
 }
 
 /* Responsive para 768px */
@@ -2866,14 +3010,9 @@ a.breadcrumbs-link:hover
     /* Nuevos estilos para el menu */
     .menu
     {
-        /* display: none; */
-        /* border: 1px solid red; */
-        /* backdrop-filter: saturate(180%) blur(10px); */
-        /* background: rgba(245, 247, 248, 0.80); */
         background: rgba(245, 247, 248, 0.96);
         position: fixed;
         height: 100vh;
-        /* width: 0; */
         right: -100%;
         top: 0;
         bottom: 0;
@@ -2883,7 +3022,6 @@ a.breadcrumbs-link:hover
     /* Clase para cuando se muestre el menu */
     .menu.active
     {
-        /* display: block; */
         left: 0;
         right: 0;
         width: 100vw;
@@ -2896,12 +3034,10 @@ a.breadcrumbs-link:hover
         justify-content: space-evenly;
         align-items: flex-end;
         padding: 105px 20% 20px;
-        /* border: 2px solid black; */
     }
     /* Estilos necesarios para corregir la altura de los elemento del menu y darle su animacion*/
     .menu ul li
     {
-        /* border: 1px solid blue; */
         height: auto;
         padding: 0;
         font-size: 18px;
@@ -3090,6 +3226,73 @@ a.breadcrumbs-link:hover
     {
         margin-top: 2em;
     }
+    /* Nuevo margen agregado tras desaparecer la fila con titulos se vea balanceado */
+    .contadorDeExamanes-Texto
+    {
+        margin-bottom: 2.916em;
+    }
+    /* Desaparesco la fila con los titulos de la grilla */
+    .filaConTitulos
+    {
+        display: none;
+    }
+    /* Nueva proporcion de la grilla para las cards de los examanes especificos */
+    .examenEspecifico
+    {
+        grid-template-columns: minmax(250px, 400px) repeat(2, 1fr) 104px;
+        /* grid-template-rows: repeat(3, minmax(16px, 1fr)); */
+        grid-template-rows: minmax(16px, 1fr);
+    }
+    /* Quitamos los margenes que impedian que los textos tocaran los bordes de las caards */
+    .examenEspecifico .titulosCard::before,
+    .examenEspecifico-ColTiempo,
+    .examenEspecifico-ColHorario
+    {
+        margin: 0;
+    }
+    /* Nueva distribucion de las columnas en las cards de los examenes especificos */
+    .examenEspecifico-ColHorario
+    {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .examenEspecifico-ColCta
+    {
+        grid-column: 2 / 5;
+        grid-row: 1 / 4;
+    }
+    /* Texto que aparece tras pasar la columna de "horario"  a la misma columna que el titulo*/
+    .examenEspecifico-ColHorario p::before
+    {
+        content: "Se realiza de ";
+        font-weight: 400;
+    }
+    /* Nuevas dimenciones para los modal */
+    .modal
+    {
+        width: 26em;
+        max-height: 90vh;
+        padding: 1.2em;
+        min-height: auto;
+        height: auto;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    /* Nuevo margen para los parrafos que estan en los modal */
+    .modal .parrafo
+    {
+        margin-bottom: 1em;
+    }
+    /* Estilo necesario para que el titulo que más al raz y no tan separado creando especio innecesario */
+    .modal .titulo
+    {
+        line-height: 35px;
+    }
+    /* Estilos para el boton que cierra el modal */
+    .btn-modal
+    {
+        margin: 1em auto 0;
+    }
 }
 /* Ajuste para que dispositivos que aparentan ser de pocos recursos no tegan el efecto glass del menu */
 /* Añado el efecto glass para  resoluciones con densidad de pixeles >= 1.75 */
@@ -3116,12 +3319,6 @@ a.breadcrumbs-link:hover
 /* Responsive design para 500px */
 @media screen and (max-width: 31.25em)
 {
-    /* Estilos de la barra superiror azul */
-    /* .headerUp
-    {
-        backdrop-filter: saturate(180%) blur(20px);
-        background-color: rgba(1, 84, 190, 0.75);
-    } */
     /* Centramos contenido de la barra azul */
     .headerUp .centro
     {
@@ -3154,8 +3351,6 @@ a.breadcrumbs-link:hover
     .headerDown
     {
         position: relative;
-        /* backdrop-filter: saturate(180%) blur(20px); */
-        /* background: rgba(245, 247, 248, 0.60); */
         box-shadow: 0px 5px 10px -5px var(--arrowSombra);
         transition: 0.93s cubic-bezier(0.5,0.5,0,1);
     }
@@ -3221,6 +3416,157 @@ a.breadcrumbs-link:hover
         width: 100%;
         padding: 1.5em;
     }
+    /* Estilos para que el hero de los examenes se pueda leer y la imagen siga estando detras */
+    .listadoDeExamanes-Hero.hematologia
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #e9eff0
+                    url("../img/examenes/hematologia.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.serologia
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                #f3fdfe
+                    url("../img/examenes/serologia.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.qsanguinea
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                #fefefe
+                    url("../img/examenes/qsanguinea.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.mtumoral
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                #f7f8fc
+                    url("../img/examenes/mtumoral.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.hormonas
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #fcfcfc
+                    url("../img/examenes/hormonas.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.inmunologia
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #eeeeec
+                    url("../img/examenes/inmunologia.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.uroanalisis
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #fafbf6
+                    url("../img/examenes/uroanalisis.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.coprologia
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #fefefe
+                    url("../img/examenes/coprologia.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.qurinaria
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #e9f2fb
+                    url("../img/examenes/qurinaria.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.espermatograma
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #fcdcdf
+                    url("../img/examenes/espermatograma.jpg");
+        background-size: cover;
+    }
+    .listadoDeExamanes-Hero.gasometria
+    {
+        background: linear-gradient(0deg, rgba(251, 252, 255, 1) 0%, rgba(251,252,255,.6) 100%),
+                    #e8e9eb
+                    url("../img/examenes/gasometria.jpg");
+        background-size: cover;
+    }
+    /* Estilo que pasa a la card de examene especifico a una columna */
+    .examenEspecifico
+    {
+        grid-template-columns: 1fr;
+        padding: 1em;
+        /* border: 1px solid red; */
+    }
+    /* quitamos los margenes a la columna que contiene el titulo del examen */
+    .examenEspecifico-ColTitulo
+    {
+        margin: 0;
+    }
+    /* margen para separar el texto de "tiempo de entrega" del titulo de la card*/
+    .examenEspecifico-ColTiempo .parrafo
+    {
+        margin-top: 1em;
+    }
+    /* margen para separar el texto del "horario" del boton de ver detalles */
+    .examenEspecifico-ColHorario .parrafo
+    {
+        margin-bottom: 1em;
+    }
+    /* Nueva disposicion del boton de ver detalles en la card */
+    .examenEspecifico-ColCta
+    {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    /* Nueva forma de ver el boton de ver detalles de la card de examen especifico */
+    .btn-detallesExamen
+    {
+        width: 100%;
+        text-align: center;
+    }
+    /*  nuevo tamaño para los titulos de los modal*/
+    .modal .titulo
+    {
+        font-size: 1.5em;
+    }
+    /* Nuevo ancho que tendran los modal */
+    .modal
+    {
+        width: 80vw;
+    }
+    /* Estilo que ocultan los elementos que "quimica urinaria 24H" en los breadcrumps */
+    /* Ocultamos los hijos directos de .breadcrumps numero 6 y 7 */
+    .breadcrumbs > :nth-child(6),
+    .breadcrumbs > :nth-child(7)
+    {
+        display: none;
+    }
+    /* Estilo para el modal de quimica urinaria */
+    .modal.seleccionModal
+    {
+        width: auto;
+    }
+    /* Estilo para pasar a columnas las cards de seleccion de quimica urinaria */
+    .contenedornMuestra
+    {
+        display: block;
+    }
+    /* estilo para centrar el contenido de las cards de quimica urinaria sin usar flex y añadir margen */
+    .linkTipoMuestra
+    {
+        display: block;
+        margin: 1em auto;
+    }
+    /* Estilos para que se centre */
+    .contenedorMuestra
+    {
+        margin: 0 auto;
+        width: 100%;
+    }
 }
 /* Ajuste para que dispositivos que aparentan ser de pocos recursos no tegan el efecto glass del menu */
 /* Añado el efecto glass para  resoluciones con densidad de pixeles >= 1.75 */
@@ -3274,13 +3620,17 @@ a.breadcrumbs-link:hover
     .intermedio,
     .contacto,
     .columna,
-    .especialistas
+    .especialistas,
+    .listadoDeExamenes,
+    .overlay,
+    .overlay-condiciones
     {
         font-size: 12px;
     }
     /* Nuevo tamaño de fuente */
     .epigrafe,
-    .parrafo
+    .parrafo,
+    .contadorDeExamanes-Texto
     {
         font-size: 1em;
     }
@@ -3291,7 +3641,9 @@ a.breadcrumbs-link:hover
         font-size: 1.16em;
         text-align: center;
     }
-    .hero .parrafo
+    /* Estilos para corregir el tamaño de textos de algunos elementos */
+    .hero .parrafo,
+    .tituloModal
     {
         font-size: 1em;
     }
@@ -3334,7 +3686,9 @@ a.breadcrumbs-link:hover
     .beneficios,
     .serviciosContenido-carrusel-container,
     .faqs-Bloque,
-    .contenedorEspecialistas
+    .contenedorEspecialistas,
+    .examenEspecifico-ColCta,
+    .examenEspecifico-ColTitulo
     {
         font-size: 16px;
     }
@@ -3451,6 +3805,24 @@ a.breadcrumbs-link:hover
     {
         height: 1.6em;
     }
+    /* Nuevo tamaño de fuente al contenedor de los breadcrumps para que éstos bajen su tamaño de fuente por estar en "em" */
+    .breadcrumbs
+    {
+        font-size: 14px;
+    }
+    /* Estilos para que el boton de cerrar modal de la vista detalles de los examenes sea mas grande */
+    .btn-modal
+    {
+        width: 100%;
+        text-align: center;
+        padding: .5em;
+        font-size: 1em;
+    }
+    /* Estilos para el modal que muestra las condiciones para ir a los examenes */
+    .overlay-condiciones .modal
+    {
+        max-height: 70vh;
+    }
 }
 
 /* Responsive design para 320px */
@@ -3511,9 +3883,23 @@ a.breadcrumbs-link:hover
     {
         align-items: baseline;
     }
+    /*  Estilos para el boton que muestra los examenes en las cards de examenes especificos*/
+    .btn-detallesExamen
+    {
+        background: var(--seleccionMenu);
+        color: var(--fuente);
+        border: none;
+    }
+    /* Estilo para corregir nuevamente el espaciado innecesario de los titulos en los modal de la vista detalle de los examenes */
+    .modal .titulo
+    {
+        line-height: 25px;
+    }
+
 }
 /* Configuracion para pantallas que son muy horizontales pero poco alto (iphone X, Pixel 2XL) */
-@media screen and (max-height: 420px) and (min-width: 800px)
+/* (420H | 800W */
+@media screen and (max-height: 26.25em) and (min-width: 50em)
 {
     /* Pequeña correcion a la altura de la seccion de servicios */
     .servicios
@@ -3533,10 +3919,22 @@ a.breadcrumbs-link:hover
         height: auto;
         min-height: 100vh;
     }
+    /* Estilos del modal  para que pueda ser scrolleable hacia el eje Y */
+    .modal
+    {
+        width: 26em;
+        max-height: 90vh;
+        padding: 1.2em;
+        min-height: auto;
+        height: auto;
+        overflow: hidden;
+        overflow-y: auto;
+    }
 }
 
 /* Configuracion para pantallas que son mas verticales que horizontales (EX: ipad normal) */
-@media screen and (min-height: 1024px) and (orientation: portrait)
+/* 1024H */
+@media screen and (min-height: 64em) and (orientation: portrait)
 {
     /* Correcion en la altura minima a dichas secciones para que este determinado por su contenido */
     .servicios,
@@ -3571,7 +3969,8 @@ a.breadcrumbs-link:hover
 }
 
 /* Configuracion para pantallas que son mas verticales que horizontales (EX: ipad pro) */
-@media screen and (min-height: 1366px) and (orientation: portrait)
+/* 1366H */
+@media screen and (min-height: 85.375em) and (orientation: portrait)
 {
     /* Correcion de la altura minima para dispositivos que son muy altos */
     .servicios,

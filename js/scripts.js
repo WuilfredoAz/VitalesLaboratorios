@@ -310,12 +310,16 @@ function validarMenu()
     {
         // Cargo los datos de los examenes
         cargarQUDia();
+        // Ejecuto la funcion para poder mostrar las condiciones para los examenes
+        mostrarCondiciones();
     }
     // si estoy en la pagina de los espermatogramas
     else if(tituloPagina=="Espermatograma — Exámenes")
     {
         // cargo los datos de los examenes
         cargarEspermatograma();
+        // Ejecuto la funcion para poder mostrar las condiciones para los examenes
+        mostrarCondiciones();
     }
     // Si estoy en la pagina de gasometria
     else if(tituloPagina=="Gasometría — Exámenes")
@@ -2783,3 +2787,24 @@ function hideShowMenu()
     // mostramos/ocultamos los elementos del menu
     menu.classList.toggle("active");
 }
+
+// Funcion para mostrar el modal de las condiciones para los examenes (espermatograma, Orina 24H)
+function mostrarCondiciones()
+{
+    // Guardo en una variable al overlay
+    const overlayCondiciones = document.querySelector(".js-overlay-condiciones");
+    // Guardo en una variable al boton que muestra el overlay
+    const btnCondicionesAbrir = document.querySelector(".js-instrucciones");
+    // Guardo en una variable al boton que cierra el overlay
+    const btnCondicionesCerrar = document.querySelector(".js-btnModal-condiciones");
+
+    // Escuchador de eventos para mostrar el modal
+    btnCondicionesAbrir.addEventListener("click", ()=>{
+        overlayCondiciones.classList.toggle("active");
+    });
+    // Escuchador de eventos para cerrar el modal
+    btnCondicionesCerrar.addEventListener("click",()=>{
+        overlayCondiciones.classList.toggle("active");
+    });
+}
+
