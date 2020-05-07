@@ -874,10 +874,10 @@ function cargarQSanguinea()
     {
         titulo: "Glicemia basal",
         categoria: "Química sanguínea",
-        listo: "6 horas",
-        condicion: "Requiere ayuno",
+        listo: " 1 día",
+        condicion: "El paciente debe haber desayunado o ingerir carga de glucosa según solicitud de su médico",
         tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 9:00 a.m."
+        horarioMuestra: "8:00 a.m. a 10:30 a.m."
     }
 
     // Figura literaria para el segundo examen
@@ -886,9 +886,9 @@ function cargarQSanguinea()
         titulo: "Glicemia post prandial",
         categoria: "Química sanguínea",
         listo: "6 horas",
-        condicion: "1 ó 2 horas post-desayuno según indicación médica",
+        condicion: "Requiere ayuno",
         tipoMuestra: "sangre (suero)",
-        horarioMuestra: "8:30 a.m. a 10:30 a.m."
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el tercer examen
@@ -951,10 +951,10 @@ function cargarQSanguinea()
     {
         titulo: "Ácido úrico",
         categoria: "Química sanguínea",
-        listo: "falta",
-        condicion: "falta",
-        tipoMuestra: "falta",
-        horarioMuestra: "falta"
+        listo: "7 horas",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el noveno examen
@@ -982,7 +982,7 @@ function cargarQSanguinea()
     // Figura literaria para el decimo primero examen
     var qsanguinea10=
     {
-        titulo: "Gamma GlutamilTransferasa (GGT)",
+        titulo: "Gamma Glutamil Transferasa (GGT)",
         categoria: "Química sanguínea",
         listo: "6 horas",
         condicion: "No requiere ayuno",
@@ -1084,7 +1084,7 @@ function cargarQSanguinea()
         titulo: "Hierro",
         categoria: "Química sanguínea",
         listo: "6 horas",
-        condicion: "Requiere ayuno",
+        condicion: "No requiere ayuno",
         tipoMuestra: "sangre (suero)",
         horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
@@ -1094,7 +1094,7 @@ function cargarQSanguinea()
     {
         titulo: "Magnesio",
         categoria: "Química sanguínea",
-        listo: "6 horas",
+        listo: "3 horas",
         condicion: "No requiere ayuno",
         tipoMuestra: "sangre (suero)",
         horarioMuestra: "7:00 a.m. a 5:00 p.m."
@@ -1116,7 +1116,7 @@ function cargarQSanguinea()
     {
         titulo: "CK-MB",
         categoria: "Química sanguínea",
-        listo: "3 horas",
+        listo: "6 horas",
         condicion: "No requiere ayuno",
         tipoMuestra: "sangre (suero)",
         horarioMuestra: "7:00 a.m. a 5:00 p.m."
@@ -1172,7 +1172,7 @@ function cargarQSanguinea()
         titulo: "Bilirrubina total y fraccionada",
         categoria: "Química sanguínea",
         listo: "6 horas",
-        condicion: "No requiere ayuno",
+        condicion: "Ayuno. El paciente deberá permanecer en el laboratorio por un lapso de 2 a 3 horas aproximadamente.",
         tipoMuestra: "sangre (suero)",
         horarioMuestra: "7:00 a.m. a 5:00 p.m."
     }
@@ -1193,10 +1193,10 @@ function cargarQSanguinea()
     {
         titulo: "PTOG 4 muestras",
         categoria: "Química sanguínea",
-        listo: "6 horas",
-        condicion: "Ayuno. El paciente deberá permanecer en el laboratorio por un lapso de 2 a 3 horas aproximadamente.",
+        listo: "1 día",
+        condicion: "Requiere ayuno",
         tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 5:00 p.m."
+        horarioMuestra: "7:00 a.m. a 9:00 p.m."
     }
 
 
@@ -1427,7 +1427,7 @@ function cargarHormonas()
     // Figura literaria para el decimo primero examen
     var horm10=
     {
-        titulo: "Insulina",
+        titulo: "Insulina Basal",
         categoria: "Hormonas",
         listo: "1 día",
         condicion: "Requiere ayuno",
@@ -1472,11 +1472,11 @@ function cargarHormonas()
     var horm14=
     {
         titulo: "DHEA-S",
-        categoria: "Hormonas",
-        listo: "1 día",
-        condicion: "Requiere ayuno",
-        tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 9:00 a.m."
+        categoria: "A consultar",
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el decimo sexto examen
@@ -1495,10 +1495,10 @@ function cargarHormonas()
     {
         titulo: "βHCG",
         categoria: "Hormonas",
-        listo: "1 día",
-        condicion: "Requiere ayuno",
+        listo: "6 Horas",
+        condicion: "No requiere ayuno",
         tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 9:00 a.m."
+        horarioMuestra: "7:00 a.m. a 4:00 a.m."
     }
 
     // Figura literaria para el decimo octavo examen
@@ -1517,10 +1517,10 @@ function cargarHormonas()
     {
         titulo: "ACTH",
         categoria: "Hormonas",
-        listo: "1 día",
-        condicion: "Requiere ayuno",
-        tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 9:00 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el vigesimo examen
@@ -1528,10 +1528,10 @@ function cargarHormonas()
     {
         titulo: "HGH (Hormana de crecimiento)",
         categoria: "Hormonas",
-        listo: "1 día",
-        condicion: "Requiere ayuno",
-        tipoMuestra: "sangre (suero)",
-        horarioMuestra: "7:00 a.m. a 9:00 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el vigesimo primer examen
@@ -1569,10 +1569,10 @@ function cargarInmunologia()
     {
         titulo: "Inmunoglobulina A (IgA)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:30 a.m."
     }
 
     // Figura literaria para el 2 examen
@@ -1580,10 +1580,10 @@ function cargarInmunologia()
     {
         titulo: "Inmunoglobulina G (IgG)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: " 2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:30 a.m."
     }
 
     // Figura literaria para el 3 examen
@@ -1591,10 +1591,10 @@ function cargarInmunologia()
     {
         titulo: "Inmunoglobulina M (IgM)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: " 2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:30 a.m."
     }
 
     // Figura literaria para el 4 examen
@@ -1602,76 +1602,76 @@ function cargarInmunologia()
     {
         titulo: "Inmunoglobulina E (IgE)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 5 examen
     var inmu4=
     {
-        titulo: "MycoplasmaPneumoniaeIgG",
+        titulo: "Mycoplasma Pneumoniae IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: " 2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:30 a.m."
     }
 
     // Figura literaria para el 6 examen
     var inmu5=
     {
-        titulo: "MycoplasmaPneumoniaeIgM",
+        titulo: "Mycoplasma Pneumoniae IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 7 examen
     var inmu6=
     {
-        titulo: "Chlamydia PneumoniaeIgG",
+        titulo: "Chlamydia Pneumoniae IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 8 examen
     var inmu7=
     {
-        titulo: "Chlamydia PneumoniaeIgM",
+        titulo: "Chlamydia Pneumoniae IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 9 examen
     var inmu8=
     {
-        titulo: "Chlamydia TrachomatisigG",
+        titulo: "Chlamydia Trachomatis IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 10 examen
     var inmu9=
     {
-        titulo: "Chlamydia TrachomatisigM",
+        titulo: "Chlamydia Trachomatis IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el  11 examen
@@ -1679,10 +1679,10 @@ function cargarInmunologia()
     {
         titulo: "Toxoplasma IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 12 examen
@@ -1690,54 +1690,54 @@ function cargarInmunologia()
     {
         titulo: "Toxoplasma IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 13 examen
     var inmu12=
     {
-        titulo: "Epstein BarrIgG",
+        titulo: "Epstein Barr IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 14 examen
     var inmu13=
     {
-        titulo: "Epstein BarrIgM",
+        titulo: "Epstein Barr IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 15 examen
     var inmu14=
     {
-        titulo: "CitomegalovirusIgG",
+        titulo: "Citomegalovirus IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 16 examen
     var inmu15=
     {
-        titulo: "CitomegalovirusIgM",
+        titulo: "Citomegalovirus IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 17 examen
@@ -1745,10 +1745,10 @@ function cargarInmunologia()
     {
         titulo: "Helicobacter Pylori IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 18 examen
@@ -1756,10 +1756,10 @@ function cargarInmunologia()
     {
         titulo: "Helicobacter Pylori IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 19 examen
@@ -1767,10 +1767,10 @@ function cargarInmunologia()
     {
         titulo: "HSV I IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 20 examen
@@ -1778,10 +1778,10 @@ function cargarInmunologia()
     {
         titulo: "HSV II IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 21 examen
@@ -1789,10 +1789,10 @@ function cargarInmunologia()
     {
         titulo: "HSV II IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 22 examen
@@ -1800,10 +1800,10 @@ function cargarInmunologia()
     {
         titulo: "Troponina I",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2-4 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
     // Figura literaria para el 23 examen
@@ -1811,10 +1811,10 @@ function cargarInmunologia()
     {
         titulo: "Procalcitonina",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 24 examen
@@ -1822,32 +1822,32 @@ function cargarInmunologia()
     {
         titulo: "NT pro BNP",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 25 examen
     var inmu24=
     {
-        titulo: "A.N.A",
+        titulo: "ANA",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 26 examen
     var inmu25=
     {
-        titulo: "Anti-D.N.A",
+        titulo: "Anti-DNA",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 27 examen
@@ -1855,21 +1855,21 @@ function cargarInmunologia()
     {
         titulo: "Complemento C3",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 28 examen
     var inmu27=
     {
-        titulo: "ComplementoC4",
+        titulo: "Complemento C4",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 29 examen
@@ -1877,10 +1877,10 @@ function cargarInmunologia()
     {
         titulo: "Complemento CH50",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 30 examen
@@ -1888,10 +1888,10 @@ function cargarInmunologia()
     {
         titulo: "Hepatitis A IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 31 examen
@@ -1899,10 +1899,10 @@ function cargarInmunologia()
     {
         titulo: "Hepatitis A IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 32 examen
@@ -1910,10 +1910,10 @@ function cargarInmunologia()
     {
         titulo: "Hepatitis B HBsAg",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 33 examen
@@ -1921,21 +1921,21 @@ function cargarInmunologia()
     {
         titulo: "Hepatitis B anti HBs",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 34 examen
     var inmu33=
     {
-        titulo: "Hepatitis B anti  HBc",
+        titulo: "Hepatitis B anti HBc",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 35 examen
@@ -1943,10 +1943,10 @@ function cargarInmunologia()
     {
         titulo: "Hepatitis C",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 36 examen
@@ -1954,10 +1954,10 @@ function cargarInmunologia()
     {
         titulo: "Rubéola IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 37 examen
@@ -1965,10 +1965,10 @@ function cargarInmunologia()
     {
         titulo: "Rubéola IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 38 examen
@@ -1976,10 +1976,10 @@ function cargarInmunologia()
     {
         titulo: "HIV (Elisa)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 39 examen
@@ -1987,10 +1987,10 @@ function cargarInmunologia()
     {
         titulo: "Vitamina B12",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 40 examen
@@ -1998,54 +1998,54 @@ function cargarInmunologia()
     {
         titulo: "Vitamina D",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 41 examen
     var inmu40=
     {
-        titulo: "AnticardiolipinasIgG",
+        titulo: "Anti cardiolipinas IgG",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 42 examen
     var inmu41=
     {
-        titulo: "Anti cardiolipinasIgM",
+        titulo: "Anti cardiolipinas IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 43 examen
     var inmu42=
     {
-        titulo: "Anticuerpos antitiroglobulina (Anti TG)",
+        titulo: "Anticuerpos anti tiroglobulina (Anti TG)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 44 examen
     var inmu43=
     {
-        titulo: "Anticuerpos antimicrosomales (anti TPO)",
+        titulo: "Anticuerpos anti microsomales (Anti TPO)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 45 examen
@@ -2053,10 +2053,10 @@ function cargarInmunologia()
     {
         titulo: "Tiroglobulina",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 46 examen
@@ -2064,10 +2064,10 @@ function cargarInmunologia()
     {
         titulo: "Ferritina",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 47 examen
@@ -2075,10 +2075,10 @@ function cargarInmunologia()
     {
         titulo: "Transferritina",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 48 examen
@@ -2086,10 +2086,10 @@ function cargarInmunologia()
     {
         titulo: "Hemoglobina glicosilada (HbA1c)",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 49 examen
@@ -2097,10 +2097,10 @@ function cargarInmunologia()
     {
         titulo: "Peptido C",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Figura literaria para el 50 examen
@@ -2108,21 +2108,21 @@ function cargarInmunologia()
     {
         titulo: "Dímero D",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "2 días",
+        condicion: "Requiere ayuno",
+        tipoMuestra: "sangre (suero)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
-    // Figura literaria para el 51 examen
+    // Figura literaria para el 50 examen
     var inmu50=
     {
-        titulo: "Dímero D",
+        titulo: "HSV I IgM",
         categoria: "Inmunología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "1 día",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Sangre (suero)",
+        horarioMuestra: "7:00 a.m a 4:00 p.m."
     }
 
 
@@ -2154,27 +2154,16 @@ function cargarUroanalisis()
     {
         titulo: "Examen general de orina",
         categoria: "Uroanálisis",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
-    }
-
-    // Figura literaria para el segundo examen
-    var uro1=
-    {
-        titulo: "Urocultivo",
-        categoria: "Uroanálisis",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (primera orina de la mañana)",
+        horarioMuestra: "7:00 a.m. a 9:00 a.m."
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
     var todosLosDatos = [];
     // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
-    todosLosDatos = [uro0, uro1];
+    todosLosDatos = [uro0];
     // Creo una variable para saber la cantidad de examenes
     const cantidadDeExamenes= todosLosDatos.length;
     // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
@@ -2191,10 +2180,10 @@ function cargarCoprologia()
     {
         titulo: "Coproanálisis",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 2 examen
@@ -2202,10 +2191,10 @@ function cargarCoprologia()
     {
         titulo: "PH",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 3 examen
@@ -2213,10 +2202,10 @@ function cargarCoprologia()
     {
         titulo: "Azúcares reductores",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 4 examen
@@ -2224,10 +2213,10 @@ function cargarCoprologia()
     {
         titulo: "Leucograma fecal",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 5 examen
@@ -2235,10 +2224,10 @@ function cargarCoprologia()
     {
         titulo: "Sangre oculta en heces",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
     // Figura literaria para el 6 examen
@@ -2246,27 +2235,17 @@ function cargarCoprologia()
     {
         titulo: "Helicobacter Pylori",
         categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "heces",
+        horarioMuestra: "7:00 a.m. a 4:00 p.m."
     }
 
-    // Figura literaria para el 7 examen
-    var copro6=
-    {
-        titulo: "Coprocultivo",
-        categoria: "Coprología",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
-    }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
     var todosLosDatos = [];
     // Le asigno al arreglo las figuras literarias para recorrerlas despues (MANUAL OJO)
-    todosLosDatos = [copro0, copro1, copro2, copro3, copro4, copro5, copro6];
+    todosLosDatos = [copro0, copro1, copro2, copro3, copro4, copro5];
     // Creo una variable para saber la cantidad de examenes
     const cantidadDeExamenes= todosLosDatos.length;
     // Ejecuto la funcion para mostrar los examenes con los datos de dicha categoria
@@ -2283,10 +2262,10 @@ function cargarQUCasual()
     {
         titulo: "Calcio",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 2 examen
@@ -2294,10 +2273,10 @@ function cargarQUCasual()
     {
         titulo: "Creatinina",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 3 examen
@@ -2305,10 +2284,10 @@ function cargarQUCasual()
     {
         titulo: "Ácido Úrico",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 4 examen
@@ -2316,10 +2295,10 @@ function cargarQUCasual()
     {
         titulo: "Fósforo",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 5 examen
@@ -2327,10 +2306,10 @@ function cargarQUCasual()
     {
         titulo: "Proteínas",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 6 examen
@@ -2338,10 +2317,10 @@ function cargarQUCasual()
     {
         titulo: "Relación calcio/creatinina",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 7 examen
@@ -2349,10 +2328,10 @@ function cargarQUCasual()
     {
         titulo: "Relación ácido úrico/creatinina",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 8 examen
@@ -2360,10 +2339,10 @@ function cargarQUCasual()
     {
         titulo: "Relación proteínas/creatinina",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 9 examen
@@ -2371,10 +2350,10 @@ function cargarQUCasual()
     {
         titulo: "Relación fósforo/creatinina",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 10 examen
@@ -2382,10 +2361,10 @@ function cargarQUCasual()
     {
         titulo: "Electrolitos (sodio, potasio, cloro)",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
     // Figura literaria para el 11 examen
@@ -2393,10 +2372,10 @@ function cargarQUCasual()
     {
         titulo: "Microalbuminuria",
         categoria: "Química urinaria (Orina Casual)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina (segunda micción de la mañana)",
+        horarioMuestra: "8:00 a.m. a 11:30 a.m."
     }
 
 
@@ -2423,10 +2402,10 @@ function cargarQUDia()
     {
         titulo: "Depuración de creatinina",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 2 examen
@@ -2434,10 +2413,10 @@ function cargarQUDia()
     {
         titulo: "Proteinuria 24 horas",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 3 examen
@@ -2445,10 +2424,10 @@ function cargarQUDia()
     {
         titulo: "Calcio",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 4 examen
@@ -2456,10 +2435,10 @@ function cargarQUDia()
     {
         titulo: "Creatinina",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 5 examen
@@ -2467,10 +2446,10 @@ function cargarQUDia()
     {
         titulo: "Ácido Úrico",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 6 examen
@@ -2478,10 +2457,10 @@ function cargarQUDia()
     {
         titulo: "Fósforo",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 7 examen
@@ -2489,10 +2468,10 @@ function cargarQUDia()
     {
         titulo: "Electrolitos orina  (sodio, potasio, cloro)",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Figura literaria para el 8 examen
@@ -2500,10 +2479,10 @@ function cargarQUDia()
     {
         titulo: "Microalbuminuria",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "6 horas",
+        condicion: "No requiere ayuno",
+        tipoMuestra: "Orina de 24 horas",
+        horarioMuestra: "7:00 a.m a 9:30 a.m."
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
@@ -2529,10 +2508,10 @@ function cargarEspermatograma()
     {
         titulo: "Espermatograma",
         categoria: "Espermatograma",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
@@ -2555,10 +2534,10 @@ function cargarGasometria()
     {
         titulo: "Gasometría venosa",
         categoria: "Gasometría",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 2 examen
@@ -2566,10 +2545,10 @@ function cargarGasometria()
     {
         titulo: "Gasometría arterial",
         categoria: "Gasometría",
-        listo: "",
-        condicion: "",
-        tipoMuestra: "",
-        horarioMuestra: ""
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
