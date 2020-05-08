@@ -85,7 +85,8 @@
 .icon-heart::before
 {
     content: "\e9da";
-    animation: 1s latido infinite;
+    -webkit-animation: 1s latido infinite;
+            animation: 1s latido infinite;
     display: inline-block;
 }
 .icon-arrow-right::before
@@ -122,7 +123,6 @@ body
 
 /* Scroll personalizado (Disponible solo en PC's) */
 @media screen and (-webkit-max-device-pixel-ratio: 1),
-       screen and (-o-max-device-pixel-ratio: 1/1),
        screen and (max-resolution: 1dppx)
 {
     /* Tamaños del scroll */
@@ -415,36 +415,55 @@ picture img
 /* Estilos de la primera linea del burguerButtom */
 .menuIcono i:nth-child(1)
 {
-    animation: outT 0.8s backwards;
+    -webkit-animation: outT 0.8s backwards;
+            animation: outT 0.8s backwards;
     animation-direction: reverse;
 }
 /* Estilos de la segunda linea del burguerButtom */
 .menuIcono i:nth-child(2)
 {
     margin: 5px 0;
-    animation: outM 0.8s backwards;
+    -webkit-animation: outM 0.8s backwards;
+            animation: outM 0.8s backwards;
     animation-direction: reverse;
 }
 /* Estilos de la tercera linea del burguerButtom */
 .menuIcono i:nth-child(3)
 {
-    animation: outBtm 0.8s backwards;
+    -webkit-animation: outBtm 0.8s backwards;
+            animation: outBtm 0.8s backwards;
     animation-direction: reverse;
 }
 /* Estilos de la primera linea del burguerButtom al estar activa */
 .menuIcono.active i:nth-child(1)
 {
-    animation: inT 0.8s forwards;
+    -webkit-animation: inT 0.8s forwards;
+            animation: inT 0.8s forwards;
 }
 /* Estilos de la segunda linea del burguerButtom al estar activa */
 .menuIcono.active i:nth-child(2)
 {
-    animation: inM 0.8s forwards;
+    -webkit-animation: inM 0.8s forwards;
+            animation: inM 0.8s forwards;
 }
 /* Estilos de la tercera linea del burguerButtom al estar activa */
 .menuIcono.active i:nth-child(3)
 {
-    animation: inBtm 0.8s forwards;
+    -webkit-animation: inBtm 0.8s forwards;
+            animation: inBtm 0.8s forwards;
+}
+@-webkit-keyframes barridoMenu
+{
+    from
+    {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    to
+    {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 @keyframes barridoMenu
 {
@@ -460,7 +479,31 @@ picture img
     }
 }
 
+@-webkit-keyframes inM
+{
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(45deg);
+    }
+}
+
 @keyframes inM
+{
+    50%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM
 {
     50%
     {
@@ -483,7 +526,37 @@ picture img
         transform: rotate(45deg);
     }
 }
+@-webkit-keyframes inT
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
 @keyframes inT
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+@-webkit-keyframes outT
 {
     0%
     {
@@ -513,7 +586,37 @@ picture img
         transform: translateY(9px) rotate(135deg);
     }
 }
+@-webkit-keyframes inBtm
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
 @keyframes inBtm
+{
+    0%
+    {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50%
+    {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100%
+    {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+@-webkit-keyframes outBtm
 {
     0%
     {
@@ -543,6 +646,13 @@ picture img
         transform: translateY(-9px) rotate(135deg);
     }
 }
+
+/* Anuncio que desplegable de las paginas */
+.anuncio
+{
+    display: none;
+}
+
 /* Estilos necesarios para el hero (Imagen de fondo y degradado generado por css)
 tamaño de fuente declarado para usar EMs para responsive*/
 .hero
@@ -630,21 +740,25 @@ tamaño de fuente declarado para usar EMs para responsive*/
 /* Clase para la animacion */
 .animado
 {
-    animation: reveal .5s cubic-bezier(0.28, 0.11, 0.32, 1);
-    animation-fill-mode: forwards;
+    -webkit-animation: reveal .5s cubic-bezier(0.28, 0.11, 0.32, 1);
+            animation: reveal .5s cubic-bezier(0.28, 0.11, 0.32, 1);
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
     opacity: 0;
 }
 
 /* Animadno el parrafo del hero */
 .hero .animado.parrafo
 {
-    animation-delay: .3s;
+    -webkit-animation-delay: .3s;
+            animation-delay: .3s;
 }
 
 /* Animando el CTA del hero */
 .hero .animado.btn-cta
 {
-    animation-delay: .6s;
+    -webkit-animation-delay: .6s;
+            animation-delay: .6s;
 }
 
 /* Hover del CTA del hero */
@@ -685,10 +799,14 @@ h2.titulo
 .rotate:first-child
 {
     margin-top: 0;
-    animation-name: moverTexto;
-    animation-duration: 10s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: moverTexto;
+            animation-name: moverTexto;
+    -webkit-animation-duration: 10s;
+            animation-duration: 10s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
 }
 
 /* Estilos necesarios para las secciones intermedias */
@@ -900,14 +1018,18 @@ h2.titulo
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     flex-shrink: 0;
 }
 
 /* Elemento que hace la animacion de pulse de la flecha de adelante */
 .pulse
 {
-    animation: pulseArrow 3s infinite;
+    -webkit-animation: pulseArrow 3s infinite;
+            animation: pulseArrow 3s infinite;
     height: 2.5em;
     width: 2.5em;
     border-radius: 50%;
@@ -1166,7 +1288,10 @@ h2.titulo
     color: var(--fuenteNormal);
     text-decoration: none;
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
 }
 
@@ -1276,7 +1401,8 @@ h2.titulo
 /* Estilo necesario para pausar la animacion al hovear el widget del telefono */
 .telefonoMid:hover .telefonoMid-ico
 {
-    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
 }
 
 /* Estilos generales de la parte del contenedor del icono del widget del telefono */
@@ -1290,7 +1416,8 @@ h2.titulo
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: 2.5s pulseTelefono infinite;
+    -webkit-animation: 2.5s pulseTelefono infinite;
+            animation: 2.5s pulseTelefono infinite;
 }
 
 /* Estilo general del icono del widget del telefono */
@@ -1517,6 +1644,7 @@ h2.titulo
     height: auto;
     display: block;
     margin-right: 1.16em;
+    flex-shrink: 0;
 }
 
 /* Estilo general de los link de los datos en el footer */
@@ -2157,6 +2285,7 @@ a.breadcrumbs-link:hover
     background: var(--fuente);
     margin-bottom: 1.2em;
     box-shadow: 0px 0px 15px -5px var(--sombras);
+    visibility: hidden
 }
 
 /* Estilos que unifican la grilla para los examenes y el titulo de las grilla */
@@ -2225,7 +2354,8 @@ a.breadcrumbs-link:hover
     position: fixed;
     top: 0;
     background: rgba(64,64,64, .85);
-    backdrop-filter: saturate(100%) blur(5px);
+    -webkit-backdrop-filter: saturate(100%) blur(5px);
+            backdrop-filter: saturate(100%) blur(5px);
     z-index: 1;
     display: none;
 }
@@ -2245,7 +2375,8 @@ a.breadcrumbs-link:hover
     border-radius: 8px;
     background: var(--bgModal);
     padding: 1.875em;
-    animation: mostrarModal 1150ms linear both;
+    -webkit-animation: mostrarModal 1150ms linear both;
+            animation: mostrarModal 1150ms linear both;
     box-shadow: 5px 5px 10px -2px rgba(0,0,0, .5);
 }
 
@@ -2378,6 +2509,18 @@ a.breadcrumbs-link:hover
 }
 
 /* Animacion para revelar los elementos del hero */
+@-webkit-keyframes reveal
+{
+    0%
+    {
+        transform: translateY(30px);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 @keyframes reveal
 {
     0%
@@ -2392,6 +2535,41 @@ a.breadcrumbs-link:hover
 }
 
 /* Animacion del texto que rota en el Hero */
+@-webkit-keyframes moverTexto
+{
+    0%
+    {
+        margin-top: 0;
+    }
+    12.5%
+    {
+        margin-top: -2em;
+    }
+    25%
+    {
+        margin-top: -2em;
+    }
+    37.5%
+    {
+        margin-top: -4em;
+    }
+    50%
+    {
+        margin-top: -4em;
+    }
+    62.5%
+    {
+        margin-top: -6em;
+    }
+    75%
+    {
+        margin-top: -6em;
+    }
+    87.5%
+    {
+        margin-top: 0;
+    }
+}
 @keyframes moverTexto
 {
     0%
@@ -2428,6 +2606,19 @@ a.breadcrumbs-link:hover
     }
 }
 /* Animacion correspondiente al pulse de los servicios */
+@-webkit-keyframes pulseArrow
+{
+    0%
+    {
+        opacity: 1;
+        transform: scale(0);
+	}
+    100%
+    {
+        opacity: 0;
+        transform: scale(1.8);
+	}
+}
 @keyframes pulseArrow
 {
     0%
@@ -2443,23 +2634,41 @@ a.breadcrumbs-link:hover
 }
 
 /* Animacion correspondiente al pulse del mid widget telefono */
+@-webkit-keyframes pulseTelefono
+{
+    0%
+    {
+        box-shadow: 0 0 0 0 var(--resaltante);
+    }
+    100%
+    {
+        box-shadow: 0 0 0 10px rgba(251,82,82,0);
+    }
+}
 @keyframes pulseTelefono
 {
-    from
+    0%
     {
-        box-shadow: 0px 0px 0px 5px var(--sombraTelefono);
+        box-shadow: 0 0 0 0 var(--resaltante);
     }
-    50%
+    100%
     {
-        box-shadow: 0px 0px 0px 7px var(--sombraTelefono);
-    }
-    to
-    {
-        box-shadow: 0px 0px 0px 5px var(--sombraTelefono);
+        box-shadow: 0 0 0 10px rgba(251,82,82,0);
     }
 }
 
 /* Animacion de latido de corazon del footer */
+@-webkit-keyframes latido
+{
+    0%,40%,80%,100%
+    {
+        transform: scale(.9);
+    }
+    20%,60%
+    {
+        transform: scale(1.2);
+    }
+}
 @keyframes latido
 {
     0%,40%,80%,100%
@@ -2473,6 +2682,57 @@ a.breadcrumbs-link:hover
 }
 
 /* animacion para mostrar el modal de la vista detalle de los examenes */
+@-webkit-keyframes mostrarModal
+{
+    0%
+    {
+        transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    3.1%
+    {
+        transform: matrix3d(0.486, 0, 0, 0, 0, 0.486, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    6.21%
+    {
+        transform: matrix3d(0.878, 0, 0, 0, 0, 0.878, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    9.31%
+    {
+        transform: matrix3d(1.084, 0, 0, 0, 0, 1.084, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    12.41%
+    {
+        transform: matrix3d(1.136, 0, 0, 0, 0, 1.136, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    20.12%
+    {
+        transform: matrix3d(1.031, 0, 0, 0, 0, 1.031, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    27.73%
+    {
+        transform: matrix3d(0.985, 0, 0, 0, 0, 0.985, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    43.14%
+    {
+        transform: matrix3d(1.002, 0, 0, 0, 0, 1.002, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    58.56%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    73.97%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    89.39%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+    100%
+    {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    }
+}
 @keyframes mostrarModal
 {
     0%
@@ -2942,7 +3202,8 @@ a.breadcrumbs-link:hover
     .serviciosImagen img,
     .faqsImagen img
     {
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
 
         position: initial;
         width: 100%;
@@ -3025,7 +3286,8 @@ a.breadcrumbs-link:hover
         left: 0;
         right: 0;
         width: 100vw;
-        animation: barridoMenu 0.93s cubic-bezier(0.5,0.5,0,1) forwards;
+        -webkit-animation: barridoMenu 0.93s cubic-bezier(0.5,0.5,0,1) forwards;
+                animation: barridoMenu 0.93s cubic-bezier(0.5,0.5,0,1) forwards;
     }
     /* Clase por defecto del menu (oculto)*/
     .menu ul
@@ -3043,29 +3305,35 @@ a.breadcrumbs-link:hover
         font-size: 18px;
         text-transform: uppercase;
         letter-spacing: 1.5px;
-        animation: barridoMenu 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
+        -webkit-animation: barridoMenu 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
+                animation: barridoMenu 1s cubic-bezier(0.28, 0.11, 0.32, 1) forwards;
         opacity: 0;
     }
     /* Delay necesaria para la secuencia animada de los links */
     .menu ul li:nth-of-type(1)
     {
-        animation-delay: .2s;
+        -webkit-animation-delay: .2s;
+                animation-delay: .2s;
     }
     .menu ul li:nth-of-type(2)
     {
-        animation-delay: .3s;
+        -webkit-animation-delay: .3s;
+                animation-delay: .3s;
     }
     .menu ul li:nth-of-type(3)
     {
-        animation-delay: .35s;
+        -webkit-animation-delay: .35s;
+                animation-delay: .35s;
     }
     .menu ul li:nth-of-type(4)
     {
-        animation-delay: .4s;
+        -webkit-animation-delay: .4s;
+                animation-delay: .4s;
     }
     .menu ul li:nth-of-type(5)
     {
-        animation-delay: .45s;
+        -webkit-animation-delay: .45s;
+                animation-delay: .45s;
     }
     /* Margen vertical agregado a los elementos que estan en el menu */
     .menu ul li a
@@ -3208,7 +3476,8 @@ a.breadcrumbs-link:hover
     {
         height: 100%;
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     /* Colocamos el orden de las columnas en su forma original */
     .columna:nth-of-type(even) .left,
@@ -3297,11 +3566,12 @@ a.breadcrumbs-link:hover
 /* Ajuste para que dispositivos que aparentan ser de pocos recursos no tegan el efecto glass del menu */
 /* Añado el efecto glass para  resoluciones con densidad de pixeles >= 1.75 */
 /* 767px */
-@media screen and (max-width: 47.9375em) and (min-resolution: 1.75dppx)
+@media screen and (max-width: 47.9375em) and (-webkit-min-device-pixel-ratio: 1.75), screen and (max-width: 47.9375em) and (min-resolution: 1.75dppx)
 {
     .menu
     {
-        backdrop-filter: saturate(180%) blur(10px);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+                backdrop-filter: saturate(180%) blur(10px);
         background: rgba(245, 247, 248, 0.80);
     }
 }
@@ -3372,9 +3642,11 @@ a.breadcrumbs-link:hover
         top: 0;
         bottom: 0;
         z-index: 2;
-        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+                backdrop-filter: none;
         background: none;
-        animation: none;
+        -webkit-animation: none;
+                animation: none;
     }
     /* Nuevo grosor para las fuentes del menu para que se aprecie mejor en dispositivos pequeños */
     .menu ul li a,
@@ -3571,16 +3843,18 @@ a.breadcrumbs-link:hover
 /* Ajuste para que dispositivos que aparentan ser de pocos recursos no tegan el efecto glass del menu */
 /* Añado el efecto glass para  resoluciones con densidad de pixeles >= 1.75 */
 /* 500px */
-@media screen and (max-width: 31.25em) and (min-resolution: 1.75dppx)
+@media screen and (max-width: 31.25em) and (-webkit-min-device-pixel-ratio: 1.75), screen and (max-width: 31.25em) and (min-resolution: 1.75dppx)
 {
     .headerUp
     {
-        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
         background-color: rgba(1, 84, 190, 0.75);
     }
     .headerDown
     {
-        backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
         background: rgba(245, 247, 248, 0.60);
     }
 }
@@ -3655,7 +3929,8 @@ a.breadcrumbs-link:hover
     /* Quitamos la animacion del texto rotativo */
     .rotate:first-child
     {
-        animation: none;
+        -webkit-animation: none;
+                animation: none;
         display: inline;
     }
     /* Ocultamos todos los demas textos rotativos que no se ven */
@@ -3997,5 +4272,123 @@ a.breadcrumbs-link:hover
     .contacto .centro
     {
         justify-content: flex-end;
+    }
+}
+
+/* Detalle exclusivo solo para PC's anuncios del covid */
+@media screen and (min-width: 1200px)
+{
+    .anuncio
+    {
+        height: 65px;
+        overflow: hidden;
+        border: 1px solid #ececec;
+        width: 650px;
+        border-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        position: fixed;
+        left: calc(50vw - 650px / 2);
+        -webkit-backdrop-filter: saturate(180%) blur(10px);
+                backdrop-filter: saturate(180%) blur(10px);
+        background: rgba(245, 247, 248, 0.70);
+        box-shadow: 0px 0px 16px -8px #595c65;
+        -webkit-animation: mostrarAnuncio 10s cubic-bezier(0.5,0.5,0,1) 3.1s forwards;
+                animation: mostrarAnuncio 10s cubic-bezier(0.5,0.5,0,1) 3.1s forwards;
+    }
+
+    .anuncioIco
+    {
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        margin-right: 30px;
+    }
+
+    .anuncioIco img
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    .anuncioTextos .parrafo
+    {
+        margin: 0;
+        font-weight: 500;
+        color: var(--fuenteRespuesta);
+    }
+
+    .parrafo > .enfasis
+    {
+        color: var(--fuenteImportante);
+    }
+    .examenes.pagina .examenesContenedor
+    {
+        -webkit-animation: covid 0.93s cubic-bezier(0.5,0.5,0,1) 3s forwards;
+                animation: covid 0.93s cubic-bezier(0.5,0.5,0,1) 3s forwards;
+    }
+    @-webkit-keyframes covid
+    {
+        from
+        {
+            gap: 1.875em;
+        }
+        to
+        {
+            gap: 3.5em;
+        }
+    }
+    @keyframes covid
+    {
+        from
+        {
+            gap: 1.875em;
+        }
+        to
+        {
+            gap: 3.5em;
+        }
+    }
+    @-webkit-keyframes mostrarAnuncio
+    {
+        0%
+        {
+            bottom: -300px;
+        }
+        15%
+        {
+            bottom: 20px;
+        }
+        85%
+        {
+            bottom: 20px;
+        }
+        100%
+        {
+            bottom: -300px;
+            display: none;
+        }
+    }
+    @keyframes mostrarAnuncio
+    {
+        0%
+        {
+            bottom: -300px;
+        }
+        15%
+        {
+            bottom: 20px;
+        }
+        85%
+        {
+            bottom: 20px;
+        }
+        100%
+        {
+            bottom: -300px;
+            display: none;
+        }
     }
 }

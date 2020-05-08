@@ -310,8 +310,6 @@ function validarMenu()
     {
         // Cargo los datos de los examenes
         cargarQUDia();
-        // Ejecuto la funcion para poder mostrar las condiciones para los examenes
-        mostrarCondiciones();
     }
     // si estoy en la pagina de los espermatogramas
     else if(tituloPagina=="Espermatograma — Exámenes")
@@ -2402,10 +2400,10 @@ function cargarQUDia()
     {
         titulo: "Depuración de creatinina",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 2 examen
@@ -2413,10 +2411,10 @@ function cargarQUDia()
     {
         titulo: "Proteinuria 24 horas",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 3 examen
@@ -2424,10 +2422,10 @@ function cargarQUDia()
     {
         titulo: "Calcio",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 4 examen
@@ -2435,10 +2433,10 @@ function cargarQUDia()
     {
         titulo: "Creatinina",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 5 examen
@@ -2446,10 +2444,10 @@ function cargarQUDia()
     {
         titulo: "Ácido Úrico",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 6 examen
@@ -2457,10 +2455,10 @@ function cargarQUDia()
     {
         titulo: "Fósforo",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 7 examen
@@ -2468,10 +2466,10 @@ function cargarQUDia()
     {
         titulo: "Electrolitos orina  (sodio, potasio, cloro)",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Figura literaria para el 8 examen
@@ -2479,10 +2477,10 @@ function cargarQUDia()
     {
         titulo: "Microalbuminuria",
         categoria: "Química urinaria (Orina de 24 horas)",
-        listo: "6 horas",
-        condicion: "No requiere ayuno",
-        tipoMuestra: "Orina de 24 horas",
-        horarioMuestra: "7:00 a.m a 9:30 a.m."
+        listo: "A consultar",
+        condicion: "A consultar",
+        tipoMuestra: "A consultar",
+        horarioMuestra: "A consultar"
     }
 
     // Creo un arreglo para guardar todos las figuras literarias con los datos de los examenes
@@ -2753,9 +2751,6 @@ const downHeader = document.querySelector(".js-headerDown");
 // Guardo en una variable al menu
 const menu = document.querySelector(".js-menu");
 
-// Creo un escuchador de eventos para cuando haga click en el burguer menu
-burguerMenu.addEventListener("click", hideShowMenu);
-
 // Creo la funcion que mostrará el menu
 function hideShowMenu()
 {
@@ -2787,3 +2782,36 @@ function mostrarCondiciones()
     });
 }
 
+// Configurando el Lazy Loading
+// https://github.com/tuupola/lazyload
+let imagesLazy = document.querySelectorAll(".js-lazy");
+lazyload(imagesLazy);
+
+// Optmizacion JS para que el menu hamburguesa se active solo en las resolucion que aparece
+// Catpuramos la resolucion
+const mobile = window.matchMedia("screen and (max-width: 767px)");
+
+
+// Creamos un escuchador de eventos que estara pendiente de cuando la resolucion cambie
+// Y le pasamos la funcion que ejecutará
+mobile.addListener(optimizacionJS);
+
+// Creamos la funcion necesaria
+function optimizacionJS()
+{
+    // Pregunto si es la resolucion necesaria para activar el burguer button
+    if(mobile.matches==true)
+    {
+        // Añado el escuchador de eventos al icono del menu hamburguesa
+        burguerMenu.addEventListener("click", hideShowMenu)
+    }
+    // Si no es la resolucion necesitada
+    else
+    {
+        // quito el escuchador de eventos
+        burguerMenu.removeEventListener("click", hideShowMenu);
+    }
+}
+
+// Ejecuto la funcion y le paso por parametros la resolucion deseada
+optimizacionJS(mobile);

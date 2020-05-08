@@ -47,7 +47,9 @@
 
 
         <!-- CSS's above the fold-->
-        <link rel="stylesheet" href="css/styles.css">
+        <style>
+            :root{--bgColor:#FBFCFF;--upMenu: #0154BE;--downMenu: #F5F7F8;--sombraMenu: #C3CFFC;--seleccionMenu: #F3478B;--fuente: #FFFFFF;--fuenteNormal:#828282;--fuenteImportante:#333333;--fuenteRotativa:#2D85F5;--fuenteRespuesta: #707070;--fuenteFooterTxt: #E8E8E8;--resaltante:#EB196C;--sombras: #CED7FF;--arrowContenedor: #F5F7F8;--arrowSombra: rgba(1,84,190, .2);--arrowAzul: #0C1A49;--arrowIndicador:#AEC2CC;--sombraTelefono: #F8BEDB;--bgFooter: #0F1733;--lineFooter: #1E2E66;--azulNosotros: #0154BE;--sombraAzulNostros: rgba(1,84,190, .32);--bgModal: #F2F4FD}*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;-webkit-text-size-adjust:100%}body{background-color:var(--bgColor)}@media screen and (-webkit-max-device-pixel-ratio:1),screen and (max-resolution:1dppx){*::-webkit-scrollbar{width:12px;height:12px;display:none}body::-webkit-scrollbar{display:block}*:hover::-webkit-scrollbar{display:block}*::-webkit-scrollbar-thumb{background:#bdc7e0;border-radius:6px}*::-webkit-scrollbar-track{background:#ffffff;border:1px solid #ebebeb;border-radius:2px}}.centro{max-width:1200px;width:100%;margin:0 auto}picture{width:100%}picture img{vertical-align:top}.header{position:relative}.headerUp{background-color:var(--upMenu);height:35px;display:flex;justify-content:space-between}.headerUp .centro,.headerDown .centro{display:flex;justify-content:space-between;align-items:center}.headerUp_left,.headerUp_Right,.headerUp_dato,.headerUp_Right_Caja{display:flex;justify-content:center;align-items:center}.headerUp_dato:nth-child(1){margin-right:50px}.headerUp_ico{height:15px;width:auto;margin-right:10px;opacity:.4}.headerUp_txt{font-weight:500;font-size:11px;color:var(--fuente);text-decoration:none;display:flex;align-items:center}.headerUp_RS{text-decoration:none;margin-right:20px;display:flex;justify-content:center;align-items:center}.headerUp_RS:last-child{margin-right:0}.headerUp_RS_Img{height:20px;width:auto;opacity:.4}.headerDown{height:70px;background-color:var(--downMenu);box-shadow:0px 10px 23px -15px var(--sombraMenu);display:flex;justify-content:center;align-items:center}.logo{height:45px;width:auto}.logo img{height:100%;width:auto}.headerDown .centro,.menu{height:inherit}.menu ul{display:flex;list-style-type:none;justify-content:flex-end;height:inherit}.menu ul li{display:flex;justify-content:center;align-items:center;height:inherit;padding-right:15px}.menu ul li a{font-weight:400;font-size:14px;color:var(--fuenteNormal);text-decoration:none;height:inherit;display:flex;align-items:center}.menuIcono{width:30px;height:22px;display:none;justify-self:end;align-self:center;z-index:2}.menuIcono i{background-color:var(--fuenteRotativa);border-radius:1.5px;content:'';display:block;width:100%;height:4px}.menuIcono i:nth-child(1){-webkit-animation:outT 0.8s backwards;animation:outT 0.8s backwards;animation-direction:reverse}.menuIcono i:nth-child(2){margin:5px 0;-webkit-animation:outM 0.8s backwards;animation:outM 0.8s backwards;animation-direction:reverse}.menuIcono i:nth-child(3){-webkit-animation:outBtm 0.8s backwards;animation:outBtm 0.8s backwards;animation-direction:reverse}@-webkit-keyframes barridoMenu{from{opacity:0;transform:translateX(100vw)}to{opacity:1;transform:translateX(0)}}@keyframes barridoMenu{from{opacity:0;transform:translateX(100vw)}to{opacity:1;transform:translateX(0)}}@-webkit-keyframes outM{50%{transform:rotate(0deg)}100%{transform:rotate(45deg)}}@keyframes outM{50%{transform:rotate(0deg)}100%{transform:rotate(45deg)}}@-webkit-keyframes outT{0%{transform:translateY(0px) rotate(0deg)}50%{transform:translateY(9px) rotate(0deg)}100%{transform:translateY(9px) rotate(135deg)}}@keyframes outT{0%{transform:translateY(0px) rotate(0deg)}50%{transform:translateY(9px) rotate(0deg)}100%{transform:translateY(9px) rotate(135deg)}}@-webkit-keyframes outBtm{0%{transform:translateY(0px) rotate(0deg)}50%{transform:translateY(-9px) rotate(0deg)}100%{transform:translateY(-9px) rotate(135deg)}}@keyframes outBtm{0%{transform:translateY(0px) rotate(0deg)}50%{transform:translateY(-9px) rotate(0deg)}100%{transform:translateY(-9px) rotate(135deg)}}.anuncio{display:none}.hero{height:auto;min-height:calc(100vh - 105px);align-items:stretch;padding:2em 0;display:flex;justify-content:flex-start;background:linear-gradient(90deg,rgba(251,252,255,1) 15%,rgba(251,252,255,0) 70%),linear-gradient(0deg,rgba(251,252,255,1) 0%,rgba(251,252,255,0) 30%),url("../img/hero-bg.jpg");background-size:cover;background-repeat:no-repeat;background-position:center center;font-size:18px}.hero .centro{height:inherit;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.epigrafe{font-weight:600;text-transform:uppercase;font-size:.625em;color:var(--resaltante);letter-spacing:.125em}.titulo{font-size:2em;font-weight:600;color:var(--fuenteImportante)}.parrafo{font-weight:400;color:var(--fuenteNormal);font-size:.75em;margin-bottom:2.91em}.hero .parrafo{width:50%}.btn-cta{font-weight:500;font-size:.75em;padding:1em 2em;background-color:var(--resaltante);box-shadow:0px 10px 23px -15px var(--resaltante);color:var(--fuente);border-radius:5px;text-decoration:none}.animado{-webkit-animation:reveal .5s cubic-bezier(0.28,0.11,0.32,1);animation:reveal .5s cubic-bezier(0.28,0.11,0.32,1);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;opacity:0}.hero .animado.parrafo{-webkit-animation-delay:.3s;animation-delay:.3s}.hero .animado.btn-cta{-webkit-animation-delay:.6s;animation-delay:.6s}h2.titulo{margin-bottom:.625em}.tituloLista{overflow:hidden;display:inline-block;margin-left:.2em;margin-bottom:-.3em;height:1.125em;line-height:1em}.rotate{color:var(--fuenteRotativa);font-weight:700;margin:1em 0;display:block}.rotate:first-child{margin-top:0;-webkit-animation-name:moverTexto;animation-name:moverTexto;-webkit-animation-duration:10s;animation-duration:10s;-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.tituloHidden{display:none}.titulosCard{font-size:.875em;font-weight:600;color:var(--resaltante)}.tituloPregunta{font-size:.875em;font-weight:500;color:var(--fuenteImportante);margin-bottom:.4375em}.faqs-Bloque{counter-reset:faqsCounter;display:none;min-height:31em}.tituloPregunta::before{counter-increment:faqsCounter;content:counter(faqsCounter)". "}.faqsCard .parrafo{margin-bottom:2em}@-webkit-keyframes reveal{0%{transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}@keyframes reveal{0%{transform:translateY(30px)}100%{opacity:1;transform:translateY(0)}}@-webkit-keyframes moverTexto{0%{margin-top:0}12.5%{margin-top:-2em}25%{margin-top:-2em}37.5%{margin-top:-4em}50%{margin-top:-4em}62.5%{margin-top:-6em}75%{margin-top:-6em}87.5%{margin-top:0}}@keyframes moverTexto{0%{margin-top:0}12.5%{margin-top:-2em}25%{margin-top:-2em}37.5%{margin-top:-4em}50%{margin-top:-4em}62.5%{margin-top:-6em}75%{margin-top:-6em}87.5%{margin-top:0}}@media screen and (max-width:75em){.centro{margin:0 20px}}@media screen and (max-width:48em){.hero{font-size:14px}.hero .parrafo{font-size:.85em;width:70%}.hero .btn-cta{font-size:.85em}.faqs-Bloque{min-height:initial;height:auto}}@media screen and (max-width:47.9375em){main{margin-top:105px}.header{position:fixed;width:100vw;z-index:1;top:0}.menuIcono{display:block}.menu{background:rgba(245,247,248,0.96);position:fixed;height:100vh;right:-100%;top:0;bottom:0;z-index:2}.menu ul{flex-direction:column;justify-content:space-evenly;align-items:flex-end;padding:105px 20% 20px}.menu ul li{height:auto;padding:0;font-size:18px;text-transform:uppercase;letter-spacing:1.5px;-webkit-animation:barridoMenu 1s cubic-bezier(0.28,0.11,0.32,1) forwards;animation:barridoMenu 1s cubic-bezier(0.28,0.11,0.32,1) forwards;opacity:0}.menu ul li:nth-of-type(1){-webkit-animation-delay:.2s;animation-delay:.2s}.menu ul li:nth-of-type(2){-webkit-animation-delay:.3s;animation-delay:.3s}.menu ul li:nth-of-type(3){-webkit-animation-delay:.35s;animation-delay:.35s}.menu ul li:nth-of-type(4){-webkit-animation-delay:.4s;animation-delay:.4s}.menu ul li:nth-of-type(5){-webkit-animation-delay:.45s;animation-delay:.45s}.menu ul li a{margin:10px 0}.tituloLista{margin-left:0}}@media screen and (max-width:31.25em){.headerUp .centro{justify-content:center}.headerUp_RS_Img,.headerUp_ico{opacity:1;height:20px;vertical-align:top}.headerUp_ico{margin-right:20px}.headerUp_txt span{display:none}.headerUp_dato:nth-child(1){margin-right:0}.headerDown{position:relative;box-shadow:0px 5px 10px -5px var(--arrowSombra)}.menu{display:none;position:absolute;height:calc(100vh - 35px);width:100vw;left:0;right:0;top:0;bottom:0;z-index:2;-webkit-backdrop-filter:none;backdrop-filter:none;background:none;-webkit-animation:none;animation:none}.menu ul li a{font-weight:600}.logo{position:absolute;top:13px}.menuIcono{position:absolute;right:20px;top:23px}}@media screen and (max-width:30em){.hero .parrafo{width:80%}}@media screen and (max-width:26.5625em){.hero{font-size:12px}.epigrafe,.parrafo{font-size:1em}.hero .btn-cta{width:100%;font-size:1.16em;text-align:center}.hero .parrafo{font-size:1em}.tituloLista{display:inline}.rotate:first-child{-webkit-animation:none;animation:none;display:inline}.rotate:nth-of-type(2),.rotate:nth-of-type(3),.rotate:nth-of-type(4){display:none}.faqs-Bloque{font-size:16px}.faqs-Bloque .parrafo{font-size:.75em}}@media screen and (max-width:20em){.hero .centro{justify-content:space-around}.hero .parrafo{display:none}.hero div.animado{font-size:1em}}@media screen and (min-width:1200px){.anuncio{height:65px;overflow:hidden;border:1px solid #ececec;width:650px;border-radius:40px;display:flex;align-items:center;justify-content:center;padding:10px;position:fixed;left:calc(50vw - 650px / 2);-webkit-backdrop-filter:saturate(180%) blur(10px);backdrop-filter:saturate(180%) blur(10px);background:rgba(245,247,248,0.70);box-shadow:0px 0px 16px -8px #595c65;-webkit-animation:mostrarAnuncio 10s cubic-bezier(0.5,0.5,0,1) 3.1s forwards;animation:mostrarAnuncio 10s cubic-bezier(0.5,0.5,0,1) 3.1s forwards}.anuncioIco{height:50px;width:50px;overflow:hidden;margin-right:30px}.anuncioIco img{width:100%;height:auto}.anuncioTextos .parrafo{margin:0;font-weight:500;color:var(--fuenteRespuesta)}.parrafo>.enfasis{color:var(--fuenteImportante)}@-webkit-keyframes mostrarAnuncio{0%{bottom:-300px}15%{bottom:20px}85%{bottom:20px}100%{bottom:-300px;display:none}}@keyframes mostrarAnuncio{0%{bottom:-300px}15%{bottom:20px}85%{bottom:20px}100%{bottom:-300px;display:none}}}
+        </style>
 
         <!-- JS's -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.5/scrollreveal.min.js"></script>
@@ -145,7 +147,8 @@
                     <h2 class="tituloHidden">Beneficios</h2>
                     <article class="js-animado beneficios">
                         <picture class="beneficiosIcono">
-                            <img src="img/icons/benef_1.png" alt="Equipos modernos" />
+                            <!-- <img src="img/icons/benef_1.png" alt="Equipos modernos" /> -->
+                            <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/benef_1.png" alt="Equipos modernos" />
                         </picture>
                         <div class="beneficiosTextos">
                             <h2 class="titulosCard">Equipos modernos</h2>
@@ -156,7 +159,8 @@
                     </article>
                     <article class="js-animado beneficios">
                         <picture class="beneficiosIcono">
-                            <img src="img/icons/benef_2.png" alt="Rapidez en resultados" />
+                            <!-- <img src="img/icons/benef_2.png" alt="Rapidez en resultados" /> -->
+                            <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/benef_2.png" alt="Rapidez en resultados" />
                         </picture>
                         <div class="beneficiosTextos">
                             <h2 class="titulosCard">Rapidez en resultados</h2>
@@ -167,7 +171,8 @@
                     </article>
                     <article class="js-animado beneficios">
                         <picture class="beneficiosIcono">
-                            <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
+                            <!-- <img src="img/icons/benef_3.png" alt="Mayor trazabilidad" /> -->
+                            <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/benef_3.png" alt="Mayor trazabilidad" />
                         </picture>
                         <div class="beneficiosTextos">
                             <h2 class="titulosCard">Mayor trazabilidad</h2>
@@ -181,7 +186,8 @@
             <section id="servicios" class="servicios">
                 <div class="centro">
                     <picture class="serviciosImagen">
-                        <img src="img/servicios-bg.jpg" alt="Servicios" />
+                        <!-- <img src="img/servicios-bg.jpg" alt="Servicios" /> -->
+                        <img class="js-lazy" src="img/pixel.gif" data-src="img/servicios-bg.jpg" alt="Servicios" />
                     </picture>
                     <div class="serviciosContenido">
                         <div class="js-animado alineado">
@@ -202,7 +208,8 @@
                             <div id="carrusel" class="js-filaCarrusel serviciosContenido-carrusel-container">
                                 <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
-                                        <img src="img/icons/serv_1.png" alt="Consultas médicas" />
+                                        <!-- <img src="img/icons/serv_1.png" alt="Consultas médicas" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/serv_1.png" alt="Consultas médicas" />
                                     </picture>
                                     <div class="serviciosTexto">
                                         <h2 class="titulosCard">Consultas médicas</h2>
@@ -213,7 +220,8 @@
                                 </article>
                                 <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
-                                        <img src="img/icons/serv_2.png" alt="Toma de muestra a domicilio" />
+                                        <!-- <img src="img/icons/serv_2.png" alt="Toma de muestra a domicilio" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/serv_2.png" alt="Toma de muestra a domicilio" />
                                     </picture>
                                     <div class="serviciosTexto">
                                         <h2 class="titulosCard">Toma de muestra a domicilio</h2>
@@ -224,7 +232,8 @@
                                 </article>
                                 <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
-                                        <img src="img/icons/serv_3.png" alt="Consultas médicas" />
+                                        <!-- <img src="img/icons/serv_3.png" alt="Consultas médicas" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/serv_3.png" alt="Consultas médicas" />
                                     </picture>
                                     <div class="serviciosTexto">
                                         <h2 class="titulosCard">Venta de reactivos e insumos para laboratorios</h2>
@@ -235,7 +244,8 @@
                                 </article>
                                 <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
-                                        <img src="img/icons/serv_4.png" alt="Exámenes médicos" />
+                                        <!-- <img src="img/icons/serv_4.png" alt="Exámenes médicos" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/serv_4.png" alt="Exámenes médicos" />
                                     </picture>
                                     <div class="serviciosTexto">
                                         <h2 class="titulosCard">Exámenes médicos</h2>
@@ -246,7 +256,8 @@
                                 </article>
                                 <article class="js-animado-r js-serviciosCard serviciosCard">
                                     <picture class="serviciosIcono">
-                                        <img src="img/icons/serv_5.png" alt="Próximamente más" />
+                                        <!-- <img src="img/icons/serv_5.png" alt="Próximamente más" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/serv_5.png" alt="Próximamente más" />
                                     </picture>
                                     <div class="serviciosTexto">
                                         <h2 class="titulosCard">Próximamente más</h2>
@@ -281,7 +292,8 @@
                         <a href="examenes/hematologias.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_1.png" alt="Hematologías" />
+                                        <!-- <img src="img/icons/exa_1.png" alt="Hematologías" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_1.png" alt="Hematologías" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Hematologías</h2>
@@ -291,7 +303,8 @@
                         <a href="examenes/serologias.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_2.png" alt="Serologías" />
+                                        <!-- <img src="img/icons/exa_2.png" alt="Serologías" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_2.png" alt="Serologías" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Serologías</h2>
@@ -301,7 +314,8 @@
                         <a href="examenes/qsanguinea.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_3.png" alt="Química sanguínea" />
+                                        <!-- <img src="img/icons/exa_3.png" alt="Química sanguínea" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_3.png" alt="Química sanguínea" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Química sanguínea</h2>
@@ -311,7 +325,8 @@
                         <a href="examenes/mtumoral.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_4.png" alt="Marcadores tumorales" />
+                                        <!-- <img src="img/icons/exa_4.png" alt="Marcadores tumorales" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_4.png" alt="Marcadores tumorales" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Marcadores tumorales</h2>
@@ -321,7 +336,8 @@
                         <a href="examenes/hormonas.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_5.png" alt="Hormonas" />
+                                        <!-- <img src="img/icons/exa_5.png" alt="Hormonas" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_5.png" alt="Hormonas" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Hormonas</h2>
@@ -331,7 +347,8 @@
                         <a href="examenes/inmunologia.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_6.png" alt="Inmunología" />
+                                        <!-- <img src="img/icons/exa_6.png" alt="Inmunología" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_6.png" alt="Inmunología" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Inmunología</h2>
@@ -341,7 +358,8 @@
                         <a href="examenes/uroanalisis.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_7.png" alt="Uroanálisis" />
+                                        <!-- <img src="img/icons/exa_7.png" alt="Uroanálisis" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_7.png" alt="Uroanálisis" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Uroanálisis</h2>
@@ -351,7 +369,8 @@
                         <a href="/examenes.html" class="js-animado examenesCard-Link">
                             <article class="examanesCard">
                                     <picture class="examanesCard-Picture">
-                                        <img src="img/icons/exa_12.png" alt="Ver más" />
+                                        <!-- <img src="img/icons/exa_12.png" alt="Ver más" /> -->
+                                        <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/exa_12.png" alt="Ver más" />
                                     </picture>
                                     <div class="examanesCard-Textos">
                                         <h2 class="titulosCard">Ver más</h2>
@@ -364,7 +383,8 @@
             <section class="faqs">
                 <div class="centro">
                     <picture class="faqsImagen">
-                        <img src="img/faqs-bg.jpg" alt="Preguntas Frecuentes" />
+                        <!-- <img src="img/faqs-bg.jpg" alt="Preguntas Frecuentes" /> -->
+                        <img class="js-lazy" src="img/pixel.gif" data-src="img/faqs-bg.jpg" alt="Preguntas Frecuentes" />
                     </picture>
                     <div class="faqsTextos">
                         <h2 class="js-animado titulo">Preguntas frecuentes</h2>
@@ -485,7 +505,8 @@
                 <a href="#" class="js-animado js-telefonoLink telefonoMid">
                     <article class="telefonoMid-Container">
                         <picture class="telefonoMid-ico">
-                            <img src="img/icons/telefono-out-white.png" alt="Teléfono" />
+                            <!-- <img src="img/icons/telefono-out-white.png" alt="Teléfono" /> -->
+                            <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/telefono-out-white.png" alt="Teléfono" />
                         </picture>
                         <div>
                             <h2 class="tituloTelefono">Contáctanos</h2>
@@ -505,7 +526,8 @@
                         </p>
                         <a href="#" class="js-datoDireccion js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/locacion-rosado.png" alt="Dirección" />
+                                <!-- <img src="img/icons/locacion-rosado.png" alt="Dirección" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/locacion-rosado.png" alt="Dirección" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Dirección</h3>
@@ -514,7 +536,8 @@
                         </a>
                         <a href="#" class="js-datoTelefonoContacto js-animado contactoCard-ElementoContainer">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/telefono-rosado.png" alt="Atención al cliente" />
+                                <!-- <img src="img/icons/telefono-rosado.png" alt="Atención al cliente" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/telefono-rosado.png" alt="Atención al cliente" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Atención al cliente</h3>
@@ -523,7 +546,8 @@
                         </a>
                         <a href="#" class="js-datoCotizaciones js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/cotizaciones.png" alt="Cotizaciones" />
+                                <!-- <img src="img/icons/cotizaciones.png" alt="Cotizaciones" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/cotizaciones.png" alt="Cotizaciones" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Cotizaciones</h3>
@@ -532,7 +556,8 @@
                         </a>
                         <a href="#" class="js-datoVentaReactivo js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/empresa.png" alt="Venta de Reactivos" />
+                                <!-- <img src="img/icons/empresa.png" alt="Venta de Reactivos" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/empresa.png" alt="Venta de Reactivos" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Venta de Reactivos</h3>
@@ -541,7 +566,8 @@
                         </a>
                         <a href="#" class="js-datoCorreo js-animado contactoCard-ElementoContainer">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/correo-rosado.png" alt="Correo" />
+                                <!-- <img src="img/icons/correo-rosado.png" alt="Correo" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/correo-rosado.png" alt="Correo" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Correo</h3>
@@ -550,7 +576,8 @@
                         </a>
                         <a href="#" class="js-datoEncuesta js-animado contactoCard-ElementoContainer" target="blank">
                             <picture class="contactoCard-ico">
-                                <img src="img/icons/encuesta.png" alt="Encuesta" />
+                                <!-- <img src="img/icons/encuesta.png" alt="Encuesta" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/icons/encuesta.png" alt="Encuesta" />
                             </picture>
                             <div class="contactoCard-texto">
                                 <h3 class="tituloElementoCard">Ayudanos a mejorar</h3>
@@ -560,6 +587,17 @@
                     </article>
                 </div>
             </section>
+            <div class="anuncio">
+                <picture class="anuncioIco">
+                    <img src="img/icons/stay-home.png" alt="Distancia social">
+                </picture>
+                <div class="anuncioTextos">
+                    <h2 class="titulosCard">Quédate en casa</h2>
+                    <p class="parrafo">
+                        Recuerda si tú te detienes, el virus tambíen: <span class="enfasis">quédate en casa</span>.
+                    </p>
+                </div>
+            </div>
         </main>
         <footer class="footer">
             <div class="centro">
@@ -567,7 +605,8 @@
                     <div class="colFooterIzquierda">
                         <div class="col-copy">
                             <picture class="logoFooter">
-                                <img src="img/logo-white.png" alt="Vitales Laboratorios" />
+                                <!-- <img src="img/logo-white.png" alt="Vitales Laboratorios" /> -->
+                                <img class="js-lazy" src="img/pixel.gif" data-src="img/logo-white.png" alt="Vitales Laboratorios" />
                             </picture>
                             <p class="copyright">
                                 <i class="icon-copyright"></i>
@@ -575,13 +614,28 @@
                             </p>
                             <div class="footerRSCaja">
                                 <a href="#" class="js-fbFooter footerRS" target="blank">
-                                    <img src="img/icons/fb.png" srcset="img/icons/fb2x.png 1.5x" alt="Facebook" />
+                                    <!-- <img src="img/icons/fb.png" srcset="img/icons/fb2x.png 1.5x" alt="Facebook" /> -->
+                                    <img class="js-lazy"
+                                    src="img/pixel.gif"
+                                    data-src="img/icons/fb.png"
+                                    data-srcset="img/icons/fb2x.png 1.5x"
+                                    alt="Facebook" />
                                 </a>
                                 <a href="#" class="js-waFooter footerRS" target="blank">
-                                    <img src="img/icons/ws.png" srcset="img/icons/ws2x.png 1.5x" alt="WhatsApp" />
+                                    <!-- <img src="img/icons/ws.png" srcset="img/icons/ws2x.png 1.5x" alt="WhatsApp" /> -->
+                                    <img class="js-lazy"
+                                    src="img/pixel.gif"
+                                    data-src="img/icons/ws.png"
+                                    data-srcset="img/icons/ws2x.png 1.5x"
+                                    alt="WhatsApp" />
                                 </a>
                                 <a href="#" class="js-igFooter footerRS" target="blank">
-                                    <img src="img/icons/ig.png" srcset="img/icons/ig2x.png 1.5x" alt="Instagram" />
+                                    <!-- <img src="img/icons/ig.png" srcset="img/icons/ig2x.png 1.5x" alt="Instagram" /> -->
+                                    <img class="js-lazy"
+                                    src="img/pixel.gif"
+                                    data-src="img/icons/ig.png"
+                                    data-srcset="img/icons/ig2x.png 1.5x"
+                                    alt="Instagram" />
                                 </a>
                             </div>
                         </div>
@@ -590,15 +644,18 @@
                         <div class="col-datos">
                             <h2 class="tituloFooter">Nuestros datos</h2>
                             <div class="datoFooter">
-                                <img class="datoFooterIco" src="img/icons/correo-rosado.png" alt="Correo:" />
+                                <!-- <img class="datoFooterIco" src="img/icons/correo-rosado.png" alt="Correo:" /> -->
+                                <img class="datoFooterIco js-lazy" src="img/pixel.gif" data-src="img/icons/correo-rosado.png" alt="Correo:" />
                                 <a href="#" class="js-correoFooter datoFooterLink">Cargando</a>
                             </div>
                             <div class="datoFooter">
-                                <img class="datoFooterIco" src="img/icons/telefono-rosado.png" alt="Telefono:" />
+                                <!-- <img class="datoFooterIco" src="img/icons/telefono-rosado.png" alt="Telefono:" /> -->
+                                <img class="datoFooterIco js-lazy" src="img/pixel.gif" data-src="img/icons/telefono-rosado.png" alt="Telefono:" />
                                 <a href="#" class="js-telefonoFooter datoFooterLink">Cargando</a>
                             </div>
                             <div class="datoFooter">
-                                <img class="datoFooterIco" src="img/icons/locacion-rosado.png" alt="Ubicación:" />
+                                <!-- <img class="datoFooterIco" src="img/icons/locacion-rosado.png" alt="Ubicación:" /> -->
+                                <img class="datoFooterIco js-lazy" src="img/pixel.gif" data-src="img/icons/locacion-rosado.png" alt="Ubicación:" />
                                 <a href="#" class="js-direccionFooter datoFooterLink" target="blank">Cargando</a>
                             </div>
                         </div>
@@ -648,7 +705,12 @@
             </div>
         </footer>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js"></script>
-        <script type="text/javascript" src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+        <script type="text/javascript" src="js/scripts.min.js"></script>
+        <script type="text/javascript">
+            function loadCSS(e,t,n,o){"use strict";function r(){for(var e,t=0;t<l.length;t++)l[t].href&&l[t].href.indexOf(i.href)>-1&&(e=!0);e?i.media=n||"all":setTimeout(r)}var i=window.document.createElement("link"),d=t||window.document.getElementsByTagName("script")[0],l=window.document.styleSheets;return i.rel="stylesheet",i.href=e,i.media="only x",o&&(i.onload=o),d.parentNode.insertBefore(i,d),r(),i}
+            loadCSS( "css/styles.min.css" );
+        </script>
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
