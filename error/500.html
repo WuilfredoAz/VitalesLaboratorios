@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <!-- HTML Meta Tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <title>500 — Algo no anda bien</title>
+        <meta name="Revisit" content="15 day">
+        <!-- <base href="https://vitaleslaboratorios.com/error/"> -->
+        <meta name="description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <link rel="apple-touch-icon" sizes="180x180" href="../img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favicons/favicon-16x16.png">
+        <link rel="manifest" href="../img/favicons/site.webmanifest">
+        <link rel="mask-icon" href="../img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <!-- <link rel="canonical" href="https://vitaleslaboratorios.com/index.html">Cambiar dependiendo de las secciones -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- Google / Search Engine Tags -->
+        <meta itemprop="name" content="500 — Algo no anda bien">
+        <meta itemprop="description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta itemprop="image" content="../img/favicons/logoGoogle.png">
+
+        <!-- Facebook - WhatsApp Meta Tags -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://vitaleslaboratorios.com/">
+        <meta property="og:title" content="500 — Algo no anda bien">
+        <meta property="og:image" content="../img/favicons/metaRS.png">
+        <meta property="og:description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta property="og:site_name" content="Vitales Laboratorios" />
+        <meta property="og:locale" content="es_VE">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <!-- <meta name="twitter:site" content="@"> -->
+        <meta name="twitter:creator" content="@WuilfredoAz">
+        <!-- <meta name="twitter:url" content="https://twitter.com/usuario"> -->
+        <meta name="twitter:title" content="500 — Algo no anda bien">
+        <meta name="twitter:description" content="Somos tu laboratorio clínico de confianza, comprometido con el bienestar y la salud de nuestros pacientes.">
+        <meta name="twitter:image" content="../img/favicons/metaRS.png">
+
+
+
+        <!-- CSS's above the fold-->
+        <style>
+            *
+            {
+                margin:0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Poppins', sans-serif;
+                -webkit-text-size-adjust: 100%;
+            }
+            .degradado
+            {
+                display: flex;
+                min-height: 100vh;
+                width: 100vw;
+                background: linear-gradient(0deg, rgba(243,245,253,1) 0%, rgba(255,255,255,1) 100%);
+            }
+            .centro
+            {
+                max-width: 1200px;
+                width: 100%;
+                min-height: 100vh;
+                margin: 0 auto;
+            }
+            .error
+            {
+                display: flex;
+                align-items: center;
+                min-height: 100vh;
+                font-size: 16px;
+            }
+            .error__textos-container,
+            .error__image-container
+            {
+                width: 50%;
+                min-height: inherit;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .error__textos-container
+            {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .error__title
+            {
+                font-size: 2em;
+                font-weight: 700;
+                color: #EB196C;
+            }
+            .error__subtitle
+            {
+                font-size: 1.375em;
+                font-weight: 700;
+                color: #333333;
+            }
+            .error__description
+            {
+                font-size: .75em;
+                color: #828282;
+                font-weight: 400;
+                margin-bottom: 4.16em;
+            }
+            .error__btn-cta
+            {
+                font-size: .75em;
+                font-weight: 500;
+                color: #fff;
+                padding: 1.25em;
+                background: #EB196C;
+                border-radius: 5px;
+                text-decoration: none;
+                box-shadow: 0px 10px 23px -15px #EB196C;
+                transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+                margin-bottom: 4.16em;
+                display: inline-block;
+            }
+            .error__btn-cta:hover
+            {
+                transform: scale(1.05);
+                box-shadow: 0px 10px 23px -10px #EB196C;
+            }
+            .error__ilustracion
+            {
+                height: auto;
+                width: 100%;
+            }
+            .redes
+            {
+                height: 1.5em;
+            }
+            .redes__link
+            {
+                text-decoration: none;
+            }
+            .redes__logo
+            {
+                height: 100%;
+                width: auto;
+                vertical-align: top;
+                filter: invert(1);
+                opacity: .2;
+                transition: .3s cubic-bezier(0.28, 0.11, 0.32, 1);
+            }
+            .redes__link:hover .redes__logo
+            {
+                opacity: .5;
+            }
+            @media screen and (max-width: 75em)
+            {
+                .centro
+                {
+                    margin: 0 20px;
+                }
+            }
+            @media screen and (max-width: 64em)
+            {
+                .error__description
+                {
+                    margin-bottom: 2.5em;
+                }
+            }
+            @media screen and (max-width: 47.9375em)
+            {
+                .error
+                {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .error__textos-container,
+                .error__image-container
+                {
+                    width: 100%;
+                    min-height: initial;
+                }
+                .error__textos-container
+                {
+                    order: 2;
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                .error__image-container
+                {
+                    order: 1;
+                    height: 256px;
+                }
+                .error__ilustracion
+                {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+            @media screen and (max-width: 30em)
+            {
+                .error__title
+                {
+                    font-size: 1.8em;
+                }
+                .error__subtitle
+                {
+                    font-size: .875em;
+                }
+                .error__textos-container,
+                .error__image-container
+                {
+                    order: initial;
+                }
+                .error__btn-cta
+                {
+                    padding: 1em;
+                    margin-bottom: 2em;
+                }
+                .error__image-container
+                {
+                    height: 100px;
+                    margin-top: 2em;
+                }
+            }
+            @media screen and (min-height: 64em) and (min-resolution: 1.5dppx) and (orientation: portrait)
+            {
+                .error
+                {
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                .error__textos-container,
+                .error__image-container
+                {
+                    width: 100%;
+                    min-height: initial;
+                }
+                .error__textos-container
+                {
+                    justify-content: flex-start;
+                    align-items: center;
+                }
+                .error__ilustracion
+                {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        </style>
+
+        <!-- JS's -->
+        <!-- Google Analytics-->
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121195399-3"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121195399-3');
+        </script> -->
+    </head>
+    <body>
+        <section class="degradado">
+            <div class="centro">
+                <article class="error">
+                    <div class="error__textos-container">
+                        <h1 class="error__title">Oops 500</h1>
+                        <h2 class="error__subtitle">Algo se rompio</h2>
+                        <p class="error__description">
+                            Parece que los reactivos que mezclamos hicieron explotar algo importante 😅. ¿Por qué no vuelves en un rato?
+                        </p>
+                        <a href="/" class="error__btn-cta">Reintentar</a>
+                        <div class="redes">
+                            <a href="https://google.co.ve" class="redes__link">
+                                <img src="../img/icons/locacion.png" srcset="../img/icons/locacion2x.png" alt="Google Maps" class="redes__logo" />
+                            </a>
+                            <a href="https://facebook.com" class="redes__link">
+                                <img src="../img/icons/fb.png" srcset="../img/icons/fb2x.png" alt="Facebook" class="redes__logo" />
+                            </a>
+                            <a href="https://instagram.com" class="redes__link">
+                                <img src="../img/icons/ig.png" srcset="../img/icons/ig2x.png" alt="Instagram" class="redes__logo" />
+                            </a>
+                        </div>
+                    </div>
+                    <picture class="error__image-container">
+                        <img src="../img/500.png" alt="500 Imagen" class="error__ilustracion">
+                    </picture>
+                </article>
+            </div>
+        </section>
+    </body>
+</html>

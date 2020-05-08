@@ -1,0 +1,36 @@
+RewriteBase /
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+ErrorDocument 500 /error/500.html
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 600 seconds"
+    ExpiresByType image/x-icon "access plus 604800 seconds"
+    ExpiresByType image/jpg "access plus 604800 seconds"
+    ExpiresByType image/jpeg "access plus 604800 seconds"
+    ExpiresByType image/png "access plus 604800 seconds"
+    ExpiresByType image/gif "access plus 604800 seconds"
+    ExpiresByType text/css "access plus 604800 seconds"
+    ExpiresByType text/javascript "access plus 604800 seconds"
+    ExpiresByType application/x-javascript "access plus 604800 seconds"
+    ExpiresByType text/html "access plus 7200 seconds"
+    ExpiresByType application/xhtml+xml "access plus 7200 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+    <FilesMatch "\\.(ico|jpeg|jpg|png|gif|swf|css|js)$">
+    Header set Cache-Control "max-age=604800, public"
+    </FilesMatch>
+    <FilesMatch "\\.(x?html?|php)$">
+        Header set Cache-Control "max-age=7200, private, must-revalidate"
+    </FilesMatch>
+</IfModule>
