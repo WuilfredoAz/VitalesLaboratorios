@@ -12,7 +12,7 @@ const numeroTelefonoLlamar = "5802812992790";
 // Link de WhastApp
 const whatsApp= "https://youtube.com";
 // Link de Instagram
-const instagram = "https://instagram.com";
+const instagram = "https://www.instagram.com/vitaleslaboratorios/";
 // Link de facebook
 const facebook = "https://facebook.com";
 // Correo
