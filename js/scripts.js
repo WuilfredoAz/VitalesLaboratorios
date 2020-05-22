@@ -2,7 +2,7 @@
 // Direccion Abreviada
 const direccionAbreviada = "El Tigre, Edo. Anzoátegui";
 // Direccion Completa
-const direccionCompleta = "Calle 22 sur,  Edif. Remanzo,  piso 1 local 01, Pueblo nuevo sur, El Tigre, edo. Anzoátegui.";
+const direccionCompleta = "Calle 22 sur,  Edif. Romanzo,  piso 1 local 01, Pueblo nuevo sur, El Tigre, edo. Anzoátegui.";
 // Link de googleMaps
 const googleMaps = "https://www.google.co.ve";
 // Telefono
@@ -774,7 +774,7 @@ function cargarSerologias()
     // Figura literaria para el septimo examen
     var sero6=
     {
-        titulo: "Helicobacter Pylori",
+        titulo: "Helicobacter Pilory",
         categoria: "Serologías",
         listo: "4-6 horas",
         condicion: "No requiere ayuno",
@@ -1741,7 +1741,7 @@ function cargarInmunologia()
     // Figura literaria para el 17 examen
     var inmu16=
     {
-        titulo: "Helicobacter Pylori IgG",
+        titulo: "Helicobacter Pilory IgG",
         categoria: "Inmunología",
         listo: "1 día",
         condicion: "No requiere ayuno",
@@ -1752,7 +1752,7 @@ function cargarInmunologia()
     // Figura literaria para el 18 examen
     var inmu17=
     {
-        titulo: "Helicobacter Pylori IgM",
+        titulo: "Helicobacter Pilory IgM",
         categoria: "Inmunología",
         listo: "1 día",
         condicion: "No requiere ayuno",
@@ -2231,7 +2231,7 @@ function cargarCoprologia()
     // Figura literaria para el 6 examen
     var copro5=
     {
-        titulo: "Helicobacter Pylori",
+        titulo: "Helicobacter Pilory",
         categoria: "Coprología",
         listo: "6 horas",
         condicion: "No requiere ayuno",
