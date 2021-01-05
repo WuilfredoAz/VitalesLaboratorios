@@ -24,7 +24,7 @@ const reactivos ="https://amazon.com";
 // Para encuentas
 const encuestas ="https://gmail.com";
 // Para el copyright
-const copyright = "Vitales Laboratorios, Copyright 2020. Todos los derechos reservados."
+const copyright = "Vitales Laboratorios, Copyright 2021. Todos los derechos reservados."
 // Para el horario Semanal (lunes-viernes)
 const horarioSemanal = "8:00am - 6:00pm";
 // Para el horario del fin de semana (sabado)
